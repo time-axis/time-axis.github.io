@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		
+			$.ajax({
+				url: 'FateGrandOrder.xml',
+				dataType: 'xml',
+				success: function(data){
+					var xml_node = $('cockatrice_carddatabase',data);
+					console.log( xml_node.find('cockatrice_carddatabase > sets > set > name').text() );
+					//$("#console").append('Success');
+				},
+				error: function(data){
+					console.log('Error loading XML data');
+					//$("#console").append('Error loading XML data');
+				}
+			}); 
+			
+			function scriptStart(xml) {
+				$("#console").append("<br/>Okay!");
+			}
+			$("#console").append("Waiting...<br/>");
+		});
+	</script>
+</head>
+<body>
+	<div id="console"></div>
+</body>
+</html>
