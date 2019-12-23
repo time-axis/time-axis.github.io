@@ -1,28 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
 		$(document).ready(function(){
 		
 			$.ajax({
-				url: 'FateGrandOrder.xml',
+				type: "GET",
+				url: 'https://time-axis.github.io/FateGrandOrder.xml',
 				dataType: 'xml',
 				success: function(data){
-					var xml_node = $('cockatrice_carddatabase',data);
-					console.log( xml_node.find('cockatrice_carddatabase > sets > set > name').text() );
-					//$("#console").append('Success');
+				
+					$("ul").children().remove();
+					
+					var cardsList = new Array();
+					
+					var commonList = new Array();
+					var uncommonList = new Array();
+					var rareList = new Array();
+					var mythicList = new Array();
+					var specialList = new Array();
+					
+					$(data).find("card").each( function (i) {
+						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'));
+						cardsList.push(newCard);
+						switch(newCard.rarity()){
+							case "common":
+								commonList.push(newCard);
+								break;
+							case "uncommon":
+								uncommonList.push(newCard);
+								break;
+							case "rare":
+								rareList.push(newCard);
+								break;
+							case "mythic rare":
+								mythicList.push(newCard);
+								break;
+							case "special":
+								specialList.push(newCard);
+								break;
+							default:
+								console.log("Error populating card list.");
+								break;
+						}
+						//console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity());
+					});
+					
+					$("#console").append('<strong>Commons</strong><br/>');
+					for(var i = 0; i < commonList.length; i++){
+						$("#console").append(commonList[i].name() + "<br/>");
+					}
+					$("#console").append('<br/><strong>Uncommons</strong><br/>');
+					for(var i = 0; i < uncommonList.length; i++){
+						$("#console").append(uncommonList[i].name() + "<br/>");
+					}
+					$("#console").append('<br/><strong>Rares</strong><br/>');
+					for(var i = 0; i < rareList.length; i++){
+						$("#console").append(rareList[i].name() + "<br/>");
+					}
+					$("#console").append('<br/><strong>Mythic Rares</strong><br/>');
+					for(var i = 0; i < mythicList.length; i++){
+						$("#console").append(mythicList[i].name() + "<br/>");
+					}
+					$("#console").append('<br/><strong>Special</strong><br/>');
+					for(var i = 0; i < specialList.length; i++){
+						$("#console").append(specialList[i].name() + "<br/>");
+					}
+					
+					
+					
 				},
 				error: function(data){
 					console.log('Error loading XML data');
-					//$("#console").append('Error loading XML data');
+					$("#console").append('Error loading XML data');
 				}
-			}); 
+			});
 			
-			function scriptStart(xml) {
-				$("#console").append("<br/>Okay!");
+			function card(nameInput,rarityInput){	
+				this.name = name;
+				this.rarity = rarity;
+				function name(){
+					return nameInput;
+				}
+				function rarity(){
+					return rarityInput;
+				}
 			}
-			$("#console").append("Waiting...<br/>");
+			
+			// source: https://stackoverflow.com/a/11331200/4298200
+			function Sound(source, volume, loop)
+			{
+				this.source = source;
+				this.volume = volume;
+				this.loop = loop;
+				var son;
+				this.son = son;
+				this.finish = false;
+				this.stop = function()
+				{
+					document.body.removeChild(this.son);
+				}
+				this.start = function()
+				{
+					if (this.finish) return false;
+					this.son = document.createElement("embed");
+					this.son.setAttribute("src", this.source);
+					this.son.setAttribute("hidden", "true");
+					this.son.setAttribute("volume", this.volume);
+					this.son.setAttribute("autostart", "true");
+					this.son.setAttribute("loop", this.loop);
+					document.body.appendChild(this.son);
+				}
+				this.remove = function()
+				{
+					document.body.removeChild(this.son);
+					this.finish = true;
+				}
+				this.init = function(volume, loop)
+				{
+					this.finish = false;
+					this.volume = volume;
+					this.loop = loop;
+				}
+			}
 		});
 	</script>
 </head>
