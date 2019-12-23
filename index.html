@@ -15,6 +15,7 @@
 			$.ajax({
 				type: "GET",
 				url: 'https://time-axis.github.io/FateGrandOrder.xml',
+				cache: false,
 				dataType: 'xml',
 				success: function(data){
 				
@@ -56,23 +57,23 @@
 					
 					$("#console").append('<strong>Commons</strong><br/>');
 					for(var i = 0; i < commonList.length; i++){
-						$("#console").append("<img src=\"FateGrandOrder-files/"+ commonList[i].name() + ".jpg\" style=\"border-radius: 20px; width: 248px;\" />");
+						$("#console").append("<img src=\"FateGrandOrder-files/"+ commonList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
 					}
-					$("#console").append('<br/><strong>Uncommons</strong><br/>');
+					$("#console").append('<br/><br/><strong>Uncommons</strong><br/>');
 					for(var i = 0; i < uncommonList.length; i++){
-						$("#console").append(uncommonList[i].name() + "<br/>");
+						$("#console").append("<img src=\"FateGrandOrder-files/"+ uncommonList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
 					}
-					$("#console").append('<br/><strong>Rares</strong><br/>');
+					$("#console").append('<br/><br/><strong>Rares</strong><br/>');
 					for(var i = 0; i < rareList.length; i++){
-						$("#console").append(rareList[i].name() + "<br/>");
+						$("#console").append("<img src=\"FateGrandOrder-files/"+ rareList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
 					}
-					$("#console").append('<br/><strong>Mythic Rares</strong><br/>');
+					$("#console").append('<br/><br/><strong>Mythic Rares</strong><br/>');
 					for(var i = 0; i < mythicList.length; i++){
-						$("#console").append(mythicList[i].name() + "<br/>");
+						$("#console").append("<img src=\"FateGrandOrder-files/"+ mythicList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
 					}
-					$("#console").append('<br/><strong>Special</strong><br/>');
+					$("#console").append('<br/><br/><strong>Special</strong><br/>');
 					for(var i = 0; i < specialList.length; i++){
-						$("#console").append(specialList[i].name() + "<br/>");
+						$("#console").append("<img src=\"FateGrandOrder-files/"+ specialList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
 					}
 					
 					
