@@ -5,8 +5,259 @@
 	<meta content="utf-8" http-equiv="encoding">
 	<style>
 		body {
-			background-color: #AAAAAA;
+			background-color: #8393b0;
+			color: #FFFFFF;
+			font-family: "Arial", Helvetica, sans-serif;
 		}
+		
+		h1 {
+			clear: both;
+			text-align: center;
+		}
+		
+		#cardListDiv {
+			margin-top: 100px;
+			margin-left: 8vw;
+			margin-right: 8vw;
+			margin-bottom: 200px;
+			height:auto;
+			text-align: center;
+		}
+		
+		#afterSummon {
+			margin-top: 100px;
+			margin-left: 8vw;
+			margin-right: 8vw;
+			margin-bottom: 200px;
+			height:auto;
+			text-align: center;
+		}
+		
+		#beforeSummon {
+			width: 90%;
+			margin: auto;
+			text-align: center;
+			padding: 200px 0;
+		}
+		
+		#summoningPlatform {
+			height: 50vw;
+		}
+		
+		#duringSummon {
+			width: 90%;
+			margin: auto;
+			text-align: center;
+		}
+		
+		#volumeMute {
+			-webkit-user-select: none; /* Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+			user-select: none; /* Standard */
+			padding: 0 10px;
+		}
+		
+		.mutedButton {
+			opacity: 0.7;
+		}
+		
+		.button {
+			height: 55px;
+			width: 250px;
+			margin-left: 20px;
+			margin-right: 20px;
+			padding: 20px 0;
+			text-align: center;
+			background-color: #7383a0;
+			display: inline-block;
+			border: 3px;
+			border-style: solid;
+			border-radius: 3px;
+			border-color: #536390;
+			font-size: 30px;
+			font-weight: bold;
+		}
+		
+		.button:hover {
+			background-color: #536390;
+			border-color: #334370;
+			cursor: pointer;
+		}
+		
+		.slider {
+			  -webkit-appearance: none;  /* Override default CSS styles */
+			  appearance: none;
+			  width: 200px; /* Full-width */
+			  height: 25px; /* Specified height */
+			  background: #7383a0;
+			  outline: none; /* Remove outline */
+			  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+			  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+			  transition: opacity .2s;
+		}
+		
+		.slider:hover {
+			opacity: 1;
+		}
+		
+		/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+		.slider::-webkit-slider-thumb {
+		  -webkit-appearance: none; /* Override default look */
+		  appearance: none;
+		  width: 25px; /* Set a specific slider handle width */
+		  height: 25px; /* Slider handle height */
+		  background: #FFFFFF;
+		  cursor: pointer; /* Cursor on hover */
+		}
+
+		.slider::-moz-range-thumb {
+		  width: 25px; /* Set a specific slider handle width */
+		  height: 25px; /* Slider handle height */
+		  background: #FFFFFF;
+		  cursor: pointer; /* Cursor on hover */
+		}
+		
+		#header {
+			padding: 20px 0;
+			margin-left: auto;
+			margin-right: auto;
+			width: 90%;
+			text-align: center;
+		}
+		
+		
+		video {
+			z-index: -1;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
+			background-attachment: scroll;
+			top: 0vw;
+			left: 0;
+			min-height: 555px;
+			height: calc(100vh);
+			-webkit-animation-name: videofadeIn;
+			-webkit-animation-duration: 0.8s;
+			-webkit-animation-play-state: paused;
+		}
+		
+		@keyframes videofadeIn {
+			0% {
+				filter:opacity(0%);
+			}
+			100% {
+				filter:opacity(100%);
+			}
+		}
+		
+		#footer {
+			clear: both;
+			height: 200px;
+		}
+		
+		#summonDiv {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			
+		}
+		
+		#rulesDiv {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		
+		li {
+			float: left;
+			height: auto;
+			
+		}
+		
+		.img-thumbnail {
+			border-radius: 12px; 
+			width: 200px;
+			position: absolute;
+			float:left;
+		}
+		
+		.img-thumbnail:hover {
+			top: -40%;
+			left: -25%;
+			width: 375px;
+			border-radius: 20px;
+			position: relative;
+			z-index: 999;
+		}
+		
+		#volumeMute:hover {
+			cursor:pointer;
+		}
+		
+		.thumbnail {
+			width: 200px;
+			height: 279px;
+			display: flex;
+		}
+		
+		.invisible {
+			opacity: 0;
+		}
+		
+		.hidden {
+			display: none;
+		}
+		
+		.card {
+			border-radius: 20px;
+			width: 100%;
+			height: 523px;
+			margin: 0 auto;
+		}
+		
+		#summonCardContainer {
+			width: 375px;
+			margin: 0 auto;
+		}
+		
+		.fadingIn {
+			-webkit-animation-name: fadingInAnim;
+			-webkit-animation-duration: 1.4s;
+			-webkit-animation-play-state: paused;
+			-webkit-animation-timing-function: ease-in;
+		}
+		
+		@keyframes fadingInAnim {
+			0% {
+				opacity: 0;
+			}
+			25% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		
+		.spinning {
+			-webkit-animation-name: spinningAnim;
+			-webkit-animation-duration: 0.3s;
+			-webkit-animation-play-state: running;
+			-webkit-animation-iteration-count: infinite;
+		}
+		
+		@keyframes spinningAnim {
+			0%, 100% {
+				width: 375px;
+				height: 523px;
+			}
+			50% {
+				width: 0px;
+				height: 523px;
+			}
+		}
+		
 	</style>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -29,6 +280,9 @@
 					var mythicList = new Array();
 					var specialList = new Array();
 					
+					var busy = false;
+					
+					// Populate Card List
 					$(data).find("card").each( function (i) {
 						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'));
 						cardsList.push(newCard);
@@ -55,29 +309,285 @@
 						//console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity());
 					});
 					
-					$("#console").append('<strong>Commons</strong><br/>');
+					// Draw Card List
+					
+					$("#cardListDiv").append('<h1>Common (55%)</h1><br/><ul>');
 					for(var i = 0; i < commonList.length; i++){
-						$("#console").append("<img src=\"FateGrandOrder-files/"+ commonList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ commonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
-					$("#console").append('<br/><br/><strong>Uncommons</strong><br/>');
+					$("#cardListDiv").append('</ul><br/><br/><h1>Uncommon (33%)</h1><br/><ul>');
 					for(var i = 0; i < uncommonList.length; i++){
-						$("#console").append("<img src=\"FateGrandOrder-files/"+ uncommonList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ uncommonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
-					$("#console").append('<br/><br/><strong>Rares</strong><br/>');
+					$("#cardListDiv").append('</ul><br/><br/><h1>Rare (8%)</h1><br/><ul>');
 					for(var i = 0; i < rareList.length; i++){
-						$("#console").append("<img src=\"FateGrandOrder-files/"+ rareList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ rareList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
-					$("#console").append('<br/><br/><strong>Mythic Rares</strong><br/>');
+					$("#cardListDiv").append('</ul><br/><br/><h1>Mythic Rare (3%)</h1><br/><ul>');
 					for(var i = 0; i < mythicList.length; i++){
-						$("#console").append("<img src=\"FateGrandOrder-files/"+ mythicList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ mythicList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
-					$("#console").append('<br/><br/><strong>Special</strong><br/>');
+					$("#cardListDiv").append('</ul><br/><br/><h1>Special (1%)</h1><br/><ul>');
 					for(var i = 0; i < specialList.length; i++){
-						$("#console").append("<img src=\"FateGrandOrder-files/"+ specialList[i].name() + ".jpg\" style=\"border-radius: 12px; width: 248px;\" />");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ specialList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+					}
+					$("#cardListDiv").append('</ul>');
+					
+					// Rules
+					
+					
+					// Summoning
+					var summonList = new Array;
+					
+					//		Volume Slider
+					var lastVolume = 0;
+					$("#volumeMute").click(function() {
+						if($("#volumeSlider").val() > 0) {
+							lastVolume = $("#volumeSlider").val();
+							$("#volumeSlider").val(0);
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+							$("#volumeMute").addClass("mutedButton");
+						}
+						else {
+							$("#volumeSlider").val(lastVolume);
+							$("#BGM").prop("volume", lastVolume / 100);
+							$("#SFX").prop("volume", lastVolume / 100);
+							$("#volumeMute").removeClass("mutedButton");
+						}
+						
+					});
+					
+					$("#volumeSlider").on("input", function() {
+						console.log($("#volumeSlider").val());
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#volumeMute").removeClass("mutedButton");
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						
+					});
+					
+					function normalSummon(){
+						var roll = Math.floor((Math.random()*100)+1);
+						var summonedCard = "";
+						
+						if (roll < 55) { //Common (55%)
+							summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
+						} else 
+						if (roll < 88) { //Uncommon (33%)
+							summonedCard = uncommonList[Math.floor(Math.random() * uncommonList.length)];
+						} else
+						if (roll < 96) { //Rare (8%)
+							summonedCard = rareList[Math.floor(Math.random() * rareList.length)];
+						} else
+						if (roll < 99) { //Mythic Rare (3%)
+							summonedCard = mythicList[Math.floor(Math.random() * mythicList.length)];
+						} 
+						else { //Special (1%)
+							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+						}
+						return summonedCard;
 					}
 					
+					function rareSummon(){ // For Guaranteed Rare or Above
+						var roll = Math.floor((Math.random()*100)+1);
+						var summonedCard = "";
+						
+						if (roll < 97) { // Rare (97%)
+							summonedCard = rareList[Math.floor(Math.random() * rareList.length)];
+						}
+						else { // Mythic Rare (3%)
+							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+						}
+						return summonedCard;
+					}
+					
+					$("#begin10SummonButton").click(async function (){ // When Summon 10 Button is Pressed
+						
+						busy = true;
+						$("#header").addClass("invisible");
+						$("#beforeSummon").addClass("hidden");
+						$("#duringSummon").removeClass("hidden");
+						$("#summonVid").get(0).play();
+						$("#summonVid").css("-webkit-animation-play-state", "running");
+						
+						var tempCard = "";
+						
+						//Play BGM
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						$("#BGM").trigger('play');
+						
+						var rareSlot1 = Math.floor(Math.random()*10);
+						var rareSlot2 = Math.floor(Math.random()*10);
+						while (rareSlot1 == rareSlot2) {	
+							rareSlot2 = Math.floor(Math.random()*10);
+						}
+						for(var i = 0; i < 10; i++) {
+							if(i == rareSlot1 || i== rareSlot2) {
+								tempCard = rareSummon();
+							}
+							else {
+								tempCard = normalSummon();
+							}
+							//console.log(tempCard.name() + " " + tempCard.rarity())
+							summonList.push(tempCard);
+							//console.log(summonList[i].name());
+						}
+						//console.log(summonList[0].name());
+						
+						//STEP 1
+						function summonStep1(i) {
+							//setTimeout(function() {
+								if(summonList[i].rarity() == "common") {
+									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_default" + ".jpg");
+								} else
+								if(summonList[i].rarity() == "uncommon") {
+									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_uncommon" + ".jpg");
+								} else
+								if(summonList[i].rarity() == "rare") {
+									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_rare" + ".jpg");
+								} else
+								if(summonList[i].rarity() == "mythic rare") {
+									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_rare" + ".jpg");
+								} 
+								else {
+									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_special" + ".jpg");
+								}
+								$("#summonCardContainer").removeClass("hidden");
+								$("#summonCard").css("-webkit-animation-play-state", "running");
+								//Play SFX
+								if($("#volumeSlider").val() > 0) {
+								$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+								$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+								}
+								else {
+									$("#BGM").prop("volume", 0);
+									$("#SFX").prop("volume", 0);
+								}
+								$("#SFX").trigger('load');
+								$("#SFX").trigger('play');
+							//}, 800);							
+						};
+						
+						//STEP 2
+						function summonStep2(i) {
+							//setTimeout(function() {
+								$("#summonCard").attr('src',"FateGrandOrder-files/"+ summonList[i].name() + ".jpg");
+								//$("#summonCardContainer").css("-webkit-animation-duration", "1s");
+								$("#summonCardContainer").css("-webkit-animation-iteration-count", "1");
+							//}, 3800);
+						}
+						
+						//STEP 3
+						function summonStep3(i) {
+							//setTimeout(function() {
+								$("#summonCardContainer").addClass("hidden");
+								$("#summonCardContainer").css("-webkit-animation-iteration-count", "infinite");
+							//}, 7500);
+						}
+						
+						//for(var i = 0; i < summonList.length; i++) {
+						
+						for(i = 0; i < summonList.length; i++) {
+							await delay(200);
+							summonStep1(i);
+							await delay(3000);
+							summonStep2(i);
+							await delay(2050);
+							summonStep3(i);
+						}
+						
+						$("#header").removeClass("invisible");
+						$("#duringSummon").addClass("hidden");
+						$("#afterSummon").removeClass("hidden");
+						
+						$("#afterSummonList").append('<h1>Summoned Cards:</h1><ul>');
+						for(var i = 0; i < summonList.length; i++){
+							$("#afterSummonList").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ summonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						}
+						$("#afterSummonList").append('</ul><br/><br/>');
+						busy = false;
+					});
+					
+					$("#resetButton").click(function() {
+						$("#afterSummon").addClass("hidden");
+						$("#beforeSummon").removeClass("hidden");
+						summonList = new Array;
+						$("#BGM").trigger('load');
+						$("#SFX").trigger('load');
+						$("#summonVid").get(0).load();
+						$("#afterSummonList").html("");
+					});
+								
+					/*
+					$("#audioTestButton").click(function() {
+						console.log($("#volumeSlider").val());
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						$("#BGM").trigger('play');
+					});
+					$("#audioTestButton2").click(function() {
+						console.log($("#volumeSlider").val());
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						$("#SFX").trigger('play');
+					});*/
 					
 					
+					
+					// Header Buttons
+					
+					$("#cardListButton").click(function(){
+						if(!busy)
+						{
+							$("#rulesDiv").addClass("hidden");
+							$("#summonDiv").addClass("hidden");
+							$("#cardListDiv").removeClass("hidden");
+						}
+					});
+					
+					$("#rulesButton").click(function(){
+						if(!busy)
+						{
+							$("#summonDiv").addClass("hidden");
+							$("#cardListDiv").addClass("hidden");
+							$("#rulesDiv").removeClass("hidden");
+						}
+					});
+					
+					$("#summoningButton").click(function(){
+						if(!busy)
+						{
+							$("#rulesDiv").addClass("hidden");
+							$("#cardListDiv").addClass("hidden");
+							$("#summonDiv").removeClass("hidden");
+						}
+					});
+										
 				},
 				error: function(data){
 					console.log('Error loading XML data');
@@ -85,6 +595,13 @@
 				}
 			});
 			
+			//Animate Card
+			function animateCard(cardInput)
+			{
+				
+			}
+			
+			//Create Card Object Function
 			function card(nameInput,rarityInput){	
 				this.name = name;
 				this.rarity = rarity;
@@ -96,46 +613,40 @@
 				}
 			}
 			
-			// source: https://stackoverflow.com/a/11331200/4298200
-			function Sound(source, volume, loop)
-			{
-				this.source = source;
-				this.volume = volume;
-				this.loop = loop;
-				var son;
-				this.son = son;
-				this.finish = false;
-				this.stop = function()
-				{
-					document.body.removeChild(this.son);
-				}
-				this.start = function()
-				{
-					if (this.finish) return false;
-					this.son = document.createElement("embed");
-					this.son.setAttribute("src", this.source);
-					this.son.setAttribute("hidden", "true");
-					this.son.setAttribute("volume", this.volume);
-					this.son.setAttribute("autostart", "true");
-					this.son.setAttribute("loop", this.loop);
-					document.body.appendChild(this.son);
-				}
-				this.remove = function()
-				{
-					document.body.removeChild(this.son);
-					this.finish = true;
-				}
-				this.init = function(volume, loop)
-				{
-					this.finish = false;
-					this.volume = volume;
-					this.loop = loop;
-				}
+			//Delay Function
+			function delay(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
 			}
+			
 		});
 	</script>
 </head>
 <body>
+	<div id="header"><div id="cardListButton" class="button">Card List</div> <div id="rulesButton" class="button">Rules</div> <div id="summoningButton" class="button">Summoning</div></div>
+	<div id="summonDiv" class="hidden">
+		<audio id="BGM" src="Summoning.mp3"></audio><audio id="SFX" src="soundEffect.mp3"></audio>
+		<span id="volumeMute" style="font-size: 45px;"><img src="audioIcon.png" style="top: -15px;"/></span><input type="range" min="0" max="100" value="50" class="slider" id="volumeSlider"><br/>
+		<div id="summoningPlatform">
+			<div id="beforeSummon" class="">
+				<div id="begin10SummonButton" class="button">10 Summon</div>
+				<br/><br/>
+				<strong>Summons 10 cards, 2 of which are guaranteed to be rare or above.</strong>
+			</div>
+			<div id="duringSummon" class="hidden">
+				<div id="summonCardContainer" class="hidden spinning"><img id="summonCard" src = "FateGrandOrder-files/cardback_default.jpg" class="card fadingIn"></div>
+				<video id="summonVid" width="100%" class="">
+					<source src="summonBG.webm" type="video/webm">
+				</video>
+			</div>
+			<div id="afterSummon" class="hidden">
+				<div id="afterSummonList"></div>
+				<div id="resetButton" class="button">Reset</div>
+			</div>
+		</div>
+	</div>
+	<div id="rulesDiv" class=""><h1 style="text-align: center;">Rules will be written here.</h1></div>
+	<div id="cardListDiv" class="hidden"></div>
+	<div id="footer"></div>
 	<div id="console"></div>
 </body>
 </html>
