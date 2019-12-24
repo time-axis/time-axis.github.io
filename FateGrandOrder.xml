@@ -808,7 +808,7 @@ Creatures that can block Warrior Monk Benkei must do so.</text>
  </prop>
 </card>
 <card>
- <name>_ Caress of the Medusa</name>
+ <name>-Caress of the Medusa</name>
  <text>Enchant creature
 As an additional cost to cast _ Caress of the Medusa, tap a creature you control that shares a True Name with it.
 Enchanted creature loses all abilities and is an artifact named Stone.</text>
@@ -1934,7 +1934,7 @@ Trample</text>
  </prop>
 </card>
 <card>
- <name>_ Irisviel Lesser Holy Grail</name>
+ <name>-Irisviel Lesser Holy Grail</name>
  <text>GW: You gain 4 life.
 T: Prevent all damage that would be dealt to _ Irisviel, Lesser Holy Grail this turn.</text>
  <tablerow>2</tablerow>
@@ -3161,7 +3161,7 @@ Target God creature you control that shares a True Name with Xiuhcoatl gets +2/+
  </prop>
 </card>
 <card>
- <name>_ Gae Dearg Crimson Rose of Exorcism</name>
+ <name>-Gae Dearg Crimson Rose of Exorcism</name>
  <text>Damage dealt by equipped creature can’t be prevented.
 Whenever equipped creature deals damage to a creature, if the damage marked on that creature is equal to or greater than its base toughness, destroy that creature.
 Soulequip 2</text>
