@@ -527,7 +527,7 @@ Whenever enchanted creature attacks, you gain 3 life.</text>
  <name>Emblem</name>
  <text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with the True Name Merlin.</text>
  <tablerow>1</tablerow>
- <set rarity="common">FGO</set>
+ <set rarity="special">FGO</set>
  <prop>
   <layout>normal</layout>
   <side>front</side>
