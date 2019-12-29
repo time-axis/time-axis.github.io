@@ -326,23 +326,23 @@
 					
 					$("#cardListDiv").append('<h1>Common (55%)</h1><br/><ul>');
 					for(var i = 0; i < commonList.length; i++){
-						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ commonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(commonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
 					$("#cardListDiv").append('</ul><br/><br/><h1>Uncommon (33%)</h1><br/><ul>');
 					for(var i = 0; i < uncommonList.length; i++){
-						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ uncommonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
 					$("#cardListDiv").append('</ul><br/><br/><h1>Rare (8%)</h1><br/><ul>');
 					for(var i = 0; i < rareList.length; i++){
-						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ rareList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(rareList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
 					$("#cardListDiv").append('</ul><br/><br/><h1>Mythic Rare (3%)</h1><br/><ul>');
 					for(var i = 0; i < mythicList.length; i++){
-						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ mythicList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(mythicList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
 					$("#cardListDiv").append('</ul><br/><br/><h1>Special (1%)</h1><br/><ul>');
 					for(var i = 0; i < specialList.length; i++){
-						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ specialList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(specialList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
 					}
 					$("#cardListDiv").append('</ul>');
 					
