@@ -9,7 +9,7 @@
 <cards>
 
 <card>
-	<name>Construct              </name>
+	<name>Construct (Token)</name>
 	<text></text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -42,7 +42,7 @@ Remove 14 age counters from Ars Almadel Salomonis and sacrifice it: You win the 
 	</prop>
 </card>
 <card>
-	<name>Human Citizen              </name>
+	<name>Human Citizen (Token)</name>
 	<text></text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -74,7 +74,7 @@ When Nursery Rhyme enters the battlefield, choose an opponent. Nursery Rhyme’s
 	</prop>
 </card>
 <card>
-	<name>Phantasm Pegasus              </name>
+	<name>Pegasus (Token)</name>
 	<text>Flying, trample</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -82,7 +82,7 @@ When Nursery Rhyme enters the battlefield, choose an opponent. Nursery Rhyme’s
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Creature - Phantasm Pegasus </type>
+		<type>Token Creature - Pegasus </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>W</color>
@@ -106,7 +106,7 @@ T: Arjuna, The Endowed Hero deals damage equal to its power to target attacking 
 	</prop>
 </card>
 <card>
-	<name>Bird Construct              </name>
+	<name>Bird (Token)</name>
 	<text>Flying</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -114,7 +114,7 @@ T: Arjuna, The Endowed Hero deals damage equal to its power to target attacking 
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact Creature - Bird Construct </type>
+		<type>Token Artifact Creature - Bird </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>U</color>
@@ -139,7 +139,7 @@ Demon creatures you control have indestructible. You can’t lose the game, and 
 	</prop>
 </card>
 <card>
-	<name>Merlin Manifested              </name>
+	<name>Merlin Manifested (Token)</name>
 	<text></text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -172,7 +172,7 @@ W: Artoria, King of Knights gets +1/+1 until end of turn.</text>
 	</prop>
 </card>
 <card>
-	<name>Demon God              </name>
+	<name>Demon God (Token)</name>
 	<text>Defender</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -204,7 +204,7 @@ W: Prevent the next 1 noncombat damage that would be dealt to Artoria Lily, Futu
 	</prop>
 </card>
 <card>
-	<name>Demon Horror              </name>
+	<name>Demon Horror (Token)</name>
 	<text>Menace</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -237,7 +237,7 @@ Artoria, Lion King of Camelot is rider class in addition to its other classes.
 	</prop>
 </card>
 <card>
-	<name>Prelatis Horror              </name>
+	<name>Prelatis Horror (Token)</name>
 	<text>Lifelink, trample</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -270,7 +270,7 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 	</prop>
 </card>
 <card>
-	<name>Skeleton Warrior              </name>
+	<name>Skeleton Warrior (Token)</name>
 	<text></text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -302,7 +302,7 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 	</prop>
 </card>
 <card>
-	<name>Spirit              </name>
+	<name>Spirit (Token)</name>
 	<text>Flying</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -334,7 +334,7 @@ Sacrifice Dragonslayer Steed: Creatures your opponents control can’t attack th
 	</prop>
 </card>
 <card>
-	<name>Artemis              </name>
+	<name>Artemis (Token)</name>
 	<text>Flying, indestructible
 Sacrifice this creature if you don’t control a creature that shares a True Name with it.</text>
  <token>1</token>
@@ -367,7 +367,7 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 	</prop>
 </card>
 <card>
-	<name>Human Soldier              </name>
+	<name>Human Soldier (Token)</name>
 	<text></text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -398,7 +398,7 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 	</prop>
 </card>
 <card>
-	<name>Ox              </name>
+	<name>Ox (Token)</name>
 	<text>Trample</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -429,7 +429,7 @@ Choose a creature. The chosen creature loses all abilities until end of turn, th
 	</prop>
 </card>
 <card>
-	<name>Quetzalcoatlus              </name>
+	<name>Quetzalcoatlus (Token)</name>
 	<text>Flying, deathtouch</text>
  <token>1</token>
 	<tablerow>2</tablerow>
@@ -462,7 +462,7 @@ T: Creatures you control with the True Name Jeanne D’Arc get +4/+4 and can blo
 	</prop>
 </card>
 <card>
-	<name>Food              </name>
+	<name>Food (Token)</name>
 	<text>2, T, Sacrifice this artifact: You gain 3 life.</text>
  <token>1</token>
 	<tablerow>1</tablerow>
@@ -493,7 +493,7 @@ Enchanted creature loses all abilities and can’t attack or block.</text>
 	</prop>
 </card>
 <card>
-	<name>Philosophers Stone              </name>
+	<name>Philosophers Stone (Token)</name>
 	<text>T: Add two mana of any one color.</text>
  <token>1</token>
 	<tablerow>1</tablerow>
@@ -524,17 +524,19 @@ Whenever enchanted creature attacks, you gain 3 life.</text>
 	</prop>
 </card>
 <card>
-	<name>Merlin Magus of Flowers (Emblem)</name>
-	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with the True Name Merlin.</text>
-	<tablerow>1</tablerow>
+	<name>Wall (Token)</name>
+	<text>Defender</text>
+ <token>1</token>
+	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Emblem</type>
+		<type>Token Artifact Creature - Wall </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
+	<pt>0/4</pt>
 	</prop>
 </card>
 <card>
@@ -553,6 +555,22 @@ When Ionioi Hetairoi leaves the battlefield, shuffle all Servant creatures you c
 		<cmc>10</cmc>
 		<color>W</color>
 	</prop>
+</card>
+<card>
+	<name>Merlin Magus of Flowers (Emblem)</name>
+	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with the True Name Merlin.</text>
+	<tablerow>1</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Emblem</type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color></color>
+	</prop>
+	<related>Merlin Magus of Flowers (Emblem)</related>
+	<related>Merlin Manifested (Token)</related>
 </card>
 <card>
 	<name>Leonardo Bistario Harwey</name>
@@ -645,6 +663,7 @@ Sacrifice a Food: Prevent the next 3 damage that would be dealt to target creatu
 		<color>W</color>
 	<pt>0/2</pt>
 	</prop>
+	<related>Food (Token)</related>
 </card>
 <card>
 	<name>Pain Breaker</name>
@@ -736,6 +755,22 @@ Creatures you control have +3/+3 and vigilance as long as you control a creature
 		<cmc>2</cmc>
 		<color>W</color>
 	<pt>1/1</pt>
+	</prop>
+</card>
+<card>
+	<name>Sanson the Executioner</name>
+	<text>Defender
+Whenever Sanson the Executioner deals damage to a creature, that creature gains “Cumulative upkeep 1.” (At the beginning of its controller’s upkeep, they put an age counter on it, then sacrifice it unless they pay its upkeep cost for each age counter on it.)</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3W</manacost>
+		<cmc>4</cmc>
+		<color>W</color>
+	<pt>2/6</pt>
 	</prop>
 </card>
 <card>
@@ -918,6 +953,40 @@ Enchanted creature has hexproof.</text>
 	</prop>
 </card>
 <card>
+	<name>Doctor Jekyll</name>
+	<text>At the beginning of your upkeep, you may draw a card.
+Whenever you draw a card, put an age counter on Doctor Jekyll. Then if Doctor Jekyll has 4 or more age counters on it, transform it.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>transform</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2U</manacost>
+		<cmc>3</cmc>
+		<color>U</color>
+	<pt>1/2</pt>
+	</prop>
+	<related attach="attach">Mister Hyde</related>
+</card>
+<card>
+	<name>Mister Hyde</name>
+	<text>Cumulative upkeep 1
+Berserk (This creature must attack if able and must be blocked if able.)
+Discard a card: Mister Hyde gets +1/+0 until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>transform</layout>
+		<side>back</side>
+		<type>Legendary Creature - Servant </type>
+		<cmc>3</cmc>
+		<color>B</color>
+	<pt>5/5</pt>
+	</prop>
+<related attach="attach">Doctor Jekyll</related>
+</card>
+<card>
 	<name>First Folio</name>
 	<text>As an additional cost to cast First Folio, tap a creature you control that shares a True Name with it.
 Choose a True Name. Exile all cards in target opponent’s graveyard that have the chosen True Name. You may cast those cards without paying their mana costs for as long as they remain exiled.</text>
@@ -1044,6 +1113,23 @@ T: You gain 1 life, then choose one —
 	</prop>
 </card>
 <card>
+	<name>Mata Hari Dancer Informant</name>
+	<text>Mata Hari, Dancer Informant enters the battlefield under the control of an opponent of your choice.
+You play with your hand revealed.
+When Mata Hari, Dancer Informant dies, sacrifice all male creatures you control.</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1U</manacost>
+		<cmc>2</cmc>
+		<color>U</color>
+	<pt>1/3</pt>
+	</prop>
+</card>
+<card>
 	<name>Medusa Lily</name>
 	<text>Flash
 When Medusa Lily enters the battlefield, you may tap target creature.
@@ -1075,6 +1161,7 @@ T: Return target male creature to its owner’s hand.</text>
 		<cmc>4</cmc>
 		<color>U</color>
 	</prop>
+	<related>Merlin Magus of Flowers (Emblem)</related>
 </card>
 <card>
 	<name>Minamoto no Yoshitsune</name>
@@ -1236,7 +1323,8 @@ When Beast of Billows dies, search your library for an artifact with the true na
 <card>
 	<name>Blood Fort Andromeda</name>
 	<text>Cumulative upkeep 1
-At the beginning of your upkeep, add C for each creature you don’t control, then if you control a creature that shares a True Name with Blood Fort Andromeda, each creature you don’t control gets -1/-1 for each age counter on Blood Fort Andromeda.</text>
+At the beginning of your upkeep, add C for each creature you don’t control.
+If you control a creature that shares a True Name with Blood Fort Andromeda, each creature you don’t control gets -1/-1 for each age counter on Blood Fort Andromeda.</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -1296,6 +1384,40 @@ You control enchanted creature. It gets -1/-1 for each age counter on Break Down
 	</prop>
 </card>
 <card>
+	<name>Carmilla the Nocturnal</name>
+	<text>Cumulative upkeep 1
+Lifelink
+Whenever a creature dies, remove an age counter from Carmilla the Nocturnal.
+Sacrifice a creature: Carmilla the Nocturnal gets +2/+2 and gains trample until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Vampire Servant </type>
+		<manacost>3BB</manacost>
+		<cmc>5</cmc>
+		<color>B</color>
+	<pt>5/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Christine Christine</name>
+	<text>Creatures your opponents control get -1/-1.
+At the beginning of your upkeep, each opponent loses 2 life.
+Sacrifice Christine, Christine if you don’t control a creature that shares a True Name with it.</text>
+	<tablerow>1</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm </type>
+		<manacost>2BB</manacost>
+		<cmc>4</cmc>
+		<color>B</color>
+	</prop>
+</card>
+<card>
 	<name>Hassan of the Cursed Arm</name>
 	<text>Mountainguide (As long as defending player controls a mountain, this creature can’t be blocked except by other creatures with mountainguide.)
 T: Hassan of the Cursed Arm deals 2 damage to any target.</text>
@@ -1309,6 +1431,22 @@ T: Hassan of the Cursed Arm deals 2 damage to any target.</text>
 		<cmc>4</cmc>
 		<color>B</color>
 	<pt>3/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Jack the Ripper</name>
+	<text>When Jack the Ripper leaves the battlefield, shuffle it into its owner’s library, then each opponent discards their hand and draws three cards.
+T: Destroy target female creature. Its controller puts the top card of their library into their graveyard.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3BB</manacost>
+		<cmc>5</cmc>
+		<color>B</color>
+	<pt>5/3</pt>
 	</prop>
 </card>
 <card>
@@ -1404,6 +1542,23 @@ Whenever a Servant dies, you may exile it and sacrifice Matou Sakura, Hollow Mag
 	</prop>
 </card>
 <card>
+	<name>Phantom of the Opera</name>
+	<text>Menace
+When Phantom of the Opera enters the battlefield, you discard a card.
+Phantom of the Opera has berserk as long as any player controls a female creature. (It must attack if able and must be blocked if able.)</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1BB</manacost>
+		<cmc>3</cmc>
+		<color>B</color>
+	<pt>3/2</pt>
+	</prop>
+</card>
+<card>
 	<name>Seal Demon</name>
 	<text>Flying
 Whenever Seal Demon deals damage to a creature, that creature loses all True Names until the beginning of your next turn.</text>
@@ -1416,7 +1571,38 @@ Whenever Seal Demon deals damage to a creature, that creature loses all True Nam
 		<manacost>3BB</manacost>
 		<cmc>5</cmc>
 		<color>B</color>
-	<pt>5/5</pt>
+	<pt>5/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Smile of Stheno</name>
+	<text>Destroy target male creature.
+If you control a God creature that shares a True Name with Smile of Stheno, destroy all male creatures your opponents control.</text>
+	<tablerow>3</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant - Phantasm </type>
+		<manacost>1BB</manacost>
+		<cmc>3</cmc>
+		<color>B</color>
+	</prop>
+</card>
+<card>
+	<name>Stheno Elegant Goddess</name>
+	<text>Stheno, Elegant Goddess has lifelink as long as an opponent controls a male creature.
+T: God creatures you control get +1/+0 and gain lifelink until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - God Servant </type>
+		<manacost>2BB</manacost>
+		<cmc>4</cmc>
+		<color>B</color>
+	<pt>5/3</pt>
 	</prop>
 </card>
 <card>
@@ -1434,6 +1620,7 @@ Sacrifice Uryuu Ryuunosuke: Add BBBB. Spend this mana only to cast a Servant spe
 		<color>B</color>
 	<pt>1/1</pt>
 	</prop>
+	<related>Human Citizen (Token)</related>
 </card>
 <card>
 	<name>Witchs Brew</name>
@@ -1449,6 +1636,7 @@ Creatures you control with the True Name Medea get +1/+1 for each Food you contr
 		<cmc>5</cmc>
 		<color>B</color>
 	</prop>
+	<related count="x">Food (Token)</related>
 </card>
 <card>
 	<name>Zabaniya Delusional Heartbeat</name>
@@ -1575,7 +1763,7 @@ As long as it’s not your turn, Dragon of Beowulf has mountainguide (As long as
 		<manacost>4R</manacost>
 		<cmc>5</cmc>
 		<color>R</color>
-	<pt>5/5</pt>
+	<pt>5/4</pt>
 	</prop>
 </card>
 <card>
@@ -1673,6 +1861,7 @@ T, Pay 1 life: Create a 1/1 male red Human Soldier creature token.</text>
 		<color>R</color>
 	<pt>3/2</pt>
 	</prop>
+	<related>Human Soldier (Token)</related>
 </card>
 <card>
 	<name>Romulus Founder of Roma</name>
@@ -1765,6 +1954,22 @@ Cumulative upkeep 1 (At the beginning of your upkeep, put an age counter on this
 		<cmc>2</cmc>
 		<color>G</color>
 	<pt>4/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Asterios Bull of King Minos</name>
+	<text>Berserk (This creature must attack if able and must be blocked if able.)
+Asterios, Bull of King Minos gets +1/+1 for each creature with defender you control.</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Minotaur Servant </type>
+		<manacost>2G</manacost>
+		<cmc>3</cmc>
+		<color>G</color>
+	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -1928,6 +2133,22 @@ Whenever Jaguar Warrior deals combat damage to a player, remove an age counter f
 	</prop>
 </card>
 <card>
+	<name>Jing Ke Fruitless Assassin</name>
+	<text>Deathtouch, haste
+T: Jing Ke, Fruitless Assassin fights target creature an opponent controls.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2G</manacost>
+		<cmc>3</cmc>
+		<color>G</color>
+	<pt>1/1</pt>
+	</prop>
+</card>
+<card>
 	<name>Orion Groom of the Goddess</name>
 	<text>When Orion enters the battlefield, create a legendary 6/6 archer class female red God creature token with the True Name Orion named Artemis. It has flying, indestructible, and “Sacrifice this creature if you don’t control a creature that shares a True Name with it.”
 T: Add G.</text>
@@ -1942,6 +2163,7 @@ T: Add G.</text>
 		<color>G</color>
 	<pt>3/3</pt>
 	</prop>
+	<related>Artemis (Token)</related>
 </card>
 <card>
 	<name>Otherworldly Hippogriff</name>
@@ -1995,7 +2217,7 @@ Damage dealt by Otherworldly Hippogriff can’t be prevented.</text>
 </card>
 <card>
 	<name>Sasaki Nameless Master</name>
-	<text>Defender
+	<text>Defender, forestguide (As long as defending player controls a forest, this creature can’t be blocked except by other creatures with forestguide.)
 T: Sasaki, Nameless Master deals damage equal to three times its power to target creature. This damage can’t be prevented.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
@@ -2707,11 +2929,12 @@ Sacrifice a Food: Halloween Elizabeth gets +2/+2 until end of turn.</text>
 		<color>M</color>
 	<pt>2/3</pt>
 	</prop>
+	<related>Food (Token)</related>
 </card>
 <card>
 	<name>Illyasviel von Einzbern</name>
 	<text>Cumulative upkeep—Add C. Spend this mana only to pay cumulative upkeep costs.
-1U, T: Create a 1/1 blue Bird Construct artifact creature token with flying.</text>
+1U, T: Create a 1/1 blue Bird artifact creature token with flying.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -2737,6 +2960,7 @@ Sacrifice a Food: Halloween Elizabeth gets +2/+2 until end of turn.</text>
 		<cmc>4</cmc>
 		<color>M</color>
 	</prop>
+	<related count="x">Food (Token)</related>
 </card>
 <card>
 	<name>Irisviel Lesser Holy Grail</name>
@@ -2922,6 +3146,7 @@ Sacrifice a creature: Add BB.</text>
 		<color>M</color>
 	<pt>3/2</pt>
 	</prop>
+	<related>Skeleton Warrior (Token)</related>
 </card>
 <card>
 	<name>Melammu Dingir</name>
@@ -3132,6 +3357,7 @@ T: Quetzalcoatl fights target male creature you don’t control.</text>
 		<color>M</color>
 	<pt>6/6</pt>
 	</prop>
+	<related>Quetzalcoatlus (Token)</related>
 </card>
 <card>
 	<name>Rainbow Wyvern</name>
@@ -3475,6 +3701,21 @@ T: Untap all creatures you control.</text>
 	</prop>
 </card>
 <card>
+	<name>Ariadnes Thread</name>
+	<text>Equipped creature has protection from lands and from creatures with defender.
+Equip 2</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Artifact - Equipment </type>
+		<manacost>4</manacost>
+		<cmc>4</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Ark of the Covenant</name>
 	<text>Catalyst (When this enters the battlefield, search your library for a Servant card that shares a True Name with it and put that card into your hand.)
 If a spell or ability destroys Ark of the Covenant, it deals 10 damage to that spell or ability’s controller.</text>
@@ -3568,6 +3809,7 @@ At the beginning of your upkeep, if you control a creature that shares a True Na
 		<cmc>3</cmc>
 		<color></color>
 	</prop>
+	<related>Food (Token)</related>
 </card>
 <card>
 	<name>Balmung</name>
@@ -3618,7 +3860,7 @@ Soulequip 2</text>
 </card>
 <card>
 	<name>Bronze Link Manipulator</name>
-	<text>Equipped creature gets +4/+4 and has trample.
+	<text>Equipped creature gets +3/+3 and has trample.
 1U, Sacrifice Bronze Link Manipulator: Counter target spell with converted mana cost 4 or less.
 Equip 3</text>
 	<tablerow>1</tablerow>
@@ -3756,6 +3998,22 @@ Soulequip 6 (6: Attach to target creature you control that shares a True Name wi
 		<type>Legendary Artifact - Phantasm Equipment </type>
 		<manacost>2</manacost>
 		<cmc>2</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Dagger of No Return</name>
+	<text>Catalyst (When this enters the battlefield, search your library for a Servant card that shares a True Name with it and put that card into your hand.)
+Sacrifice Dagger of No Return: Equipped creature gains first strike until end of turn.
+Soulequip 1 (1: Attach to target creature you control that shares a True Name with it. Equip only as a sorcery.)</text>
+	<tablerow>1</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>1</manacost>
+		<cmc>1</cmc>
 		<color></color>
 	</prop>
 </card>
@@ -4156,6 +4414,7 @@ Soulcrew 9</text>
 		<cmc>7</cmc>
 		<color></color>
 	</prop>
+	<related count="2">Ox (Token)</related>
 </card>
 <card>
 	<name>Hamesh Avanim</name>
@@ -4265,6 +4524,21 @@ Soulequip 2 (2: Attach to target creature you control that shares a True Name wi
 	</prop>
 </card>
 <card>
+	<name>La Mort Espoir</name>
+	<text>Catalyst (When this enters the battlefield, search your library for a Servant card that shares a True Name with it and put that card into your hand.)
+2, Tap a creature you control that shares a True Name with La Mort Espoir: If target opponent has more life than you, they lose half their life rounded up.</text>
+	<tablerow>1</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm </type>
+		<manacost>3</manacost>
+		<cmc>3</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Mac an Luin</name>
 	<text>Equipped creature has lifelink, islandguide, and protection from sorcery and enchantment spells you don’t control.
 Soulequip 1</text>
@@ -4337,6 +4611,22 @@ Crew 2</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Artifact - Vehicle </type>
+		<manacost>4</manacost>
+		<cmc>4</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Phantom Maiden</name>
+	<text>When Phantom Maiden enters the battlefield, exile target creature until Phantom Maiden leaves the battlefield. (That creature returns under its owner’s control.)
+During each of your opponent’s upkeeps, Phantom Maiden deals damage to the exiled card’s owner equal to that card’s converted mana cost, and you gain that much life.
+Sacrifice Phantom Maiden if you don’t control a Vampire creature that shares a True Name with it.</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm </type>
 		<manacost>4</manacost>
 		<cmc>4</cmc>
 		<color></color>
@@ -4781,6 +5071,22 @@ Soulequip 1 (1: Attach to target creature you control that shares a True Name wi
 	</prop>
 </card>
 <card>
+	<name>Chaos Labyrinthos</name>
+	<text>T: Add C.
+Sacrifice a Wall: Return target creature to its owner’s hand.
+At the beginning of your upkeep, if you control a creature that shares a True Name with Chaos Labyrinthos, create a 0/4 Wall artifact creature token with defender.</text>
+	<tablerow>0</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Land - Phantasm </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Dún Scáith Land of Shadows</name>
 	<text>Whenever a card is put into a graveyard from anywhere, exile that card and its owner creates a 1/1 black Spirit creature token with flying.
 T: Add B.</text>
@@ -4904,6 +5210,7 @@ Creatures with islandguide can be blocked as though they didn’t have islandgui
 		<cmc>1</cmc>
 		<color>W</color>
 	</prop>
+	<related count="x">Food (Token)</related>
 </card>
 <card>
 	<name>Chloe von Einzbern</name>
@@ -4985,6 +5292,7 @@ Whenever Jeanne Alter Santa Lily deals combat damage to a player, each player cr
 		<color>M</color>
 	<pt>3/2</pt>
 	</prop>
+	<related>Food (Token)</related>
 </card>
 <card>
 	<name>Kaleid Liner Prisma Illya</name>
