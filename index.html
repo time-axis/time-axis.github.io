@@ -297,29 +297,31 @@
 					
 					// Populate Card List
 					$(data).find("card").each( function (i) {
-						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'));
+						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'),$(this).find('token').text(),$(this).find('prop').find('layout').text(),$(this).find('prop').find('side').text());
 						cardsList.push(newCard);
-						switch(newCard.rarity()){
-							case "common":
-								commonList.push(newCard);
-								break;
-							case "uncommon":
-								uncommonList.push(newCard);
-								break;
-							case "rare":
-								rareList.push(newCard);
-								break;
-							case "mythic rare":
-								mythicList.push(newCard);
-								break;
-							case "special":
-								specialList.push(newCard);
-								break;
-							default:
-								console.log("Error populating card list.");
-								break;
+						if(!newCard.isBackside()){
+							switch(newCard.rarity()){
+								case "common":
+									commonList.push(newCard);
+									break;
+								case "uncommon":
+									uncommonList.push(newCard);
+									break;
+								case "rare":
+									rareList.push(newCard);
+									break;
+								case "mythic rare":
+									mythicList.push(newCard);
+									break;
+								case "special":
+									specialList.push(newCard);
+									break;
+								default:
+									console.log("Error populating card list.");
+									break;
+							}
 						}
-						//console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity());
+						// console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside());
 					});
 					
 					// Draw Card List
@@ -389,6 +391,7 @@
 						var roll = Math.floor((Math.random()*100)+1);
 						var summonedCard = "";
 						
+						
 						if (roll < 55) { //Common (55%)
 							summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
 						} else 
@@ -403,6 +406,11 @@
 						} 
 						else { //Special (1%)
 							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+							if (summonedCard.isToken()){ // Don't allow tokens to be summoned
+								while(summonedCard.isToken()) {
+									summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+								}
+							}
 						}
 						return summonedCard;
 					}
@@ -619,14 +627,83 @@
 			}
 			
 			//Create Card Object Function
-			function card(nameInput,rarityInput){	
-				this.name = name;
-				this.rarity = rarity;
+			function card(nameInput,rarityInput,tokenInput,layoutInput,sideInput){
+			
+				switch(arguments.length) // Function Overload Handling
+				{
+					case 0:
+						this.name = "(Argument Error)";
+						this.rarity = "(Argument Error)";
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						break;
+					case 1:
+						this.name = name;
+						this.rarity = "(Argument Error)";
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						break;
+					case 2:
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						break;
+					case 3:
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = false;
+						this.isBackside = false;
+						break;
+					case 4:
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = isTransform;
+						this.isBackside = false;
+						break;
+					case 5:
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = isTransform;
+						this.isBackside = isBackside;
+						break;
+					default:
+						console.log("Error constructing card object. Too many arguments.");
+						break;
+				}
+
 				function name(){
 					return nameInput;
 				}
 				function rarity(){
 					return rarityInput;
+				}
+				function isToken(){
+					if (tokenInput == "1") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isTransform(){
+					if (layoutInput == "transform") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isBackside(){
+					if (sideInput == "back") {
+						return true;
+					} else {
+						return false;
+					}
 				}
 			}
 			
