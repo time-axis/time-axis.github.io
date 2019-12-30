@@ -25,7 +25,7 @@
 		}
 		
 		#afterSummon {
-			margin-top: 100px;
+			margin-top: 50px;
 			margin-left: 8vw;
 			margin-right: 8vw;
 			margin-bottom: 200px;
@@ -48,7 +48,7 @@
 			display:block;
 			text-decoration: none;
 			color: #FFFFFF;
-			width: 250px;
+			width: 125px;
 			margin: auto;
 		}
 		
@@ -88,6 +88,29 @@
 		}
 		
 		.button:hover {
+			background-color: #536390;
+			border-color: #334370;
+			cursor: pointer;
+		}
+		
+		.buttonSmall {
+			height: 28px;
+			width: 125px;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding: 10px 0;
+			text-align: center;
+			background-color: #7383a0;
+			display: inline-block;
+			border: 3px;
+			border-style: solid;
+			border-radius: 3px;
+			border-color: #536390;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		
+		.buttonSmall:hover {
 			background-color: #536390;
 			border-color: #334370;
 			cursor: pointer;
@@ -203,6 +226,10 @@
 			cursor:pointer;
 		}
 		
+		.transform:hover {
+			cursor:pointer;
+		}
+		
 		.thumbnail {
 			width: 200px;
 			height: 279px;
@@ -297,7 +324,7 @@
 					
 					// Populate Card List
 					$(data).find("card").each( function (i) {
-						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'),$(this).find('token').text(),$(this).find('prop').find('layout').text(),$(this).find('prop').find('side').text());
+						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'),$(this).find('token').text(),$(this).find('prop').find('layout').text(),$(this).find('prop').find('side').text(),$(this).find('prop').find('type').text());
 						cardsList.push(newCard);
 						if(!newCard.isBackside()){
 							switch(newCard.rarity()){
@@ -321,7 +348,7 @@
 									break;
 							}
 						}
-						// console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside());
+						console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside()+", "+cardsList[i].isEmblem());
 					});
 					
 					// Draw Card List
@@ -332,7 +359,12 @@
 					}
 					$("#cardListDiv").append('</ul><br/><br/><h1>Uncommon (33%)</h1><br/><ul>');
 					for(var i = 0; i < uncommonList.length; i++){
-						$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						//console.log(uncommonList[i].isTransform());
+						if (!uncommonList[i].isTransform()) {
+							$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+						} else {
+							$("#cardListDiv").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"transform img-thumbnail\" /></span>"+"<span><img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden img-thumbnail transform\" /></span></li>");
+						}
 					}
 					$("#cardListDiv").append('</ul><br/><br/><h1>Rare (8%)</h1><br/><ul>');
 					for(var i = 0; i < rareList.length; i++){
@@ -392,22 +424,22 @@
 						var summonedCard = "";
 						
 						
-						if (roll < 55) { //Common (55%)
+						if (roll < 55) { //Common (55%) 55
 							summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
 						} else 
-						if (roll < 88) { //Uncommon (33%)
+						if (roll < 88) { //Uncommon (33%) 88
 							summonedCard = uncommonList[Math.floor(Math.random() * uncommonList.length)];
 						} else
-						if (roll < 96) { //Rare (8%)
+						if (roll < 96) { //Rare (8%) 96
 							summonedCard = rareList[Math.floor(Math.random() * rareList.length)];
 						} else
-						if (roll < 99) { //Mythic Rare (3%)
+						if (roll < 99) { //Mythic Rare (3%) 99
 							summonedCard = mythicList[Math.floor(Math.random() * mythicList.length)];
 						} 
 						else { //Special (1%)
 							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
-							if (summonedCard.isToken()){ // Don't allow tokens to be summoned
-								while(summonedCard.isToken()) {
+							if (summonedCard.isToken() || summonedCard.isEmblem()){ // Don't allow tokens or emblems to be summoned
+								while(summonedCard.isToken() || summonedCard.isEmblem()) {
 									summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
 								}
 							}
@@ -431,6 +463,7 @@
 					$("#begin10SummonButton").click(async function (){ // When Summon 10 Button is Pressed
 						
 						busy = true;
+						window.scrollTo(0, 0);
 						$("#header").addClass("invisible");
 						$("#beforeSummon").addClass("hidden");
 						$("#duringSummon").removeClass("hidden");
@@ -474,19 +507,19 @@
 						function summonStep1(i) {
 							//setTimeout(function() {
 								if(summonList[i].rarity() == "common") {
-									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_default" + ".jpg");
+									$("#summonCard").attr('src',"cardback_default" + ".jpg");
 								} else
 								if(summonList[i].rarity() == "uncommon") {
-									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_uncommon" + ".jpg");
+									$("#summonCard").attr('src',"cardback_uncommon" + ".jpg");
 								} else
 								if(summonList[i].rarity() == "rare") {
-									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_rare" + ".jpg");
+									$("#summonCard").attr('src',"cardback_rare" + ".jpg");
 								} else
 								if(summonList[i].rarity() == "mythic rare") {
-									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_rare" + ".jpg");
+									$("#summonCard").attr('src',"cardback_rare" + ".jpg");
 								} 
 								else {
-									$("#summonCard").attr('src',"FateGrandOrder-files/"+ "cardback_special" + ".jpg");
+									$("#summonCard").attr('src',"cardback_special" + ".jpg");
 								}
 								$("#summonCardContainer").removeClass("hidden");
 								$("#summonCard").css("-webkit-animation-play-state", "running");
@@ -540,13 +573,18 @@
 						
 						$("#afterSummonList").append('<h1>Summoned Cards:</h1><ul>');
 						for(var i = 0; i < summonList.length; i++){
-							$("#afterSummonList").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ summonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+							if(!summonList[i].isTransform()) {							
+								$("#afterSummonList").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ summonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span></li>");
+							} else {
+								$("#afterSummonList").append("<li class=\"thumbnail\"><span><img src=\"FateGrandOrder-files/"+ summonList[i].name() + ".jpg\" class=\"transform img-thumbnail\" /></span>"+"<span><img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden img-thumbnail transform\" /></span></li>");
+							}
 						}
 						$("#afterSummonList").append('</ul><br/><br/>');
 						busy = false;
 					});
 					
 					$("#resetButton").click(function() {
+						window.scrollTo(0, 0);
 						$("#afterSummon").addClass("hidden");
 						$("#beforeSummon").removeClass("hidden");
 						summonList = new Array;
@@ -589,6 +627,7 @@
 					$("#cardListButton").click(function(){
 						if(!busy)
 						{
+							window.scrollTo(0, 0);
 							$("#rulesDiv").addClass("hidden");
 							$("#summonDiv").addClass("hidden");
 							$("#cardListDiv").removeClass("hidden");
@@ -598,6 +637,7 @@
 					$("#rulesButton").click(function(){
 						if(!busy)
 						{
+							window.scrollTo(0, 0);
 							$("#summonDiv").addClass("hidden");
 							$("#cardListDiv").addClass("hidden");
 							$("#rulesDiv").removeClass("hidden");
@@ -607,10 +647,18 @@
 					$("#summoningButton").click(function(){
 						if(!busy)
 						{
+							window.scrollTo(0, 0);
 							$("#rulesDiv").addClass("hidden");
 							$("#cardListDiv").addClass("hidden");
 							$("#summonDiv").removeClass("hidden");
 						}
+					});
+					
+					
+					//Flip Transform Cards
+					
+					$(document.body).on('click', '.transform',function() {
+						$(".transform").toggle();
 					});
 										
 				},
@@ -625,9 +673,10 @@
 			{
 				
 			}
+										
 			
 			//Create Card Object Function
-			function card(nameInput,rarityInput,tokenInput,layoutInput,sideInput){
+			function card(nameInput,rarityInput,tokenInput,layoutInput,sideInput,typeInput){
 			
 				switch(arguments.length) // Function Overload Handling
 				{
@@ -637,6 +686,7 @@
 						this.isToken = false;
 						this.isTransform = false;
 						this.isBackside = false;
+						this.isEmblem = false;
 						break;
 					case 1:
 						this.name = name;
@@ -644,6 +694,7 @@
 						this.isToken = false;
 						this.isTransform = false;
 						this.isBackside = false;
+						this.isEmblem = false;
 						break;
 					case 2:
 						this.name = name;
@@ -651,6 +702,7 @@
 						this.isToken = false;
 						this.isTransform = false;
 						this.isBackside = false;
+						this.isEmblem = false;
 						break;
 					case 3:
 						this.name = name;
@@ -658,6 +710,7 @@
 						this.isToken = isToken;
 						this.isTransform = false;
 						this.isBackside = false;
+						this.isEmblem = false;
 						break;
 					case 4:
 						this.name = name;
@@ -665,6 +718,7 @@
 						this.isToken = isToken;
 						this.isTransform = isTransform;
 						this.isBackside = false;
+						this.isEmblem = false;
 						break;
 					case 5:
 						this.name = name;
@@ -672,7 +726,15 @@
 						this.isToken = isToken;
 						this.isTransform = isTransform;
 						this.isBackside = isBackside;
+						this.isEmblem = false;
 						break;
+					case 6:
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = isTransform;
+						this.isBackside = isBackside;
+						this.isEmblem = isEmblem;
 					default:
 						console.log("Error constructing card object. Too many arguments.");
 						break;
@@ -705,6 +767,13 @@
 						return false;
 					}
 				}
+				function isEmblem(){
+					if (typeInput == "Emblem") {
+						return true;
+					} else {
+						return false;
+					}
+				}
 			}
 			
 			//Delay Function
@@ -729,20 +798,21 @@
 				<input type="checkbox" id="skipAnimationBox"><strong> Skip Animation</strong>
 			</div>
 			<div id="duringSummon" class="hidden">
-				<div id="summonCardContainer" class="hidden spinning"><img id="summonCard" src = "FateGrandOrder-files/cardback_default.jpg" class="card fadingIn"></div>
+				<div id="summonCardContainer" class="hidden spinning"><img id="summonCard" src = "cardback_default.jpg" class="card fadingIn"></div>
 				<video id="summonVid" width="100%" class="">
 					<source src="summonBG.webm" type="video/webm">
 				</video>
 			</div>
 			<div id="afterSummon" class="hidden">
+				<div id="resetButton" class="buttonSmall">Reset</div>
+				<br/>
 				<div id="afterSummonList"></div>
-				<br/><br/><br/><br/><br/><div id="resetButton" class="button">Reset</div>
 			</div>
 		</div>
 	</div>
 	<div id="rulesDiv" class="">
 	<h1>Download:</h1>
-	<a class="button" id="downloadLink" href="FGO Cockatrice.rar">v 0.6</a>
+	<a class="buttonSmall" id="downloadLink" href="FGO Cockatrice.rar">v 0.6</a>
 	<br/>
 	<strong>Extract in "Users/(Your User)/AppData/Local/Cockatrice/Cockatrice" folder, and overwrite files as necessary.</strong>
 	<h1 style="text-align: center;">Rules</h1>
