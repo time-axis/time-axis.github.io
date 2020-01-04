@@ -10,6 +10,19 @@
 			font-family: "Arial", Helvetica, sans-serif;
 		}
 		
+		a {
+			text-decoration: none;
+			color: #DDDDFF;
+			font-weight: bold;
+			text-shadow: 2px 2px #000000;
+		}
+		
+		a:hover {
+			text-decoration: none;
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+		
 		h1 {
 			clear: both;
 			text-align: center;
@@ -50,6 +63,7 @@
 			color: #FFFFFF;
 			width: 125px;
 			margin: auto;
+			text-shadow: none;
 		}
 		
 		#duringSummon {
@@ -785,7 +799,7 @@
 	</script>
 </head>
 <body>
-	<div id="header"><div id="cardListButton" class="button">Card List</div> <div id="rulesButton" class="button">Rules</div> <div id="summoningButton" class="button">Summoning</div></div>
+	<div id="header"><div id="cardListButton" class="button">Card List</div> <div id="rulesButton" class="button">FAQ</div> <div id="summoningButton" class="button">Summoning</div></div>
 	<div id="summonDiv" class="hidden">
 		<audio id="BGM" src="Summoning.mp3"></audio><audio id="SFX" src="soundEffect.mp3"></audio>
 		<span id="volumeMute" style="font-size: 45px;"><img src="audioIcon.png" style="top: -15px;"/></span><input type="range" min="0" max="100" value="50" class="slider" id="volumeSlider"><br/>
@@ -811,43 +825,74 @@
 		</div>
 	</div>
 	<div id="rulesDiv" class="">
+	<h1>FAQ</h1>
+	<div style="margin-left:20px; margin-right:20px; text-align: left;"><strong>What is this?</strong><br/>
+	This is a Custom Magic the Gathering set based on Fate/Grand Order.  The set is the first in a planned block of three.  The block is called the "Fate" block, and the first set is simply called "Fate/Grand Order".  Naturally, this set may feature spoilers for F/GO and related properties.<br/>
+	In general, the set is heavily combo-oriented, with cards specifically designed to work with each other.
+	<br/><br/>
+	<strong>Can I play this?</strong><br/>
+	Yes! Using a program called <a href="https://cockatrice.github.io/">Cockatrice</a>, you can play games using these cards and even combine them with existing MTG cards as well. They're fully compatible.  You just need to make sure the person you're playing with has downloaded this custom set as well, and you're both using the most up-to-date download.
+	<br/><br/>
+	<strong>My favorite character is missing!</strong><br/>
+	This first set includes every single Servant released up to the end of Part 1 of the F/GO storyline.  If your favorite Servant was released in Epic of Remnant or Lostbelt, then it will show up in the later sets when I eventually get to those parts.
+	<br/><br/>
+	<strong>The colors for this character seem wrong.</strong><br/>
+	I did my best to balance making the colors accurate to character personalities and also making them accurate to what that character is capable of, gameplay-wise. Sometimes I had to make a few compromises in either direction.  I'm open to feedback, but a lot of thought was put into the existing colors and there may not be much wiggle room left to tweak colors too much.
+	<br/><br/>
+	<strong>Why are Noble Phantasms usable by all versions of a Servant?</strong><br/>
+	Tying a Noble Phantasm's effect directly to a creature on the same card would have made creatures way too wordy, so I separated them into separate cards.  All versions of a Servant can use them (for example, Artoria Lily can use Excalibur, and all versions of Hassan can use any other Hassan's NP) because I felt this made for a more versatile set that was more fun to play.  Limiting them to only being usable by one card each would have made for a lot of dead draws and unusable cards in your hand.
+	<br/><br/>
+	<strong>Some of these cards seem pretty powerful...</strong><br/>
+	I wanted Noble Phantasms to feel powerful in general, and my main priority is that the set is balanced within itself and that there are viable options in every color.  I'm not overly concerned right now with how balanced it is with the rest of the MTG card pool, as there are already tons of broken cards in MTG.  That being said, the set is still undergoing playtesting and I will be making tweaks to ensure nothing is overtly broken to the point of being unfun.
+	<br/><br/>
+	<strong>Why bring back old dead mechanics like Cumulative Upkeep or World Enchantments?</strong><br/>
+	For World Enchantments, it was because I felt that was the best mechanic to represent Reality Marbles and similar abilities in F/GO. It fit too perfectly. I also gave World Enchantments their own new card frame with full art to make them a bit more exciting.<br/>
+	As for Cumulative Upkeep, at first it was because I wanted to emulate the fact that Reality Marbles aren't meant to stick around for long.  But I later realized that there were interesting ways to use the mechanic on other cards as well.  Since it's a bit of a faux-pas to include more than one type of counter on permanents in a set, trying to find ways to use age counters in place of other counters like +1/+1 or -1/-1 counters made for an interesting design challenge.  In order to avoid the nightmare of having to keep track of all sorts of different cumulative upkeep costs, all cumulative upkeep costs in this set are counted in 1s. I felt this was no less manageable than keeping track of how many times your Commander has died, for example.
+	<br/><br/>
+	<strong>Why add gender? What about cards from before this set?</strong><br/>
+	There are too many characters in Fate whose abilities, myths, and legends revolve heavily around gender-based interactions. I felt it was very thematically fitting and it made for a fun mechanic.  From a strict rules perspective, if a card does not have a gender printed on it, then it's genderless. That would include all cards outside of this set.  However, in reality, if Wizards ever added a mechanic like Gender, I imagine they would probably errata older cards to have them, based on their existing lore or card art, so if both players agree beforehand, you could houserule older cards to have genders if you were mixing older cards in. Officially, however, cards only have a gender if they're printed with one.
+	<br/><br/>
+	<strong>What do Classes do? Don't Classes already exist in MTG?</strong><br/>
+	Classes don't really do anything on their own outside of being a new card property for other cards to refer to, but I felt I couldn't just leave them out, since they're so important to FGO.  I'm working on some optional rules that would grant all Servants of each class particular class abilities.  As for the existing "Classes" of MTG, that was always a more colloquial thing to refer to certain creature types.  The word "class" doesn't actually exist in the rules, and I felt the word was too important to FGO to use a different one.
+	<br/><br/>
+	</div>
 	<h1>Download:</h1>
 	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-0.rar">v0.9.0</a>
 	<br/>
 	<strong>Extract in "Users/(Your User)/AppData/Local/Cockatrice/Cockatrice" folder, and overwrite files as necessary.</strong>
 	<h1 style="text-align: center;">Rules</h1>
 	<br/>
-	<table style="width:80%;margin:auto;"><tr>
+	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Fergus Knight of the Red Branch.jpg" class="exampleCard" /></td>
 		<td><h2>True Name Bar</h2><strong style="">Some cards in this set have a bar below their name.  This is called the "True Name bar". The color of the bar is indicative of the card's rarity. On this bar, there are three new card properties:
 		<h3>Class</h3>The diamond-shaped icon on the top-left indicates a card's class. Normally only creatures and planeswalkers have classes. They don't have any rules meaning on their own, but abilities can refer to them.  The classes in this set are: Archer, Assassin, Berserker, Caster, Lancer, Rider, Saber, Avenger, Ruler, and Shielder. Fergus over here is a saber class creature. If a card doesn't have a class icon, then it doesn't have a class.
 		<h3>True Name</h3>A card's "True Name" is listed right below its regular name. This also doesn't have any rules meaning on its own, but many abilities will refer to them. True Names have no bearing on abilities that refer to Names, and vice versa. Fergus' true name is "Fergus mac Róich".
 		<h3>Gender</h3>Only creatures and planeswalkers can have genders. A card's gender is determined by the icon in the top right, below the mana cost. Cards can either be male, female, both, or neither. If a card doesn't have a male icon or female icon, then it doesn't have a gender. Fergus is male.</strong></td>
 	</tr></table>
-	<table style="width:80%;margin:auto;"><tr>
+	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Spiral Sword Caladbolg.jpg" class="exampleCard" /></td>
 		<td><h2>New Keyword Abilities</h2><strong style="">
 		<h3>Catalyst</h3>Creatures aren't the only cards with True Names. Many cards will share the same True Name. Catalyst is an ability for artifacts. When an artifact with catalyst enters the battlefield, search your library for a Servant type card that shares a True Name with it, and put that card into your hand, then shuffle your library.
 		<h3>Soulequip</h3>Soulequip is an ability that only exists on Equipment. If an equipment has Soulequip instead of regular Equip, it can't be equipped to just any creature. You need to attach it to a creature that shares a True Name with it. Other than that, it works exactly like Equip.</strong></td>
 	</tr></table>
-	<table style="width:80%;margin:auto;"><tr>
+	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Chariot of Boudica.jpg" class="exampleCard" /></td>
 		<td><strong style="">
 		<h3>Soulcrew</h3>Soulcrew is an ability for Vehicles. You can still treat it like a regular Crew ability and crew a vehicle with any creatures that have power equal to the Soulcrew cost, but you can also crew it with only one creature that shares a True Name with it, regardless of that creature's power.</strong></td>
 	</tr></table>
-	<table style="width:80%;margin:auto;"><tr>
+	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Jaguar Warrior.jpg" class="exampleCard" /></td>
 		<td><strong style="">
 		<h3>Berserk</h3>Creatures with Berserk must attack if able, and they must be blocked if able.
 		<h3>Landguide</h3>A less powerful version of landwalk. If defending player controls a land of the corresponding type to the type of Landguide your creature has, that creature can't be blocked except by other creatures with the same type of Landguide. As an example, Jaguar Warrior has Forestguide, so if you have a Forest, you can't block Jaguar Warrior except with other creatures that have Forestguide.</strong></td>
 	</tr></table>
-	<table style="width:80%;margin:auto;"><tr>
+	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Arash Kamangir.jpg" class="exampleCard" /></td>
 		<td><strong style="">
 		<h2>Returning Old Mechanics</h2>
 		<h3>Cumulative Upkeep</h3>If a permanent has Cumulative Upkeep, put an age counter on it at the beginning of your upkeep, then sacrifice that permanent unless you pay the Cumulative Upkeep cost for each age counter on it. In this set, with very few exceptions, the Cumulative Upkeep cost will always be 1 generic mana, making the cost generally 1 mana per age counter.</strong></td>
 	</tr></table>
-	<table style="width:80%;margin:auto;"><tr>
+	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Aestus Domus Aurea.jpg" class="exampleCard" /></td>
 		<td><strong style="">
 		<h3>World Enchantments</h3>Only one enchantment with the World supertype may exist on the battlefield at one time, regardless of who controls it.  Whenever a World Enchantment enters the battlefield under either player's control, all other World Enchantments controlled by all players are destroyed. World Enchantments have a unique card frame in this set, and generally have powerful abilities with cumulative upkeep costs to balance them out.</strong></td>
