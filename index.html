@@ -362,7 +362,7 @@
 									break;
 							}
 						}
-						console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside()+", "+cardsList[i].isEmblem());
+						console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside()+", "+cardsList[i].isEmblem()+", "+cardsList[i].isBasicLand());
 					});
 					
 					// Draw Card List
@@ -440,6 +440,10 @@
 						
 						if (roll < 55) { //Common (55%) 55
 							summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
+							while(summonedCard.isBasicLand()) // Don't summon basic lands
+							{
+								summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
+							}
 						} else 
 						if (roll < 88) { //Uncommon (33%) 88
 							summonedCard = uncommonList[Math.floor(Math.random() * uncommonList.length)];
@@ -700,6 +704,7 @@
 						this.isTransform = false;
 						this.isBackside = false;
 						this.isEmblem = false;
+						this.isBasicLand = false;
 						break;
 					case 1:
 						this.name = name;
@@ -708,6 +713,7 @@
 						this.isTransform = false;
 						this.isBackside = false;
 						this.isEmblem = false;
+						this.isBasicLand = false;
 						break;
 					case 2:
 						this.name = name;
@@ -716,6 +722,7 @@
 						this.isTransform = false;
 						this.isBackside = false;
 						this.isEmblem = false;
+						this.isBasicLand = false;
 						break;
 					case 3:
 						this.name = name;
@@ -724,6 +731,7 @@
 						this.isTransform = false;
 						this.isBackside = false;
 						this.isEmblem = false;
+						this.isBasicLand = false;
 						break;
 					case 4:
 						this.name = name;
@@ -732,6 +740,7 @@
 						this.isTransform = isTransform;
 						this.isBackside = false;
 						this.isEmblem = false;
+						this.isBasicLand = false;
 						break;
 					case 5:
 						this.name = name;
@@ -740,6 +749,7 @@
 						this.isTransform = isTransform;
 						this.isBackside = isBackside;
 						this.isEmblem = false;
+						this.isBasicLand = false;
 						break;
 					case 6:
 						this.name = name;
@@ -748,6 +758,7 @@
 						this.isTransform = isTransform;
 						this.isBackside = isBackside;
 						this.isEmblem = isEmblem;
+						this.isBasicLand = isBasicLand;
 						break;
 					default:
 						console.log("Error constructing card object. Too many arguments.");
@@ -783,6 +794,13 @@
 				}
 				function isEmblem(){
 					if (typeInput == "Emblem") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isBasicLand() {
+					if (typeInput == "Basic Land - Forest" || typeInput == "Basic Land - Swamp" || typeInput == "Basic Land - Island" || typeInput == "Basic Land - Plains" || typeInput == "Basic Land - Mountain" ) {
 						return true;
 					} else {
 						return false;
@@ -857,7 +875,7 @@
 	<br/><br/>
 	</div>
 	<h1>Download:</h1>
-	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-0.rar">v0.9.0</a>
+	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-1.rar">v0.9.1</a>
 	<br/>
 	<strong>Extract in "Users/(Your User)/AppData/Local/Cockatrice/Cockatrice" folder, and overwrite files as necessary.</strong>
 	<h1 style="text-align: center;">Rules</h1>

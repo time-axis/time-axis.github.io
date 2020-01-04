@@ -6013,6 +6013,20 @@ T: Add B.</text>
 	</prop>
 </card>
 <card>
+	<name>Forest</name>
+	<text></text>
+	<tablerow>0</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Basic Land - Forest </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color>G</color>
+	</prop>
+</card>
+<card>
 	<name>Garden of Avalon</name>
 	<text>Cumulative upkeep—You gain 1 life.
 T: Add one mana of any color.
@@ -6026,6 +6040,48 @@ Sacrifice Garden of Avalon if you don’t control a permanent that shares a True
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>M</color>
+	</prop>
+</card>
+<card>
+	<name>Island</name>
+	<text></text>
+	<tablerow>0</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Basic Land - Island </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color>U</color>
+	</prop>
+</card>
+<card>
+	<name>Mountain</name>
+	<text></text>
+	<tablerow>0</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Basic Land - Mountain </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color>R</color>
+	</prop>
+</card>
+<card>
+	<name>Plains</name>
+	<text></text>
+	<tablerow>0</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Basic Land - Plains </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color>W</color>
 	</prop>
 </card>
 <card>
@@ -6106,6 +6162,20 @@ Creatures with islandguide can be blocked as though they didn’t have islandgui
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Swamp</name>
+	<text></text>
+	<tablerow>0</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Basic Land - Swamp </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color>B</color>
 	</prop>
 </card>
 <card>
