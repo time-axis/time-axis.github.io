@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (WIP1)</longname>
+  <longname>Fate Grand Order (v0.9.0)</longname>
  </set>
 </sets>
 <cards>
@@ -398,19 +398,19 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 	</prop>
 </card>
 <card>
-	<name>Ox (Token)</name>
-	<text>Trample</text>
+	<name>Human Ninja (Token)</name>
+	<text>Forestguide</text>
  <token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Creature - Ox </type>
+		<type>Token Creature - Human Ninja </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
-		<color>M</color>
-	<pt>3/3</pt>
+		<color>G</color>
+	<pt>1/1</pt>
 	</prop>
 </card>
 <card>
@@ -429,19 +429,19 @@ Choose a creature. The chosen creature loses all abilities until end of turn, th
 	</prop>
 </card>
 <card>
-	<name>Quetzalcoatlus (Token)</name>
-	<text>Flying, deathtouch</text>
+	<name>Ox (Token)</name>
+	<text>Trample</text>
  <token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Token Creature - Dinosaur Snake </type>
+		<type>Token Creature - Ox </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>M</color>
-	<pt>4/4</pt>
+	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -462,18 +462,19 @@ T: Creatures you control with the True Name Jeanne D’Arc get +4/+4 and can blo
 	</prop>
 </card>
 <card>
-	<name>Food (Token)</name>
-	<text>2, T, Sacrifice this artifact: You gain 3 life.</text>
+	<name>Quetzalcoatlus (Token)</name>
+	<text>Flying, deathtouch</text>
  <token>1</token>
-	<tablerow>1</tablerow>
+	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact - Food </type>
+		<type>Legendary Token Creature - Dinosaur Snake </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
-		<color></color>
+		<color>M</color>
+	<pt>4/4</pt>
 	</prop>
 </card>
 <card>
@@ -493,15 +494,15 @@ Enchanted creature loses all abilities and can’t attack or block.</text>
 	</prop>
 </card>
 <card>
-	<name>Philosophers Stone (Token)</name>
-	<text>T: Add two mana of any one color.</text>
+	<name>Food (Token)</name>
+	<text>2, T, Sacrifice this artifact: You gain 3 life.</text>
  <token>1</token>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact</type>
+		<type>Token Artifact - Food </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
@@ -524,19 +525,18 @@ Whenever enchanted creature attacks, you gain 3 life.</text>
 	</prop>
 </card>
 <card>
-	<name>Wall (Token)</name>
-	<text>Defender</text>
+	<name>Philosophers Stone (Token)</name>
+	<text>T: Add two mana of any one color.</text>
  <token>1</token>
-	<tablerow>2</tablerow>
+	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact Creature - Wall </type>
+		<type>Token Artifact</type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
-	<pt>0/4</pt>
 	</prop>
 </card>
 <card>
@@ -557,6 +557,38 @@ When Ionioi Hetairoi leaves the battlefield, shuffle all Servant creatures you c
 	</prop>
 </card>
 <card>
+	<name>Wall (Token)</name>
+	<text>Defender</text>
+ <token>1</token>
+	<tablerow>2</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Token Artifact Creature - Wall </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color></color>
+	<pt>0/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Jeanne DArc Holy Maiden</name>
+	<text>Hexproof
+If a Servant you don’t control would deal damage to a permanent or player, it deals half that damage, rounded down, to that permanent or player instead. (This ability doesn’t prevent damage.)</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3WW</manacost>
+		<cmc>5</cmc>
+		<color>W</color>
+	<pt>4/6</pt>
+	</prop>
+</card>
+<card>
 	<name>Merlin Magus of Flowers (Emblem)</name>
 	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with the True Name Merlin.</text>
 	<tablerow>1</tablerow>
@@ -571,6 +603,21 @@ When Ionioi Hetairoi leaves the battlefield, shuffle all Servant creatures you c
 	</prop>
 	<related>Merlin Magus of Flowers (Emblem)</related>
 	<related>Merlin Manifested (Token)</related>
+</card>
+<card>
+	<name>La Pucelle Crimson Holy Virgin</name>
+	<text>As an additional cost to cast La Pucelle: Crimson Holy Virgin, sacrifice a creature that shares a True Name with it.
+Destroy all creatures.</text>
+	<tablerow>3</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant - Phantasm </type>
+		<manacost>1WW</manacost>
+		<cmc>3</cmc>
+		<color>W</color>
+	</prop>
 </card>
 <card>
 	<name>Leonardo Bistario Harwey</name>
@@ -649,6 +696,21 @@ If you control a creature that shares a True Name with Lord Chaldeas, prevent al
 	</prop>
 </card>
 <card>
+	<name>Luminosité Eternelle</name>
+	<text>As an additional cost to cast Luminosité Eternelle, tap a ruler class creature you control that shares a True Name with Luminosité Eternelle. It doesn’t untap during your next untap step.
+Creatures you control gain hexproof and indestructible until end of turn.</text>
+	<tablerow>3</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Sorcery - Phantasm </type>
+		<manacost>1WW</manacost>
+		<cmc>3</cmc>
+		<color>W</color>
+	</prop>
+</card>
+<card>
 	<name>Marie Fleeting Lady</name>
 	<text>2W, T: Create a Food token.
 Sacrifice a Food: Prevent the next 3 damage that would be dealt to target creature you control.</text>
@@ -664,6 +726,39 @@ Sacrifice a Food: Prevent the next 3 damage that would be dealt to target creatu
 	<pt>0/2</pt>
 	</prop>
 	<related>Food (Token)</related>
+</card>
+<card>
+	<name>Nightingale Angel of Crimea</name>
+	<text>Whenever Nightingale, Angel of Crimea attacks or blocks, prevent the next 4 damage that would be dealt to each other creature you control this turn.
+1W, T: Destroy target enchantment. Its controller gains 4 life.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3WW</manacost>
+		<cmc>5</cmc>
+		<color>W</color>
+	<pt>4/5</pt>
+	</prop>
+</card>
+<card>
+	<name>Nightingale Pledge</name>
+	<text>Cumulative upkeep 1
+All creatures have indestructible. Players can’t cast phantasm spells. 
+At the beginning of your upkeep, each player gains life equal to the number of age counters on Nightingale Pledge.
+Sacrifice Nightingale Pledge if you don’t control a creature that shares a True Name with it.</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm </type>
+		<manacost>2WW</manacost>
+		<cmc>4</cmc>
+		<color>W</color>
+	</prop>
 </card>
 <card>
 	<name>Pain Breaker</name>
@@ -873,22 +968,6 @@ Creatures that can block Warrior Monk Benkei must do so.</text>
 	</prop>
 </card>
 <card>
-	<name>-Caress of the Medusa</name>
-	<text>Enchant creature
-As an additional cost to cast -Caress of the Medusa, tap a creature you control that shares a True Name with it.
-Enchanted creature loses all abilities and is an artifact named Stone.</text>
-	<tablerow>1</tablerow>
-	<set rarity="rare">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Enchantment - Phantasm Aura </type>
-		<manacost>1U</manacost>
-		<cmc>2</cmc>
-		<color>U</color>
-	</prop>
-</card>
-<card>
 	<name>Alchemist Hohenheim</name>
 	<text>2, Sacrifice a creature: Search your library for an artifact with converted mana cost equal to the sacrificed creature’s converted mana cost, and put it onto the battlefield, then shuffle your library.
 2, T: Create a colorless artifact token named Philosopher’s Stone with “T: Add two mana of any one color.” </text>
@@ -933,6 +1012,22 @@ Players can’t cast Phantasm spells or activate abilities of Servant creatures.
 		<type>World Enchantment - Phantasm </type>
 		<manacost>2UU</manacost>
 		<cmc>4</cmc>
+		<color>U</color>
+	</prop>
+</card>
+<card>
+	<name>Caress of the Medusa</name>
+	<text>Enchant creature
+As an additional cost to cast Caress of the Medusa, tap a creature you control that shares a True Name with it.
+Enchanted creature loses all abilities and is an artifact named Stone.</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Enchantment - Phantasm Aura </type>
+		<manacost>1U</manacost>
+		<cmc>2</cmc>
 		<color>U</color>
 	</prop>
 </card>
@@ -1305,6 +1400,22 @@ If a source would deal damage to Anne Bonny &amp; Mary Read, it deals double tha
 	</prop>
 </card>
 <card>
+	<name>Azrael Harbinger of Death</name>
+	<text>Cumulative upkeep B
+Remove thirteen age counters from Azrael, Harbinger of Death, then sacrifice it: Target player loses the game.
+Sacrifice Azrael, Harbinger of Death if you don’t control a creature that shares a True Name with it.</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm </type>
+		<manacost>2BB</manacost>
+		<cmc>4</cmc>
+		<color>B</color>
+	</prop>
+</card>
+<card>
 	<name>Beast of Billows</name>
 	<text>Menace, islandguide (As long as defending player controls an island, this creature can’t be blocked except by other creatures with islandguide.)
 When Beast of Billows dies, search your library for an artifact with the true name Cu Chulainn and put it into your hand, then shuffle your library.</text>
@@ -1418,6 +1529,90 @@ Sacrifice Christine, Christine if you don’t control a creature that shares a T
 	</prop>
 </card>
 <card>
+	<name>Count Dracula</name>
+	<text>Lifelink
+2, Pay 2 life: Count Dracula Gets +1/+0 or +0/+1 until end of turn.
+3, Pay 3 life: Count Dracula gains flying until end of turn.
+Whenever a creature dies, you gain 2 life.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Vampire Servant </type>
+		<manacost>4BB</manacost>
+		<cmc>6</cmc>
+		<color>B</color>
+	<pt>6/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Count of Monte Cristo</name>
+	<text>Count of Monte Cristo gets +1/+1 for each Servant card in your graveyard.
+Whenever you discard a card, you may pay B. If you do, return the discarded card from your graveyard to your hand.
+BB, Discard a Servant card: Return Count of Monte Cristo from your graveyard to the battlefield.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>4B</manacost>
+		<cmc>5</cmc>
+		<color>B</color>
+	<pt>3/3</pt>
+	</prop>
+</card>
+<card>
+	<name>EMIYA Counter Guardian</name>
+	<text>Cumulative upkeep 1
+First strike, haste
+2: Remove an age counter from EMIYA, Counter Guardian, then you may put an age counter on target permanent with an age counter on it.
+2B, T: Each other player loses 2 life and you gain 2 life.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2B</manacost>
+		<cmc>3</cmc>
+		<color>B</color>
+	<pt>3/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Enfer Château dIf</name>
+	<text>As an additional cost to cast Enfer Château d’If, tap an avenger class creature you control that shares a True Name with it.
+Choose a True Name, then search target opponent’s library for all cards with the chosen True Name and put them into that player’s graveyard.</text>
+	<tablerow>3</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Sorcery - Phantasm </type>
+		<manacost>6BB</manacost>
+		<cmc>8</cmc>
+		<color>B</color>
+	</prop>
+</card>
+<card>
+	<name>Hassan of Serenity</name>
+	<text>Whenever Hassan of Serenity deals damage to a creature, that creature gains “Cumulative upkeep 1.”
+T: Hassan of Serenity deals 1 damage to target creature.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2BB</manacost>
+		<cmc>4</cmc>
+		<color>B</color>
+	<pt>2/4</pt>
+	</prop>
+</card>
+<card>
 	<name>Hassan of the Cursed Arm</name>
 	<text>Mountainguide (As long as defending player controls a mountain, this creature can’t be blocked except by other creatures with mountainguide.)
 T: Hassan of the Cursed Arm deals 2 damage to any target.</text>
@@ -1431,6 +1626,23 @@ T: Hassan of the Cursed Arm deals 2 damage to any target.</text>
 		<cmc>4</cmc>
 		<color>B</color>
 	<pt>3/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Hundred Faced Hassan</name>
+	<text>(Hundred Faced Hassan is both male and female.)
+When Hundred Faced Hassan enters the battlefield, you may pay 1. If you do, create a token that’s a copy of it.
+A deck can have any number of cards named Hundred Faced Hassan.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Creature - Servant </type>
+		<manacost>1B</manacost>
+		<cmc>2</cmc>
+		<color>B</color>
+	<pt>1/1</pt>
 	</prop>
 </card>
 <card>
@@ -1490,8 +1702,8 @@ Enchanted creature is black in addition to its other colors and has berserk. (It
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Enchantment - Aura </type>
-		<manacost>1B</manacost>
-		<cmc>2</cmc>
+		<manacost>B</manacost>
+		<cmc>1</cmc>
 		<color>B</color>
 	</prop>
 </card>
@@ -1509,6 +1721,22 @@ Whenever a Servant dies, you may exile it and sacrifice Matou Sakura, Hollow Mag
 		<cmc>4</cmc>
 		<color>B</color>
 	<pt>2/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Mysterious Heroine X</name>
+	<text>Mysterious Heroine X gets +3/+3 and first strike as long as an opponent controls a saber class creature.
+T: Destroy target tapped saber class creature.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Dragon Servant </type>
+		<manacost>3B</manacost>
+		<cmc>4</cmc>
+		<color>B</color>
+	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -1542,6 +1770,23 @@ Whenever a Servant dies, you may exile it and sacrifice Matou Sakura, Hollow Mag
 	</prop>
 </card>
 <card>
+	<name>The Old Man of the Mountain</name>
+	<text>Deathtouch
+1BB, Reveal The Old Man of the Mountain from your hand: Destroy target creature. Activate this ability only during your turn.
+When The Old Man of the Mountain deals combat damage to an opponent, that player loses the game.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>5BB</manacost>
+		<cmc>7</cmc>
+		<color>B</color>
+	<pt>7/7</pt>
+	</prop>
+</card>
+<card>
 	<name>Phantom of the Opera</name>
 	<text>Menace
 When Phantom of the Opera enters the battlefield, you discard a card.
@@ -1572,6 +1817,23 @@ Whenever Seal Demon deals damage to a creature, that creature loses all True Nam
 		<cmc>5</cmc>
 		<color>B</color>
 	<pt>5/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Shuten-Douji</name>
+	<text>Mountainguide
+Sacrifice a Food: Target creature gets -1/-1 until end of turn.
+At the beginning of your end step, if you didn’t sacrifice a Food this turn, Shuten-Douji doesn’t untap during your next untap step.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Demon Servant </type>
+		<manacost>5BB</manacost>
+		<cmc>7</cmc>
+		<color>B</color>
+	<pt>6/5</pt>
 	</prop>
 </card>
 <card>
@@ -1650,6 +1912,22 @@ Destroy target creature without flying.</text>
 		<type>Sorcery - Phantasm </type>
 		<manacost>B</manacost>
 		<cmc>1</cmc>
+		<color>B</color>
+	</prop>
+</card>
+<card>
+	<name>Zabaniya Delusional Poison Body</name>
+	<text>Enchant player
+As an additional cost to cast Zabaniya: Delusional Poison Body, tap a creature you control that shares a True Name with it.
+Cumulative upkeep—Enchanted player loses 1 life.</text>
+	<tablerow>1</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Enchantment - Phantasm Aura </type>
+		<manacost>3BB</manacost>
+		<cmc>5</cmc>
 		<color>B</color>
 	</prop>
 </card>
@@ -1735,6 +2013,22 @@ Boudica, Queen of Victory has berserk as long an opponent controls a permanent w
 	</prop>
 </card>
 <card>
+	<name>Caligula Emperor of Death</name>
+	<text>Berserk (This creature must attack if able and must be blocked if able.)
+When Caligula, Emperor of Death enters the battlefield, you may search your library for a Servant card with the True Name Nero Claudius and put it into your hand, then shuffle your library.</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1RR</manacost>
+		<cmc>3</cmc>
+		<color>R</color>
+	<pt></pt>
+	</prop>
+</card>
+<card>
 	<name>Dancing Efreet</name>
 	<text>Haste
 Whenever Dancing Efreet deals damage, you may put an age counter on target permanent.</text>
@@ -1767,6 +2061,85 @@ As long as it’s not your turn, Dragon of Beowulf has mountainguide (As long as
 	</prop>
 </card>
 <card>
+	<name>Eric Bloodaxe King</name>
+	<text>Berserk (This creature must attack if able and must be blocked if able.)
+Whenever a creature blocks or is blocked by Eric, Bloodaxe King, that creature gets -1/-1 until end of combat.</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>R</manacost>
+		<cmc>1</cmc>
+		<color>R</color>
+	<pt>2/1</pt>
+	</prop>
+</card>
+<card>
+	<name>Flucticulus Diana</name>
+	<text>As an additional cost to cast Flucticulus Diana, sacrifice a creature you control that shares a True Name with it.
+Cumulative upkeep 1 (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
+All creatures lose all abilities and gain berserk.</text>
+	<tablerow>1</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm </type>
+		<manacost>2RR</manacost>
+		<cmc>4</cmc>
+		<color>R</color>
+	</prop>
+</card>
+<card>
+	<name>Frankenstein Innocent Bride</name>
+	<text>T: Add RR.
+RR: Put Frankenstein, Innocent Bride onto the battlefield from your graveyard, then it deals 4 damage to you.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Zombie Servant </type>
+		<manacost>2R</manacost>
+		<cmc>3</cmc>
+		<color>R</color>
+	<pt>4/1</pt>
+	</prop>
+</card>
+<card>
+	<name>Great Grudge of Rashoumon</name>
+	<text>As an additional cost to cast Great Grudge of Rashoumon, tap a Demon creature you control that shares a True Name with it.
+Target creature gets -3/-3 until end of turn, then Great Grudge of Rashoumon deals 5 damage to it.</text>
+	<tablerow>3</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant - Phantasm </type>
+		<manacost>1R</manacost>
+		<cmc>2</cmc>
+		<color>R</color>
+	</prop>
+</card>
+<card>
+	<name>Ibaraki-Douji</name>
+	<text>Haste
+Whenever Ibaraki-Douji attacks, you may pay R. If you do, Ibaraki-Douji gets +3/+0 until end of turn, then return it to your hand at the beginning of the next end step.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Demon Servant </type>
+		<manacost>4R</manacost>
+		<cmc>5</cmc>
+		<color>R</color>
+	<pt>4/5</pt>
+	</prop>
+</card>
+<card>
 	<name>Kintoki Son of Raijin</name>
 	<text>Haste
 Whenever Kintoki, Son of Raijin crews a vehicle, that vehicle gets +6/+0 and gains trample and haste until end of turn. At the beginning of the end step, sacrifice that vehicle if it doesn’t share a True Name with Kintoki, Son of Raijin.</text>
@@ -1780,6 +2153,39 @@ Whenever Kintoki, Son of Raijin crews a vehicle, that vehicle gets +6/+0 and gai
 		<cmc>4</cmc>
 		<color>R</color>
 	<pt>3/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Lancelot the Black Knight</name>
+	<text>Berserk, haste
+Whenever Lancelot, the Black Knight deals combat damage to a creature, gain control of all equipment attached to that creature and attach it to Lancelot, the Black Knight.
+Whenever Lancelot, the Black Knight deals combat damage to a player, gain control of target equipment that player controls and attach it to Lancelot, the Black Knight.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>4R</manacost>
+		<cmc>5</cmc>
+		<color>R</color>
+	<pt>4/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Lu Bu Treacherous General</name>
+	<text>Haste, menace
+At the end of your turn, if Lu Bu, Treacherous General didn’t deal combat damage this turn, target opponent gains control of it.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3RR</manacost>
+		<cmc>5</cmc>
+		<color>R</color>
+	<pt>7/5</pt>
 	</prop>
 </card>
 <card>
@@ -1881,6 +2287,39 @@ Whenever Romulus, Founder of Roma attacks alone, prevent all damage that would b
 	</prop>
 </card>
 <card>
+	<name>Sakata Kintoki the Golden</name>
+	<text>Haste
+Non-Human, non-Servant creatures you control get +1/+1.
+RR: Sakata Kintoki the Golden gets +6/+0 until end of turn. Sacrifice it at the beginning of the next end step. Activate this ability no more than once per turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3RR</manacost>
+		<cmc>5</cmc>
+		<color>R</color>
+	<pt>6/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Spartacus Gladiator of Thrace</name>
+	<text>Berserk (This creature must attack if able and must be blocked if able.)
+Spartacus, Gladiator of Thrace gets +3/+0 as long as it was dealt damage this turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2R</manacost>
+		<cmc>3</cmc>
+		<color>R</color>
+	<pt>3/3</pt>
+	</prop>
+</card>
+<card>
 	<name>Spear of Striking Death Flight</name>
 	<text>As an additional cost to cast Spear of Striking Death Flight, unattach an Equipment that shares a True Name with it from a creature you control that shares a True Name with it.
 Spear of Striking Death Flight deals 8 damage divided as you choose among any number of targets.</text>
@@ -1893,6 +2332,22 @@ Spear of Striking Death Flight deals 8 damage divided as you choose among any nu
 		<manacost>1R</manacost>
 		<cmc>2</cmc>
 		<color>R</color>
+	</prop>
+</card>
+<card>
+	<name>Tamamo Cat</name>
+	<text>Berserk (This creature must attack if able and must be blocked if able.)
+T: Tamamo Cat fights target creature, then it doesn’t untap during your next untap step.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1RR</manacost>
+		<cmc>3</cmc>
+		<color>R</color>
+	<pt>3/4</pt>
 	</prop>
 </card>
 <card>
@@ -1909,6 +2364,22 @@ Tamamo Shark gets +1/+0 for each female creature and planeswalker in a graveyard
 		<cmc>5</cmc>
 		<color>R</color>
 	<pt>0/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Tenshin Kashou Zanmai</name>
+	<text>As an additional cost to cast Tenshin Kashou Zanmai, tap a creature you control that shares a True Name with it.
+Cumulative upkeep 1
+At the beginning of each upkeep, Tenshin Kashou Zanmai deals damage to each creature, player, and planeswalker equal to the number of age counters on it.</text>
+	<tablerow>1</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm </type>
+		<manacost>2RR</manacost>
+		<cmc>4</cmc>
+		<color>R</color>
 	</prop>
 </card>
 <card>
@@ -1973,6 +2444,23 @@ Asterios, Bull of King Minos gets +1/+1 for each creature with defender you cont
 	</prop>
 </card>
 <card>
+	<name>Beowulf King of Savagery</name>
+	<text>Cumulative upkeep 1
+1G: Beowulf, King of Savagery gains berserk until end of turn.
+Whenever a creature dies, remove an age counter from Beowulf, King of Savagery.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3G</manacost>
+		<cmc>4</cmc>
+		<color>G</color>
+	<pt>4/6</pt>
+	</prop>
+</card>
+<card>
 	<name>Cu Chulainn Rune Wielder</name>
 	<text>Protection from archer class creatures
 T: Add one mana of any color.
@@ -2022,6 +2510,23 @@ Prevent all damage.</text>
 	</prop>
 </card>
 <card>
+	<name>Fuuma Kotarou</name>
+	<text>When Fuuma Kotarou enters the battlefield, you may destroy target equipment.
+XGG, T: Create X 1/1 green Human Ninja creature tokens with forestguide, then for each of those tokens, that creature fights target creature you don’t control.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2G</manacost>
+		<cmc>3</cmc>
+		<color>G</color>
+	<pt>3/3</pt>
+	</prop>
+	<related count="x">Human Ninja (Token)</related>
+</card>
+<card>
 	<name>Geronimo Apache Warrior</name>
 	<text>When Geronimo, Apache Warrior enters the battlefield, you may destroy target artifact. If you do, its controller searches their library for a land card and puts it onto the battlefield tapped, then shuffles their library.
 Mountainguide (As long as defending player controls a mountain, this creature can’t be blocked except by other creatures with mountainguide.)</text>
@@ -2053,6 +2558,22 @@ Then it fights target creature you don’t control. Damage it deals can’t be p
 	</prop>
 </card>
 <card>
+	<name>Grendel Buster</name>
+	<text>Enchant creature you control that shares a True Name with Grendel Buster.
+As an additional cost to cast Grendel Buster, sacrifice two artifacts that share a True Name with it.
+Enchanted creature loses cumulative upkeep. It gets +6/+4 and has trample.</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm Aura </type>
+		<manacost>1G</manacost>
+		<cmc>2</cmc>
+		<color>G</color>
+	</prop>
+</card>
+<card>
 	<name>Hachiman Prayer</name>
 	<text>Target creature you control gets +6/+6 until end of turn if it shares a True Name with Hachiman Prayer. Then it fights target creature you don’t control.</text>
 	<tablerow>3</tablerow>
@@ -2080,6 +2601,24 @@ T: Prevent the next 4 damage that would be dealt to Hector of the Gleaming Helme
 		<cmc>5</cmc>
 		<color>G</color>
 	<pt>3/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Heracles the Immortal</name>
+	<text>Cumulative upkeep 1
+Berserk, trample
+At the beginning of each upkeep, prevent the next 5 damage that would be dealt to Heracles the Immortal this turn.
+If Heracles the Immortal would die, you may remove three age counters from it. If you do, it gains indestructible until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>4GG</manacost>
+		<cmc>6</cmc>
+		<color>G</color>
+	<pt>5/5</pt>
 	</prop>
 </card>
 <card>
@@ -2146,6 +2685,53 @@ T: Jing Ke, Fruitless Assassin fights target creature an opponent controls.</tex
 		<cmc>3</cmc>
 		<color>G</color>
 	<pt>1/1</pt>
+	</prop>
+</card>
+<card>
+	<name>Martha Waterfront Saintess</name>
+	<text>Martha, Waterfront Saintess gets +2/+2 as long as any player controls an island.
+T: Martha, Waterfront Saintess gets +3/+3 until end of turn, then it fights target Servant creature. </text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2GG</manacost>
+		<cmc>4</cmc>
+		<color>G</color>
+	<pt>3/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Minamoto no Raikou</name>
+	<text>Reach
+Minamoto no Raikou has berserk as long as an opponent controls a Demon.
+Whenever Minamoto no Raikou attacks, you may pay 2GG. If you do, create three tokens that are copies of Minamoto no Raikou that are tapped and attacking. Exile those tokens at end of combat.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3GG</manacost>
+		<cmc>5</cmc>
+		<color>G</color>
+	<pt>4/4</pt>
+	</prop>
+</card>
+<card>
+	<name>Nine Lives 100 Strikes</name>
+	<text>Target creature you control that shares a True Name with Nine Lives: 100 Strikes gets +X/+0 until end of turn, then it fights target creature.</text>
+	<tablerow>3</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant - Phantasm </type>
+		<manacost>XG</manacost>
+		<cmc>1</cmc>
+		<color>G</color>
 	</prop>
 </card>
 <card>
@@ -2326,6 +2912,23 @@ The tapped creature deals damage equal to three times its power to target player
 	</prop>
 </card>
 <card>
+	<name>Uraeus Astrape</name>
+	<text>You may tap a creature you control that shares a True Name with Uraeus Astrape rather than pay its mana cost.
+Deathtouch, trample, berserk
+At the beginning of combat on your turn, Uraeus Astrape fights target creature.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Phantasm Snake </type>
+		<manacost>7GG</manacost>
+		<cmc>9</cmc>
+		<color>G</color>
+	<pt>3/6</pt>
+	</prop>
+</card>
+<card>
 	<name>Wu Xing Shan</name>
 	<text>Prevent all damage that would be dealt to target creature you control that shares a True Name with Wu Xing Shan this turn, then it fights target creature an opponent controls with power greater than 2.</text>
 	<tablerow>3</tablerow>
@@ -2353,6 +2956,22 @@ Other creatures you control get +1/+1.</text>
 		<cmc>3</cmc>
 		<color>M</color>
 	<pt>3/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Amakusa Shirou Tokisada</name>
+	<text>UU: Tap target non-ruler class Servant.
+4, T: Look at the top card of your opponent’s library. If it’s a non-ruler class Servant, you may cast that card, and you may spend mana as though it were mana of any type to cast that spell.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2RWU</manacost>
+		<cmc>5</cmc>
+		<color>M</color>
+	<pt></pt>
 	</prop>
 </card>
 <card>
@@ -2453,6 +3072,23 @@ Atalanta, Chaste Huntress can’t be the target of aura or sorcery spells your o
 		<cmc>4</cmc>
 		<color>M</color>
 	<pt>3/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Athanaton Ten Thousand</name>
+	<text>As an additional cost to cast Athanaton Ten Thousand, tap a creature you control that shares a True Name with it, and sacrifice any number of Skeletons.
+Trample, menace
+Athanaton Ten Thousand’s power and toughness are equal to double the number of skeletons sacrificed.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Phantasm Elephant </type>
+		<manacost>3BG</manacost>
+		<cmc>5</cmc>
+		<color>M</color>
+	<pt>*/*</pt>
 	</prop>
 </card>
 <card>
@@ -2568,6 +3204,23 @@ Burning Summer Kiyohime has berserk as long as an opponent controls a male creat
 	</prop>
 </card>
 <card>
+	<name>Cleopatra the Last Pharoah</name>
+	<text>Vigilance, menace, hexproof
+Whenever Cleopatra, the Last Pharoah attacks, it loses hexproof until end of combat.
+WB, T: Prevent all combat damage that would be dealt to Cleopatra, the Last Pharoah this turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1BGW</manacost>
+		<cmc>4</cmc>
+		<color>M</color>
+	<pt>4/3</pt>
+	</prop>
+</card>
+<card>
 	<name>Cu Chulainn Child of the Sun</name>
 	<text>First strike, haste
 At the beginning of each upkeep, prevent the next 4 noncombat damage that would be dealt to Cu Chulainn, Child of the Sun this turn.
@@ -2582,6 +3235,23 @@ When Cu Chulainn, Child of the Sun dies, it deals 3 damage to any target.</text>
 		<cmc>5</cmc>
 		<color>M</color>
 	<pt>3/5</pt>
+	</prop>
+</card>
+<card>
+	<name>Darius Achaemenid King</name>
+	<text>Trample, berserk (This creature must attack if able and must be blocked if able.)
+W: Darius, Achaemenid King loses berserk until end of turn.
+T: Put target creature card from your graveyard onto the battlefield under your control. That creature is a Skeleton in addition to its other types.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1BGW</manacost>
+		<cmc>4</cmc>
+		<color>M</color>
+	<pt>4/4</pt>
 	</prop>
 </card>
 <card>
@@ -2898,6 +3568,22 @@ Discard an artifact card: Gilgamesh, King of Heroes deals damage to any target e
 	</prop>
 </card>
 <card>
+	<name>Gorgon Monstrous Goddess</name>
+	<text>Flying, deathtouch, trample
+T: Destroy target creature.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Gorgon Servant </type>
+		<manacost>5BG</manacost>
+		<cmc>7</cmc>
+		<color>M</color>
+	<pt>7/7</pt>
+	</prop>
+</card>
+<card>
 	<name>Gorgon Sister Medusa</name>
 	<text>Deathtouch
 T: Target creature doesn’t untap during its controller’s next untap step.
@@ -3015,6 +3701,23 @@ Other creatures you control get +2/+2.
 	</prop>
 </card>
 <card>
+	<name>Jeanne Alter Dragon Witch</name>
+	<text>Dragons you control get +1/+1.
+T: Target Dragon you control fights another target creature an opponent controls.
+R: Jeanne Alter, Dragon Witch gets +2/-1 until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3BR</manacost>
+		<cmc>5</cmc>
+		<color>M</color>
+	<pt>4/4</pt>
+	</prop>
+</card>
+<card>
 	<name>Karna Sun Gods Progeny</name>
 	<text>Flying, vigilance
 Your opponents play with their hands revealed.
@@ -3065,6 +3768,40 @@ When King David of Isreal blocks or is blocked by a creature with greater power,
 	</prop>
 </card>
 <card>
+	<name>Kiyohime the Betrayed</name>
+	<text>Berserk (This creature must attack if able and must be blocked if able.)
+Protection from enchantments
+2R: Kiyohime the Betrayed gets +1/+0 until end of turn and deals 1 damage to each other creature.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>2RG</manacost>
+		<cmc>4</cmc>
+		<color>M</color>
+	<pt>2/5</pt>
+	</prop>
+</card>
+<card>
+	<name>Le Grondement de la Haine</name>
+	<text>As an additional cost to cast Le Grondement de la Haine, tap a creature you control that shares a True Name with it.
+Cumulative upkeep 1
+At the beginning of your upkeep, Le Grondement de la Haine deals 2 damage to each creature and each player.
+Creatures your opponents control have protection from spells their controllers control.</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Phantasm </type>
+		<manacost>4BR</manacost>
+		<cmc>6</cmc>
+		<color>M</color>
+	</prop>
+</card>
+<card>
 	<name>Leonardo Da Vinci</name>
 	<text>Protection from enchantments.
 Artifact spells you cast cost 2 less to cast.
@@ -3079,6 +3816,23 @@ Leonardo Da Vinci gets +1/+1 for each artifact you control.</text>
 		<cmc>5</cmc>
 		<color>M</color>
 	<pt>3/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Mad King Cu Chulainn</name>
+	<text>Berserk
+Sacrifice a Spirit: Mad King Cu Chulainn gets +0/+1 until end of turn.
+Whenever Mad King Cu Chulainn is dealt damage, create a 1/1 black Spirit creature token with flying.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>4BR</manacost>
+		<cmc>6</cmc>
+		<color>M</color>
+	<pt>8/4</pt>
 	</prop>
 </card>
 <card>
@@ -3278,6 +4032,21 @@ T: Target land you control becomes a 5/5 Sphinx creature with flying. It’s sti
 	</prop>
 </card>
 <card>
+	<name>Pandemonium Cetus</name>
+	<text>As an additional cost to cast Pandemonium Cetus, tap a creature you control that shares a True Name with it.
+Creatures target player controls lose all abilities and get -5/-5 until end of turn.</text>
+	<tablerow>3</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant - Phantasm </type>
+		<manacost>4BG</manacost>
+		<cmc>6</cmc>
+		<color>M</color>
+	</prop>
+</card>
+<card>
 	<name>Papiyas Demon King of the Sixth Heaven</name>
 	<text>Cumulative upkeep 1
 Whenever Papiyas, Demon King of the Sixth Heaven’s cumulative upkeep cost is paid, it deals X damage to each creature that doesn’t share a True Name with it and each other player, where X is the number of age counters on it.
@@ -3443,22 +4212,6 @@ T: Each player who controls the most lands chooses a number of lands they contro
 	</prop>
 </card>
 <card>
-	<name>Ryougi Shiki of the Void</name>
-	<text>Damage dealt by Ryougi Shiki of the Void can’t be prevented.
-At the beginning of your end step, if you have fewer than seven cards in hand, you may draw cards equal to the difference.</text>
-	<tablerow>2</tablerow>
-	<set rarity="mythic rare">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Legendary Creature - Servant </type>
-		<manacost>4GU</manacost>
-		<cmc>6</cmc>
-		<color>M</color>
-	<pt>4/4</pt>
-	</prop>
-</card>
-<card>
 	<name>Scathach Lord of Spirits</name>
 	<text>First strike, menace
 2B, T: Target opponent reveals their hand. You choose a card in it. That player discards that card.
@@ -3503,6 +4256,22 @@ Equipped creatures you control get +2/+2.</text>
 		<manacost>2BG</manacost>
 		<cmc>4</cmc>
 		<color>M</color>
+	</prop>
+</card>
+<card>
+	<name>Shiki of the Void</name>
+	<text>Damage dealt by Shiki of the Void can’t be prevented.
+At the beginning of your end step, if you have fewer than seven cards in hand, you may draw cards equal to the difference.</text>
+	<tablerow>2</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>4GU</manacost>
+		<cmc>6</cmc>
+		<color>M</color>
+	<pt>4/4</pt>
 	</prop>
 </card>
 <card>
@@ -3569,6 +4338,21 @@ T: Add one mana of any color.
 		<cmc>4</cmc>
 		<color>M</color>
 	<pt>1/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Twin Arm - Big Crunch</name>
+	<text>As an additional cost to cast Twin Arm - Big Crunch, tap a ruler class creature you control that shares a True Name with it.
+Destroy all enchantments target player controls. That player may return any number of Servant creatures they control to their owners’ hands, then Twin Arm - Big Crunch deals X damage to them, where X is the number of Servant creatures they control.</text>
+	<tablerow>3</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant - Phantasm </type>
+		<manacost>3RWU</manacost>
+		<cmc>6</cmc>
+		<color>M</color>
 	</prop>
 </card>
 <card>
@@ -3842,6 +4626,21 @@ Soulequip 2 (2: Attach to target creature you control that shares a True Name wi
 	</prop>
 </card>
 <card>
+	<name>Blood-Sucking Axe</name>
+	<text>Equipped creature gets +4/+4 and lifelink.
+Soulequip 4 (4: Attach to target creature you control that shares a True Name with it. Equip only as a sorcery.)</text>
+	<tablerow>1</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>3</manacost>
+		<cmc>3</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Brahmastra</name>
 	<text>Catalyst
 Indestructible
@@ -3855,6 +4654,22 @@ Soulequip 2</text>
 		<type>Legendary Artifact - Phantasm Equipment </type>
 		<manacost>3</manacost>
 		<cmc>3</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Bridal Chest</name>
+	<text>Equipped creature gets +3/+3 and has berserk.
+Sacrifice Bridal Chest and equipped creature: Bridal Chest deals 5 damage to each opponent and each creature and planeswalker your opponents control.
+Soulequip 3 (3: Attach to target creature you control that shares a True Name with it. Equip only as a sorcery.)</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>4</manacost>
+		<cmc>4</cmc>
 		<color></color>
 	</prop>
 </card>
@@ -3998,6 +4813,23 @@ Soulequip 6 (6: Attach to target creature you control that shares a True Name wi
 		<type>Legendary Artifact - Phantasm Equipment </type>
 		<manacost>2</manacost>
 		<cmc>2</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Curruid Coinchenn</name>
+	<text>Indestructible
+When Curruid Coinchenn enters the battlefield, sacrifice all artifacts you control that share a True Name with it.
+Equipped creature gets +4/+4 and has indestructible, trample, and “Cumulative upkeep—Pay 1 life.”
+Soulequip 4BR</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>7</manacost>
+		<cmc>7</cmc>
 		<color></color>
 	</prop>
 </card>
@@ -4351,6 +5183,22 @@ Soulequip 2</text>
 	</prop>
 </card>
 <card>
+	<name>God Force</name>
+	<text>Equipped creature gets +3/+3 and has double strike.
+2, Sacrifice God Force and equipped creature: Equipped creature deals damage equal to its power to target creature or planeswalker.
+Soulequip 4 (4: Attach to target creature you control that shares a True Name with it. Equip only as a sorcery.)</text>
+	<tablerow>1</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>5</manacost>
+		<cmc>5</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Golden Apple</name>
 	<text>Catalyst
 Creatures you control have haste, and nonland, nonartifact cards you own that aren’t on the battlefield have flash.
@@ -4377,6 +5225,22 @@ Soulcrew 6</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Artifact - Phantasm Vehicle </type>
+		<manacost>5</manacost>
+		<cmc>5</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Golden Eater</name>
+	<text>Equipped creature has “T: This creature deals 3 damage to any target.”
+Sacrifice Golden Eater: Equipped creature gets +6/+0 until end of turn.
+Soulequip 6</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
 		<manacost>5</manacost>
 		<cmc>5</cmc>
 		<color></color>
@@ -4457,6 +5321,23 @@ Sacrifice Hellfire of Wisdom: Creatures you control get +3/+3 and gain haste unt
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Artifact</type>
+		<manacost>3</manacost>
+		<cmc>3</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Hrunting</name>
+	<text>Catalyst
+Equipped creature gets +1/+1.
+Whenever equipped creature deals damage to a creature, remove an age counter from it.
+Soulequip 2</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
 		<manacost>3</manacost>
 		<cmc>3</cmc>
 		<color></color>
@@ -4601,9 +5482,24 @@ Crew 5 (Tap any number of creatures you control with total power 5 or greater: T
 	</prop>
 </card>
 <card>
+	<name>Naegling</name>
+	<text>Equipped creature gets +2/+0 and has “T: This creature fights target creature.”
+Soulequip 3</text>
+	<tablerow>1</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>2</manacost>
+		<cmc>2</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Ornithricopter</name>
 	<text>1: Ornithricopter gains flying until end of turn.
-Sacrifice Ornithricopter: Destroy all creatures.
+Sacrifice Ornithricopter: Ornithricopter deals 4 damage to each creature.
 Crew 2</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
@@ -4611,8 +5507,8 @@ Crew 2</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Artifact - Vehicle </type>
-		<manacost>4</manacost>
-		<cmc>4</cmc>
+		<manacost>3</manacost>
+		<cmc>3</cmc>
 		<color></color>
 	</prop>
 </card>
@@ -4814,6 +5710,37 @@ Soulcrew 6</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Artifact - Phantasm Vehicle </type>
+		<manacost>4</manacost>
+		<cmc>4</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Secret-Calibur</name>
+	<text>As long as equipped creature is an assassin class creature, it gets +4/+0 and has “4, T: Destroy all saber class creatures.”
+Soulequip 4</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Equipment </type>
+		<manacost>4</manacost>
+		<cmc>4</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
+	<name>Shinpen Kidoku Sake</name>
+	<text>Spells your opponents cast cost 2 more to cast.
+2, T, Sacrifice Shinpen Kidoku Sake: You lose 2 life. Creatures target player controls don’t untap during that player’s next untap step.
+2, Tap a creature you control that shares a True Name with Shinpen Kidoku Sake: Return Shinpen Kidoku Sake to the battlefield from your graveyard.</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Artifact - Phantasm Food </type>
 		<manacost>4</manacost>
 		<cmc>4</cmc>
 		<color></color>
@@ -5023,22 +5950,6 @@ Soulequip 8</text>
 	</prop>
 </card>
 <card>
-	<name>Wheel of Sunlight</name>
-	<text>Equipped creature has protection from black and swampguide. (As long as defending player controls a swamp, it can’t be blocked except by other creatures with swampguide.)
-Equip 6
-Soulequip 1 (1: Attach to target creature you control that shares a True Name with it. Equip only as a sorcery.)</text>
-	<tablerow>1</tablerow>
-	<set rarity="common">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Legendary Artifact - Phantasm Equipment </type>
-		<manacost>3</manacost>
-		<cmc>3</cmc>
-		<color></color>
-	</prop>
-</card>
-<card>
 	<name>Wicker Man</name>
 	<text>As an additional cost to cast Wicker Man, tap a caster class creature you control that shares a True Name with it.
 Cumulative upkeep 1
@@ -5137,7 +6048,7 @@ T: Add R or B.</text>
 <card>
 	<name>Rome</name>
 	<text>Rome enters the battlefield tapped.
-When Rome enters the battlefield, you may search your library for a Servant card with the True Name Romulus, Nero Claudius, or Gaius Julius Ceasar and put it into your hand, then shuffle your library.
+When Rome enters the battlefield, you may search your library for a Servant card with the True Name Caligula, Gaius Julius Ceasar, Romulus, or Nero Claudius and put it into your hand, then shuffle your library.
 T: Add U, R or W.</text>
  <cipt>1</cipt>
 	<tablerow>0</tablerow>
@@ -5211,6 +6122,53 @@ Creatures with islandguide can be blocked as though they didn’t have islandgui
 		<color>W</color>
 	</prop>
 	<related count="x">Food (Token)</related>
+</card>
+<card>
+	<name>Angra Mainyu All the Worlds Evil</name>
+	<text>Whenever Angra Mainyu, All the World’s Evil blocks or is blocked by a Human, it gets +5/+5 and gains first strike and deathtouch until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1BB</manacost>
+		<cmc>3</cmc>
+		<color>B</color>
+	<pt>2/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Deathseer Ryougi Shiki</name>
+	<text>First strike, deathtouch
+Damage dealt by Deathseer Ryougi Shiki can’t be prevented.</text>
+	<tablerow>2</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1BB</manacost>
+		<cmc>3</cmc>
+		<color>B</color>
+	<pt>2/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Verg Avesta</name>
+	<text>Enchant creature you control that shares a True Name with Verg Avesta
+Enchanted creature has indestructible.
+Whenever a source deals damage to enchanted creature, the source’s controller loses that much life.</text>
+	<tablerow>1</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Enchantment - Phantasm Aura </type>
+		<manacost>4BB</manacost>
+		<cmc>6</cmc>
+		<color>B</color>
+	</prop>
 </card>
 <card>
 	<name>Chloe von Einzbern</name>
@@ -5371,6 +6329,22 @@ Choose a permanent type other than land. Destroy all permanents your opponents c
 		<cmc>4</cmc>
 		<color>M</color>
 	<pt>4/5</pt>
+	</prop>
+</card>
+<card>
+	<name>Scathach Lord of Seasides</name>
+	<text>When Scathach, Lord of Seasides enters the battlefield, you gain 3 life.
+2: Scathach, Lord of Seasides must be blocked by all male creatures this turn if able.</text>
+	<tablerow>2</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>3GU</manacost>
+		<cmc>5</cmc>
+		<color>M</color>
+	<pt>5/4</pt>
 	</prop>
 </card>
 <card>
