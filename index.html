@@ -800,7 +800,7 @@
 					}
 				}
 				function isBasicLand() {
-					if (typeInput == "Basic Land - Forest " || typeInput == "Basic Land - Swamp " || typeInput == "Basic Land - Island " || typeInput == "Basic Land - Plains " || typeInput == "Basic Land - Mountain " ) {
+					if (typeInput.includes("Basic Land")) {
 						return true;
 					} else {
 						return false;
