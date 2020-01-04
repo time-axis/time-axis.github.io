@@ -11,7 +11,7 @@
 <card>
 	<name>Construct (Token)</name>
 	<text></text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -44,7 +44,7 @@ Remove 14 age counters from Ars Almadel Salomonis and sacrifice it: You win the 
 <card>
 	<name>Human Citizen (Token)</name>
 	<text></text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -76,7 +76,7 @@ When Nursery Rhyme enters the battlefield, choose an opponent. Nursery Rhyme’s
 <card>
 	<name>Pegasus (Token)</name>
 	<text>Flying, trample</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -108,7 +108,7 @@ T: Arjuna, The Endowed Hero deals damage equal to its power to target attacking 
 <card>
 	<name>Bird (Token)</name>
 	<text>Flying</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -141,7 +141,7 @@ Demon creatures you control have indestructible. You can’t lose the game, and 
 <card>
 	<name>Merlin Manifested (Token)</name>
 	<text></text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -174,7 +174,7 @@ W: Artoria, King of Knights gets +1/+1 until end of turn.</text>
 <card>
 	<name>Demon God (Token)</name>
 	<text>Defender</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -206,7 +206,7 @@ W: Prevent the next 1 noncombat damage that would be dealt to Artoria Lily, Futu
 <card>
 	<name>Demon Horror (Token)</name>
 	<text>Menace</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -239,7 +239,7 @@ Artoria, Lion King of Camelot is rider class in addition to its other classes.
 <card>
 	<name>Prelatis Horror (Token)</name>
 	<text>Lifelink, trample</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -272,7 +272,7 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 <card>
 	<name>Skeleton Warrior (Token)</name>
 	<text></text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -304,7 +304,7 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 <card>
 	<name>Spirit (Token)</name>
 	<text>Flying</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -337,7 +337,7 @@ Sacrifice Dragonslayer Steed: Creatures your opponents control can’t attack th
 	<name>Artemis (Token)</name>
 	<text>Flying, indestructible
 Sacrifice this creature if you don’t control a creature that shares a True Name with it.</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -369,7 +369,7 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 <card>
 	<name>Human Soldier (Token)</name>
 	<text></text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -400,7 +400,7 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 <card>
 	<name>Human Ninja (Token)</name>
 	<text>Forestguide</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -431,7 +431,7 @@ Choose a creature. The chosen creature loses all abilities until end of turn, th
 <card>
 	<name>Ox (Token)</name>
 	<text>Trample</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -464,7 +464,7 @@ T: Creatures you control with the True Name Jeanne D’Arc get +4/+4 and can blo
 <card>
 	<name>Quetzalcoatlus (Token)</name>
 	<text>Flying, deathtouch</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -496,7 +496,7 @@ Enchanted creature loses all abilities and can’t attack or block.</text>
 <card>
 	<name>Food (Token)</name>
 	<text>2, T, Sacrifice this artifact: You gain 3 life.</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -527,7 +527,7 @@ Whenever enchanted creature attacks, you gain 3 life.</text>
 <card>
 	<name>Philosophers Stone (Token)</name>
 	<text>T: Add two mana of any one color.</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -559,7 +559,7 @@ When Ionioi Hetairoi leaves the battlefield, shuffle all Servant creatures you c
 <card>
 	<name>Wall (Token)</name>
 	<text>Defender</text>
- <token>1</token>
+	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
