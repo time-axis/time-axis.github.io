@@ -2614,7 +2614,7 @@ If Heracles the Immortal would die, you may remove three age counters from it. I
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Creature - Servant </type>
+		<type>Legendary Creature - God Servant </type>
 		<manacost>4GG</manacost>
 		<cmc>6</cmc>
 		<color>G</color>
@@ -6127,7 +6127,7 @@ T: Add CC.</text>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Land</type>
+		<type>Legendary Land</type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
