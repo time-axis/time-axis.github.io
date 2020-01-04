@@ -438,10 +438,9 @@
 						} 
 						else { //Special (1%)
 							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
-							if (summonedCard.isToken() || summonedCard.isEmblem()){ // Don't allow tokens or emblems to be summoned
-								while(summonedCard.isToken() || summonedCard.isEmblem()) {
-									summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
-								}
+							while(summonedCard.isToken() || summonedCard.isEmblem()) {
+								console.log("Can't summon "+summonedCard.name()+". Rerolling.");
+								summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
 							}
 						}
 						return summonedCard;
@@ -455,7 +454,7 @@
 							summonedCard = rareList[Math.floor(Math.random() * rareList.length)];
 						}
 						else { // Mythic Rare (3%)
-							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+							summonedCard = mythicList[Math.floor(Math.random() * mythicList.length)];
 						}
 						return summonedCard;
 					}
@@ -735,6 +734,7 @@
 						this.isTransform = isTransform;
 						this.isBackside = isBackside;
 						this.isEmblem = isEmblem;
+						break;
 					default:
 						console.log("Error constructing card object. Too many arguments.");
 						break;
