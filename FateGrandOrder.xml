@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (v0.9.3)</longname>
+  <longname>Fate Grand Order (v0.9.4)</longname>
  </set>
 </sets>
 <cards>
@@ -968,22 +968,6 @@ Creatures that can block Warrior Monk Benkei must do so.</text>
 	</prop>
 </card>
 <card>
-	<name>Alchemist Hohenheim</name>
-	<text>2, Sacrifice a creature: Search your library for an artifact with converted mana cost equal to the sacrificed creature’s converted mana cost, and put it onto the battlefield, then shuffle your library.
-2, T: Create a colorless artifact token named Philosopher’s Stone with “T: Add two mana of any one color.” </text>
-	<tablerow>2</tablerow>
-	<set rarity="uncommon">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Legendary Creature - Servant </type>
-		<manacost>1UU</manacost>
-		<cmc>3</cmc>
-		<color>U</color>
-	<pt>1/1</pt>
-	</prop>
-</card>
-<card>
 	<name>Boundary of the Void</name>
 	<text>You may tap a creature you control that shares a True Name with Boundary of the Void rather than pay its mana cost.
 Counter target spell.</text>
@@ -1462,6 +1446,7 @@ B, Sacrifice a creature: Create a 3/1 black Demon Horror creature token with men
 		<color>B</color>
 	<pt>2/1</pt>
 	</prop>
+	<related>Demon Horror (Token)</related>
 </card>
 <card>
 	<name>Break Down</name>
@@ -2943,6 +2928,23 @@ At the beginning of combat on your turn, Uraeus Astrape fights target creature.<
 	</prop>
 </card>
 <card>
+	<name>Alchemist Hohenheim</name>
+	<text>2, Sacrifice a creature: Search your library for an artifact with converted mana cost equal to the sacrificed creature’s converted mana cost, and put it onto the battlefield, then shuffle your library.
+2, T: Create a colorless artifact token named Philosopher’s Stone with “T: Add two mana of any one color.” </text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Servant </type>
+		<manacost>1GU</manacost>
+		<cmc>3</cmc>
+		<color>M</color>
+	<pt>1/1</pt>
+	</prop>
+	<related>Philosophers Stone (Token)</related>
+</card>
+<card>
 	<name>Alexander Macedonian Prince</name>
 	<text>When Alexander, Macedonian Prince enters the battlefield, search your library for a creature card that shares a True Name with it and put that card into your hand, then shuffle your library.
 Other creatures you control get +1/+1.</text>
@@ -3270,6 +3272,7 @@ At the beginning of each upkeep, create a 4/4 red, white, and blue Construct art
 		<color>M</color>
 	<pt>3/3</pt>
 	</prop>
+	<related>Construct (Token)</related>
 </card>
 <card>
 	<name>Elizabeth Bathory Blood Countess</name>
@@ -3599,6 +3602,7 @@ When Gorgon Sister Medusa dies, create a 7/7 white Pegasus creature token with f
 		<color>M</color>
 	<pt>3/4</pt>
 	</prop>
+	<related>Pegasus (Token)</related>
 </card>
 <card>
 	<name>Halloween Elizabeth</name>
@@ -3835,6 +3839,7 @@ Whenever Mad King Cu Chulainn is dealt damage, create a 1/1 black Spirit creatur
 		<color>M</color>
 	<pt>8/4</pt>
 	</prop>
+	<related>Spirit (Token)</related>
 </card>
 <card>
 	<name>Marie the Reminiscent</name>
@@ -4307,6 +4312,7 @@ Whenever Siegfried, Dragon-Blood Knight would deal combat damage to a Dragon, it
 		<cmc>5</cmc>
 		<color>M</color>
 	</prop>
+	<related>Demon God (Token)</related>
 </card>
 <card>
 	<name>Surging Surfer Mordred</name>
@@ -5543,6 +5549,8 @@ Sacrifice Prelati’s Spellbook and a creature that shares a True Name with it: 
 		<cmc>5</cmc>
 		<color></color>
 	</prop>
+	<related>Demon Horror (Token)</related>
+	<related>Prelatis Horror (Token)</related>
 </card>
 <card>
 	<name>Prydwen</name>
@@ -5996,10 +6004,11 @@ At the beginning of your upkeep, if you control a creature that shares a True Na
 		<cmc>0</cmc>
 		<color></color>
 	</prop>
+	<related>Wall (Token)</related>
 </card>
 <card>
 	<name>Dún Scáith Land of Shadows</name>
-	<text>Whenever a card is put into a graveyard from anywhere, exile that card and its owner creates a 1/1 black Spirit creature token with flying.
+	<text>Whenever a nontoken creature is put into a graveyard from the battlefield, exile that card and its owner creates a 1/1 black Spirit creature token with flying.
 T: Add B.</text>
 	<tablerow>0</tablerow>
 	<set rarity="common">FGO</set>
@@ -6011,6 +6020,7 @@ T: Add B.</text>
 		<cmc>0</cmc>
 		<color>B</color>
 	</prop>
+	<related>Spirit (Token)</related>
 </card>
 <card>
 	<name>Forest</name>
