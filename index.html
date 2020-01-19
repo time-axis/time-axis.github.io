@@ -28,10 +28,21 @@
 			text-align: center;
 		}
 		
+		input[type=text] {
+		  width: 380px;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+		  border: 2px solid #FFFFFF;
+		  border-radius: 2px;
+		  background-color: #536390;
+		  color: #FFFFFF;
+		}
+		
 		#cardListDiv {
 			margin-top: 100px;
-			margin-left: 8vw;
-			margin-right: 8vw;
+			margin-left: 100px;
+			margin-right: 100px;
 			margin-bottom: 200px;
 			height:auto;
 			text-align: center;
@@ -85,8 +96,8 @@
 		}
 		
 		.button {
-			height: 55px;
-			width: 250px;
+			height: 35px;
+			width: 180px;
 			margin-left: 20px;
 			margin-right: 20px;
 			padding: 20px 0;
@@ -164,10 +175,10 @@
 		}
 		
 		#header {
-			padding: 20px 0;
+			padding: 10px 0;
 			margin-left: auto;
 			margin-right: auto;
-			width: 90%;
+			width: 95%;
 			text-align: center;
 		}
 		
@@ -314,6 +325,7 @@
 		
 	</style>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 		
@@ -338,7 +350,7 @@
 					
 					// Populate Card List
 					$(data).find("card").each( function (i) {
-						var newCard = new card($(this).find('name').text(),$(this).find('set').attr('rarity'),$(this).find('token').text(),$(this).find('prop').find('layout').text(),$(this).find('prop').find('side').text(),$(this).find('prop').find('type').text());
+						var newCard = new card(i,$(this).find('name').text(),$(this).find('set').attr('rarity'),$(this).find('token').text(),$(this).find('prop').find('layout').text(),$(this).find('prop').find('side').text(),$(this).find('prop').find('type').text());
 						cardsList.push(newCard);
 						if(!newCard.isBackside()){
 							switch(newCard.rarity()){
@@ -362,7 +374,7 @@
 									break;
 							}
 						}
-						console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside()+", "+cardsList[i].isEmblem()+", "+cardsList[i].isBasicLand());
+						//console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside()+", "+cardsList[i].isEmblem()+", "+cardsList[i].isBasicLand());
 					});
 					
 					// Draw Card List
@@ -420,7 +432,7 @@
 					});
 					
 					$("#volumeSlider").on("input", function() {
-						console.log($("#volumeSlider").val());
+						//console.log($("#volumeSlider").val());
 						if($("#volumeSlider").val() > 0) {
 							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
 							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
@@ -457,7 +469,7 @@
 						else { //Special (1%)
 							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
 							while(summonedCard.isToken() || summonedCard.isEmblem()) {
-								console.log("Can't summon "+summonedCard.name()+". Rerolling.");
+								//console.log("Can't summon "+summonedCard.name()+". Rerolling.");
 								summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
 							}
 						}
@@ -647,6 +659,7 @@
 							window.scrollTo(0, 0);
 							$("#rulesDiv").addClass("hidden");
 							$("#summonDiv").addClass("hidden");
+							$("#draftDiv").addClass("hidden");
 							$("#cardListDiv").removeClass("hidden");
 						}
 					});
@@ -657,6 +670,7 @@
 							window.scrollTo(0, 0);
 							$("#summonDiv").addClass("hidden");
 							$("#cardListDiv").addClass("hidden");
+							$("#draftDiv").addClass("hidden");
 							$("#rulesDiv").removeClass("hidden");
 						}
 					});
@@ -667,8 +681,31 @@
 							window.scrollTo(0, 0);
 							$("#rulesDiv").addClass("hidden");
 							$("#cardListDiv").addClass("hidden");
+							$("#draftDiv").addClass("hidden");
 							$("#summonDiv").removeClass("hidden");
 						}
+					});
+					
+					$("#draftButton").click(function(){
+						if(!busy)
+						{
+							window.scrollTo(0, 0);
+							$("#rulesDiv").addClass("hidden");
+							$("#cardListDiv").addClass("hidden");
+							$("#summonDiv").addClass("hidden");
+							$("#draftDiv").removeClass("hidden");
+						}
+					});
+					
+					// DRAFTING
+					
+					// Host New Draft
+					$("draftHostButton").click(function(){
+						var selfPeer = new Peer();
+						
+						peer.on('open', function(id){
+							console.log("Peer ID:"+ id);
+						});
 					});
 					
 					
@@ -693,11 +730,21 @@
 										
 			
 			//Create Card Object Function
-			function card(nameInput,rarityInput,tokenInput,layoutInput,sideInput,typeInput){
+			function card(cardIdInput,nameInput,rarityInput,tokenInput,layoutInput,sideInput,typeInput){
 			
 				switch(arguments.length) // Function Overload Handling
 				{
 					case 0:
+						this.cardId = false;
+						this.name = "(Argument Error)";
+						this.rarity = "(Argument Error)";
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;		
+					case 1:
+						this.cardId = cardId;
 						this.name = "(Argument Error)";
 						this.rarity = "(Argument Error)";
 						this.isToken = false;
@@ -706,7 +753,8 @@
 						this.isEmblem = false;
 						this.isBasicLand = false;
 						break;
-					case 1:
+					case 2:
+						this.cardId = cardId;
 						this.name = name;
 						this.rarity = "(Argument Error)";
 						this.isToken = false;
@@ -715,7 +763,8 @@
 						this.isEmblem = false;
 						this.isBasicLand = false;
 						break;
-					case 2:
+					case 3:
+						this.cardId = cardId;
 						this.name = name;
 						this.rarity = rarity;
 						this.isToken = false;
@@ -724,7 +773,8 @@
 						this.isEmblem = false;
 						this.isBasicLand = false;
 						break;
-					case 3:
+					case 4:
+						this.cardId = cardId;
 						this.name = name;
 						this.rarity = rarity;
 						this.isToken = isToken;
@@ -733,7 +783,8 @@
 						this.isEmblem = false;
 						this.isBasicLand = false;
 						break;
-					case 4:
+					case 5:
+						this.cardId = cardId;
 						this.name = name;
 						this.rarity = rarity;
 						this.isToken = isToken;
@@ -742,7 +793,8 @@
 						this.isEmblem = false;
 						this.isBasicLand = false;
 						break;
-					case 5:
+					case 6:
+						this.cardId = cardId;
 						this.name = name;
 						this.rarity = rarity;
 						this.isToken = isToken;
@@ -751,7 +803,8 @@
 						this.isEmblem = false;
 						this.isBasicLand = false;
 						break;
-					case 6:
+					case 7:
+						this.cardId = cardId;
 						this.name = name;
 						this.rarity = rarity;
 						this.isToken = isToken;
@@ -764,7 +817,11 @@
 						console.log("Error constructing card object. Too many arguments.");
 						break;
 				}
-
+				
+				function cardId(){
+					return cardIdInput;
+				}
+				
 				function name(){
 					return nameInput;
 				}
@@ -817,7 +874,7 @@
 	</script>
 </head>
 <body>
-	<div id="header"><div id="cardListButton" class="button">Card List</div> <div id="rulesButton" class="button">FAQ</div> <div id="summoningButton" class="button">Summoning</div></div>
+	<div id="header"><div id="cardListButton" class="button">Card List</div> <div id="rulesButton" class="button">FAQ</div> <div id="summoningButton" class="button">Summoning</div><div id="draftButton" class="button">Draft</div></div>
 	<div id="summonDiv" class="hidden">
 		<audio id="BGM" src="Summoning.mp3"></audio><audio id="SFX" src="soundEffect.mp3"></audio>
 		<span id="volumeMute" style="font-size: 45px;"><img src="audioIcon.png" style="top: -15px;"/></span><input type="range" min="0" max="100" value="50" class="slider" id="volumeSlider"><br/>
@@ -917,6 +974,24 @@
 	</tr></table>
 	<strong></strong></div>
 	<div id="cardListDiv" class="hidden"></div>
+	<div id="draftDiv" class="hidden">
+		<div style="margin-left:20px; margin-right:20px; text-align: center;">
+			<div id="connectionInfo">
+				<br/>
+				<h1>Online Draft</h1>
+				Click "Host" to host a drafting session, or enter another host's ID and click "Connect" to join their session.<br/><br/>
+				<div id="draftHostButton" class="buttonSmall">Host</div><br/>
+				<input type="text" id="draftHostIDTextbox"><div id="draftConnectButton" class="buttonSmall">Connect</div><br/>
+			</div>
+			<div id="draftSettings" class="hidden">
+				<br/>
+				<div id="addCPUButton" class="buttonSmall">Add CPU</div>
+			</div>
+			<div id="draftSummonList"></div><br/>
+			<h2>Your Card Pool:</h2><br/>
+			<div id="draftCardPool"></div>			
+		</div>
+	</div>
 	<div id="footer"></div>
 	<div id="console"></div>
 </body>
