@@ -729,39 +729,23 @@
 							$("#draftBeforeConnected").html("");
 							$("#connectionInfo").prepend("<h1>Host ID: "+id+"</h1>Send this ID to other players to let them join your draft.<br/><br/>");
 							$("#connectedPlayersBox").removeClass("hidden");
-							connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/><strong>"+username+": </strong>"+id+"</div>";
+							connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/>"+username+"";
 							$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
 							$("#draftSettings").removeClass("hidden");
 						});
 						
 						var activeConnections = new Array();
-						selfPeer.on('connection', function(conn) {
+						selfPeer.on('connection', function(conn) { //When someone connects to your draft
 							activeConnections.push(conn);
-							conn.on('data', function(name) { //When someone connects to your draft
-								connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/><strong>"+name+": </strong>"+conn.peer+"</div>";
+							connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/>"+conn.metadata[0]+"";
+							conn.on('open', function(){
 								for(i=0; i<activeConnections.length;i++){
 									activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
 								}
 								$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+								loop();
 							});
 						});
-						
-						$(window).on('beforeunload', function(){
-							for(i=0; i<activeConnections.length;i++){
-								activeConnections[i].close();
-							}
-						});
-						
-						for(i=0; i<activeConnections.length;i++){
-							activeConnections[i].on('close', function() {
-								activeConnections.splice(0, i);
-								connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/><strong>"+name+": </strong>"+conn.peer+"</div>";
-								for(i=0; i<activeConnections.length;i++){
-									activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
-								}
-								$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
-							});
-						}
 					});
 					
 					// Join Existing Draft
@@ -776,12 +760,10 @@
 						
 						selfPeer.on('open', function(id){
 							console.log("Peer ID:"+ id);
-							var conn = selfPeer.connect($("#draftHostIDTextbox").val());
+							var conn = selfPeer.connect($("#draftHostIDTextbox").val(), {metadata: [username,'']});
 							$("#draftBeforeConnected").html("");
 							
 							conn.on('open', function() {
-								conn.send(username);
-								
 								conn.on('data', function(data){
 									if(Array.isArray(data))
 									{
@@ -803,13 +785,6 @@
 									
 								});
 								
-								window.addEventListener('beforeunload', (event) => {
-									event.preventDefault();
-									event.returnValue = function(){
-										alert("test");
-										conn.close();
-									};
-								});
 							});
 						});
 					});
