@@ -716,14 +716,14 @@
 						var selfPeer = new Peer();
 						var username = $("#draftNameTextbox").val();
 						var connectedPlayersBoxHTML = "<strong>Connected Players:</strong><br/><br/>";
+						var playerCount = 1;
+						var cpuCount = 0;
 						if(username == "")
 						{
 							username = "Player";
 						}
-						console.log("Okay");
 						
-						
-						
+						// selfPeer initalization
 						selfPeer.on('open', function(id){
 							console.log("Peer ID:"+ id);
 							$("#draftBeforeConnected").html("");
@@ -731,15 +731,37 @@
 							$("#connectedPlayersBox").removeClass("hidden");
 							connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/><strong>"+username+": </strong>"+id+"</div>";
 							$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+							$("#draftSettings").removeClass("hidden");
 						});
 						
+						var activeConnections = new Array();
 						selfPeer.on('connection', function(conn) {
-							conn.on('data', function(name) {
+							activeConnections.push(conn);
+							conn.on('data', function(name) { //When someone connects to your draft
 								connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/><strong>"+name+": </strong>"+conn.peer+"</div>";
-								conn.send(connectedPlayersBoxHTML);
+								for(i=0; i<activeConnections.length;i++){
+									activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
+								}
 								$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
 							});
 						});
+						
+						$(window).on('beforeunload', function(){
+							for(i=0; i<activeConnections.length;i++){
+								activeConnections[i].close();
+							}
+						});
+						
+						for(i=0; i<activeConnections.length;i++){
+							activeConnections[i].on('close', function() {
+								activeConnections.splice(0, i);
+								connectedPlayersBoxHTML = connectedPlayersBoxHTML + "<br/><strong>"+name+": </strong>"+conn.peer+"</div>";
+								for(i=0; i<activeConnections.length;i++){
+									activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
+								}
+								$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+							});
+						}
 					});
 					
 					// Join Existing Draft
@@ -751,7 +773,6 @@
 						{
 							username = "Player";
 						}
-						console.log("Okay");
 						
 						selfPeer.on('open', function(id){
 							console.log("Peer ID:"+ id);
@@ -761,10 +782,33 @@
 							conn.on('open', function() {
 								conn.send(username);
 								
-								conn.on('data', function(receiveConnectionBoxHTML){
-									$("#connectedPlayersBox").removeClass("hidden");
-									connectedPlayersBoxHTML = receiveConnectionBoxHTML;
-									$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+								conn.on('data', function(data){
+									if(Array.isArray(data))
+									{
+										switch(data[0]){
+											case 'consoleUpdate':
+												$("#connectedPlayersBox").removeClass("hidden");
+												connectedPlayersBoxHTML = data[1];
+												$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+												break;
+											default:
+												console.log("Error: Host sent invalid data.");
+												break;
+										}
+									}
+									else
+									{
+										console.log("Error: Host sent invalid data.");
+									}
+									
+								});
+								
+								window.addEventListener('beforeunload', (event) => {
+									event.preventDefault();
+									event.returnValue = function(){
+										alert("test");
+										conn.close();
+									};
 								});
 							});
 						});
@@ -1042,10 +1086,10 @@
 				<div id="draftBeforeConnected">
 					<br/>
 					<h1>Online Draft</h1>
-					<strong>Name: </strong><input type="text" id="draftNameTextbox" style="width:250px;" maxlength="16"><br/>
+					<strong>Username: </strong><input type="text" id="draftNameTextbox" style="width:240px;" maxlength="16"><br/>
 					Click "Host" to host a drafting session, or enter another host's ID and click "Connect" to join their session.<br/><br/>
 					<div id="draftHostButton" class="buttonSmall">Host</div><br/>
-					<strong>ID:</strong><input type="text" id="draftHostIDTextbox"><div id="draftConnectButton" class="buttonSmall">Connect</div><br/>
+					<strong>Host ID: </strong><input type="text" id="draftHostIDTextbox"><div id="draftConnectButton" class="buttonSmall">Connect</div><br/>
 				</div>
 				<div id="connectedPlayersBox" class="hidden"></div>
 			</div>
