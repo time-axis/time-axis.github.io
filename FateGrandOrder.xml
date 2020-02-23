@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (v0.9.4)</longname>
+  <longname>Fate Grand Order (v0.9.5)</longname>
  </set>
 </sets>
 <cards>
@@ -620,6 +620,20 @@ Destroy all creatures.</text>
 	</prop>
 </card>
 <card>
+	<name>The Old Man of the Mountain (Emblem)</name>
+	<text>Whenever you’re dealt damage, you lose the game.</text>
+	<tablerow>1</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Emblem</type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color></color>
+	</prop>
+</card>
+<card>
 	<name>Leonardo Bistario Harwey</name>
 	<text>White servants you control get +1/+1 and have vigilance.</text>
 	<tablerow>2</tablerow>
@@ -1195,7 +1209,7 @@ T: You gain 1 life, then choose one —
 	<name>Mata Hari Dancer Informant</name>
 	<text>Mata Hari, Dancer Informant enters the battlefield under the control of an opponent of your choice.
 You play with your hand revealed.
-When Mata Hari, Dancer Informant dies, sacrifice all male creatures you control.</text>
+When Mata Hari, Dancer Informant dies, tap all male creatures you control. They don’t untap during your next untap step.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1385,9 +1399,8 @@ If a source would deal damage to Anne Bonny &amp; Mary Read, it deals double tha
 </card>
 <card>
 	<name>Azrael Harbinger of Death</name>
-	<text>Cumulative upkeep B
-Remove thirteen age counters from Azrael, Harbinger of Death, then sacrifice it: Target player loses the game.
-Sacrifice Azrael, Harbinger of Death if you don’t control a creature that shares a True Name with it.</text>
+	<text>As an additional cost to cast Azrael, Harbinger of Death, remove four loyalty counters from a planeswalker you control that shares a True Name with it.
+Whenever a creatures dies for the first time each turn, you may put a loyalty counter on target planeswalker you control that shares a True Name with Azrael, Harbinger of Death.</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -1583,8 +1596,9 @@ Choose a True Name, then search target opponent’s library for all cards with t
 </card>
 <card>
 	<name>Hassan of Serenity</name>
-	<text>Whenever Hassan of Serenity deals damage to a creature, that creature gains “Cumulative upkeep 1.”
-T: Hassan of Serenity deals 1 damage to target creature.</text>
+	<text>Cumulative upkeep—Pay 1 life
+Whenever Hassan of Serenity deals damage to a creature, that creature gains “Cumulative upkeep 1.”
+T: Hassan of Serenity deals 1 damage to target tapped creature.</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -1600,7 +1614,7 @@ T: Hassan of Serenity deals 1 damage to target creature.</text>
 <card>
 	<name>Hassan of the Cursed Arm</name>
 	<text>Mountainguide (As long as defending player controls a mountain, this creature can’t be blocked except by other creatures with mountainguide.)
-T: Hassan of the Cursed Arm deals 2 damage to any target.</text>
+T: Hassan of the Cursed Arm deals 2 damage to target creature.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1615,8 +1629,7 @@ T: Hassan of the Cursed Arm deals 2 damage to any target.</text>
 </card>
 <card>
 	<name>Hundred Faced Hassan</name>
-	<text>(Hundred Faced Hassan is both male and female.)
-When Hundred Faced Hassan enters the battlefield, you may pay 1B. If you do, create a token that’s a copy of it.
+	<text>When Hundred Faced Hassan enters the battlefield, you may pay 1B. If you do, create a token that’s a copy of it.
 A deck can have any number of cards named Hundred Faced Hassan.</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
@@ -1756,19 +1769,18 @@ T: Destroy target tapped saber class creature.</text>
 </card>
 <card>
 	<name>The Old Man of the Mountain</name>
-	<text>Deathtouch
-1BB, Reveal The Old Man of the Mountain from your hand: Destroy target creature. Activate this ability only during your turn.
-When The Old Man of the Mountain deals combat damage to an opponent, that player loses the game.</text>
-	<tablerow>2</tablerow>
+	<text>[+3]: Each player sacrifices a creature.
+[-4]: Target creature loses indestructible until end of turn, then destroy it.
+[-13]: Target player gets an emblem with “Whenever you’re dealt damage, you lose the game.”</text>
+	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Creature - Servant </type>
+		<type>Legendary Planeswalker - Hassan </type>
 		<manacost>5BB</manacost>
 		<cmc>7</cmc>
 		<color>B</color>
-	<pt>7/7</pt>
 	</prop>
 </card>
 <card>
@@ -1887,7 +1899,7 @@ Creatures you control with the True Name Medea get +1/+1 for each Food you contr
 </card>
 <card>
 	<name>Zabaniya Delusional Heartbeat</name>
-	<text>As an additional cost to cast Zabaniya: Delusional Heartbeat, tap a creature you control that shares a True Name with it.
+	<text>As an additional cost to cast Zabaniya: Delusional Heartbeat, tap a male creature you control that shares a True Name with it.
 Destroy target creature without flying.</text>
 	<tablerow>3</tablerow>
 	<set rarity="common">FGO</set>
@@ -1895,16 +1907,16 @@ Destroy target creature without flying.</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Sorcery - Phantasm </type>
-		<manacost>B</manacost>
-		<cmc>1</cmc>
+		<manacost>1B</manacost>
+		<cmc>2</cmc>
 		<color>B</color>
 	</prop>
 </card>
 <card>
 	<name>Zabaniya Delusional Poison Body</name>
 	<text>Enchant player
-As an additional cost to cast Zabaniya: Delusional Poison Body, tap a creature you control that shares a True Name with it.
-Cumulative upkeep—Enchanted player loses 1 life.</text>
+Cumulative upkeep—Enchanted player loses 1 life.
+Sacrifice Zabaniya: Delusional Poison Body if you don’t control a female creature that shares a True Name with it.</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -2970,7 +2982,7 @@ Other creatures you control get +1/+1.</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>2RWU</manacost>
+		<manacost>2URW</manacost>
 		<cmc>5</cmc>
 		<color>M</color>
 	<pt></pt>
@@ -3216,7 +3228,7 @@ WB, T: Prevent all combat damage that would be dealt to Cleopatra, the Last Phar
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>1BGW</manacost>
+		<manacost>1WBG</manacost>
 		<cmc>4</cmc>
 		<color>M</color>
 	<pt>4/3</pt>
@@ -3250,7 +3262,7 @@ T: Put target creature card from your graveyard onto the battlefield under your 
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>1BGW</manacost>
+		<manacost>1WBG</manacost>
 		<cmc>4</cmc>
 		<color>M</color>
 	<pt>4/4</pt>
@@ -3267,7 +3279,7 @@ At the beginning of each upkeep, create a 4/4 red, white, and blue Construct art
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>2RWU</manacost>
+		<manacost>2URW</manacost>
 		<cmc>5</cmc>
 		<color>M</color>
 	<pt>3/3</pt>
@@ -3483,7 +3495,7 @@ You gain 1 life for each permanent destroyed this way.</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Sorcery - Phantasm </type>
-		<manacost>3WBR</manacost>
+		<manacost>3RWB</manacost>
 		<cmc>6</cmc>
 		<color>M</color>
 	</prop>
@@ -3547,7 +3559,7 @@ Discard an artifact card: Gilgamesh, King of Heroes deals damage to any target e
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>2RWU</manacost>
+		<manacost>2URW</manacost>
 		<cmc>5</cmc>
 		<color>M</color>
 	<pt>4/4</pt>
@@ -3674,7 +3686,7 @@ Sacrifice Irisviel, Lesser Holy Grail: Search your library for an Equipment card
 	<name>Ishtar Goddess of Venus</name>
 	<text>Flying, haste
 Male creatures you control get +2/+2.
-T: Add WBR.
+T: Add RWB.
 T: Exile target land card from an opponent’s graveyard. If you do, Ishtar, Goddess of Venus deals 8 damage to any target.</text>
 	<tablerow>2</tablerow>
 	<set rarity="mythic rare">FGO</set>
@@ -3682,7 +3694,7 @@ T: Exile target land card from an opponent’s graveyard. If you do, Ishtar, God
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - God Servant </type>
-		<manacost>4WBR</manacost>
+		<manacost>4RWB</manacost>
 		<cmc>7</cmc>
 		<color>M</color>
 	<pt>8/7</pt>
@@ -3919,7 +3931,7 @@ Melammu Dingir deals damage divided as you choose to any number of targets equal
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Instant - Phantasm </type>
-		<manacost>1RWU</manacost>
+		<manacost>1URW</manacost>
 		<cmc>4</cmc>
 		<color>M</color>
 	</prop>
@@ -4031,7 +4043,7 @@ T: Target land you control becomes a 5/5 Sphinx creature with flying. It’s sti
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>2RWU</manacost>
+		<manacost>2URW</manacost>
 		<cmc>5</cmc>
 		<color>M</color>
 	<pt>5/5</pt>
@@ -4178,7 +4190,7 @@ Sacrifice Ramesseum Tentyris if you don’t control a creature that shares a Tru
 		<layout>normal</layout>
 		<side>front</side>
 		<type>World Enchantment - Phantasm </type>
-		<manacost>4RWU</manacost>
+		<manacost>4URW</manacost>
 		<cmc>7</cmc>
 		<color>M</color>
 	</prop>
@@ -4357,7 +4369,7 @@ Destroy all enchantments target player controls. That player may return any numb
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Instant - Phantasm </type>
-		<manacost>3RWU</manacost>
+		<manacost>3URW</manacost>
 		<cmc>6</cmc>
 		<color>M</color>
 	</prop>
@@ -4423,7 +4435,7 @@ Whenever another player casts a spell, copy that spell unless that player has Wo
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Enchantment - Phantasm </type>
-		<manacost>RWU</manacost>
+		<manacost>URW</manacost>
 		<cmc>3</cmc>
 		<color>M</color>
 	</prop>
