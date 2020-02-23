@@ -698,6 +698,7 @@
 						}
 						tempHtml = tempHtml + '</div><br/><br/>';
 						$("#afterSummonList").append(tempHtml);
+						console.log(cardListToString(summonList));
 						busy = false;
 					});
 					
@@ -818,7 +819,7 @@
 						
 						function writePlayerList() {
 							var outputString = "<strong>Connected Players:</strong><br/>" + "<br/><strong>1. </strong>"+username+"";
-							for(i=0; i < 7; i++) {
+							for(i=0; i < 4; i++) {
 								if (activeConnections.length > i) {
 									outputString = outputString + "<br/><strong>"+ (i+2) + ". </strong>"+activeConnections[i].metadata[0]+"";
 								} else {
@@ -874,7 +875,7 @@
 								//console.log(playerList[i][1]);
 							}
 							if($("#addCPUCheckbox").get(0).checked) { // Add CPU players if enabled
-								for (i=0; i < (8-(activeConnections.length + 1)); i++) {
+								for (i=0; i < (5-(activeConnections.length + 1)); i++) {
 									playerList.push(["CPU"+(playerList.length - activeConnections.length),quickSummon10(),"CPU",false]);
 								}
 							}
@@ -1077,12 +1078,14 @@
 									}
 									else {
 										// end draft function
-										$("#draftSummonList").html("<br/><br/><h3>Draft finished. Exporting in cockatrice deck format will be coming soon.  Refresh the page to draft again.</h3>");
+										$("#draftSummonList").html("<br/><br/><h3>Draft finished. Refresh the page to draft again.</h3>");
 										activeConnections.forEach(function(item){
 											item.send(['endDraft']);
 										});
 										$("#connectionInfo").addClass("hidden");
 										$("#connectedPlayersBox").addClass("hidden");
+										$("#draftCardPool").append('<div class=\"flexboxStyle\">' + cardListToString(yourCardPool, true) + '</div>');
+										
 									}
 									
 								} else {
@@ -1100,12 +1103,13 @@
 									}
 									else {
 										// end draft function
-										$("#draftSummonList").html("<br/><br/><h3>Draft finished. Exporting in cockatrice deck format will be coming soon.  Refresh the page to draft again.</h3>");
+										$("#draftSummonList").html("<br/><br/><h3>Draft finished. Refresh the page to draft again.</h3>");
 										activeConnections.forEach(function(item){
 											item.send(['endDraft']);
 										});
 										$("#connectionInfo").addClass("hidden");
 										$("#connectedPlayersBox").addClass("hidden");
+										$("#draftCardPool").append('<div class=\"flexboxStyle\">' + cardListToString(yourCardPool, true) + '</div>');
 									}
 									
 								}
@@ -1121,30 +1125,35 @@
 						
 						
 						selfPeer.on('connection', function(conn) { //When someone connects to your draft
-							activeConnections.push(conn);
-							connectedPlayersBoxHTML = writePlayerList();
-							conn.on('open', function(){
-								for(i=0; i < activeConnections.length;i++){
-									activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
-								}
-								$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
-								
-								(function checkConnections() {
-									for(i=0; i < activeConnections.length; i++) {
-										if(!activeConnections[i]._open) {
-											activeConnections.splice(i,1);
-											console.log("Connection "+ i +" lost.");
-											connectedPlayersBoxHTML = writePlayerList();
-											for(j=0; j < activeConnections.length;j++){
-												activeConnections[j].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
-											}
-											$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
-											
-										}
+							if (activeConnections.length < 4) {
+								activeConnections.push(conn);
+								connectedPlayersBoxHTML = writePlayerList();
+								conn.on('open', function(){
+									for(i=0; i < activeConnections.length;i++){
+										activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
 									}
-									setTimeout(checkConnections, 15000);
-								})();
-							});
+									$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+									
+									(function checkConnections() {
+										for(i=0; i < activeConnections.length; i++) {
+											if(!activeConnections[i]._open) {
+												activeConnections.splice(i,1);
+												console.log("Connection "+ i +" lost.");
+												connectedPlayersBoxHTML = writePlayerList();
+												for(j=0; j < activeConnections.length;j++){
+													activeConnections[j].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
+												}
+												$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+												
+											}
+										}
+										setTimeout(checkConnections, 15000);
+									})();
+								});
+							}
+							else {
+								conn.close();
+							}
 						});
 					});
 					
@@ -1226,10 +1235,11 @@
 												
 												break;
 											case 'endDraft':
-												$("#draftSummonList").html("<br/><br/><h3>Draft finished. Exporting in cockatrice deck format will be coming soon.  Refresh the page to draft again.</h3>");
+												$("#draftSummonList").html("<br/><br/><h3>Draft finished.  Refresh the page to draft again.</h3>");
 												conn.close();
 												$("#connectedPlayersBox").addClass("hidden");
 												$("#connectionInfo").addClass("hidden");
+												$("#draftCardPool").append('<div class=\"flexboxStyle\">' + cardListToString(yourCardPool, true) + '</div>');
 												break;
 											default:
 												console.log("Error: Host sent invalid data.");
@@ -1298,6 +1308,50 @@
 				return output;
 			}
 			
+			//Convert Array of Cards to String
+			function cardListToString(listInput, htmlFormat = false){
+				var newCardList = listInput.slice();
+				var tempName = "";
+				var tempNumber = 1;
+				var tempIndex = 0;
+				var numberList = new Array;
+				var outputList = "";
+				var okayToGo = true;
+				
+				for(i = 0; i < newCardList.length; i++) {
+					tempNumber = 1;
+					tempName = newCardList[i].name();
+					okayToGo = true;
+					while(okayToGo){
+						tempIndex = newCardList.findIndex(checkDuplicateName, i);
+						//console.log(tempIndex);
+						if (tempIndex != -1) {
+							tempNumber++;
+							newCardList.splice(tempIndex, 1);
+						} else {
+							okayToGo = false;
+						}
+					}
+					numberList.push(tempNumber);
+				}
+				
+				for(i = 0; i < newCardList.length; i++) {
+					if (htmlFormat) {
+						outputList = outputList + numberList[i] + " " + newCardList[i].name() + "<br/>";
+					} else {
+						outputList = outputList + numberList[i] + " " + newCardList[i].name() + "\n";
+					}
+				}
+				
+				return outputList;
+				
+				function checkDuplicateName(card, index) {
+					//console.log(index);
+					var mainIndex = this;
+					return (card.name() === tempName && index != mainIndex);
+					
+				}
+			}
 			
 			//Create Card Object Function
 			function card(cardIdInput,nameInput,rarityInput,tokenInput,layoutInput,sideInput,typeInput){
@@ -1567,7 +1621,7 @@
 			<br/><br/>
 			<h2>Your Card Pool: <span id="cardPoolNumber">0 Cards</span></h2><br/>
 			<div class="draftCardsDiv">
-				<div id="draftCardPool" class="flexboxStyle"></div>		
+				<div id="draftCardPool"></div>		
 			</div>
 		</div>
 	</div>
