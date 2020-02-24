@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (v0.9.5)</longname>
+  <longname>Fate Grand Order (v0.9.6)</longname>
  </set>
 </sets>
 <cards>
@@ -237,19 +237,19 @@ Artoria, Lion King of Camelot is rider class in addition to its other classes.
 	</prop>
 </card>
 <card>
-	<name>Prelatis Horror (Token)</name>
-	<text>Lifelink, trample</text>
+	<name>Insect (Token)</name>
+	<text>Sacrifice this creature: Add BB. You lose 2 life.</text>
 	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Token Creature - Demon Horror </type>
+		<type>Token Creature - Insect </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>B</color>
-	<pt>*/*</pt>
+	<pt>2/1</pt>
 	</prop>
 </card>
 <card>
@@ -270,19 +270,19 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 	</prop>
 </card>
 <card>
-	<name>Skeleton Warrior (Token)</name>
-	<text></text>
+	<name>Prelatis Horror (Token)</name>
+	<text>Lifelink, trample</text>
 	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Creature - Skeleton Warrior </type>
+		<type>Legendary Token Creature - Demon Horror </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>B</color>
-	<pt>1/1</pt>
+	<pt>*/*</pt>
 	</prop>
 </card>
 <card>
@@ -302,15 +302,15 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 	</prop>
 </card>
 <card>
-	<name>Spirit (Token)</name>
-	<text>Flying</text>
+	<name>Skeleton Warrior (Token)</name>
+	<text></text>
 	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Creature - Spirit </type>
+		<type>Token Creature - Skeleton Warrior </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>B</color>
@@ -334,6 +334,38 @@ Sacrifice Dragonslayer Steed: Creatures your opponents control can’t attack th
 	</prop>
 </card>
 <card>
+	<name>Spirit (Token)</name>
+	<text>Flying</text>
+	<token>1</token>
+	<tablerow>2</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Token Creature - Spirit </type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color>B</color>
+	<pt>1/1</pt>
+	</prop>
+</card>
+<card>
+	<name>Dun Stallion</name>
+	<text>Whenever Dun Stallion blocks, prevent the next 1 damage that would be dealt to it.
+T: Target creature you control gets +2/+2 until end of turn.</text>
+	<tablerow>2</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Creature - Horse </type>
+		<manacost>WW</manacost>
+		<cmc>2</cmc>
+		<color>W</color>
+	<pt>2/2</pt>
+	</prop>
+</card>
+<card>
 	<name>Artemis (Token)</name>
 	<text>Flying, indestructible
 Sacrifice this creature if you don’t control a creature that shares a True Name with it.</text>
@@ -351,16 +383,15 @@ Sacrifice this creature if you don’t control a creature that shares a True Nam
 	</prop>
 </card>
 <card>
-	<name>Dun Stallion</name>
-	<text>Whenever Dun Stallion blocks, prevent the next 1 damage that would be dealt to it.
-T: Target creature you control gets +2/+2 until end of turn.</text>
+	<name>Fae Steed</name>
+	<text>Whenever Fae Steed attacks, you may have all combat damage that would be dealt to target attacking creature this combat be dealt to Fae Steed instead.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Creature - Horse </type>
-		<manacost>WW</manacost>
+		<type>Creature - Faerie Horse </type>
+		<manacost>1W</manacost>
 		<cmc>2</cmc>
 		<color>W</color>
 	<pt>2/2</pt>
@@ -383,18 +414,18 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 	</prop>
 </card>
 <card>
-	<name>Fae Steed</name>
-	<text>Whenever Fae Steed attacks, you may have all combat damage that would be dealt to target attacking creature this combat be dealt to Fae Steed instead.</text>
-	<tablerow>2</tablerow>
-	<set rarity="common">FGO</set>
+	<name>Failnaught</name>
+	<text>As an additional cost to cast Failnaught, tap a creature you control that shares a True Name with it.
+Choose a creature. The chosen creature loses all abilities until end of turn, then if R was spent to cast Failnaught, it deals 4 damage to that creature. This damage can’t be prevented.</text>
+	<tablerow>3</tablerow>
+	<set rarity="rare">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Creature - Faerie Horse </type>
-		<manacost>1W</manacost>
-		<cmc>2</cmc>
+		<type>Instant - Phantasm </type>
+		<manacost>2W</manacost>
+		<cmc>3</cmc>
 		<color>W</color>
-	<pt>2/2</pt>
 	</prop>
 </card>
 <card>
@@ -411,37 +442,6 @@ T: Target creature you control gets +2/+2 until end of turn.</text>
 		<cmc>0</cmc>
 		<color>G</color>
 	<pt>1/1</pt>
-	</prop>
-</card>
-<card>
-	<name>Failnaught</name>
-	<text>As an additional cost to cast Failnaught, tap a creature you control that shares a True Name with it.
-Choose a creature. The chosen creature loses all abilities until end of turn, then if R was spent to cast Failnaught, it deals 4 damage to that creature. This damage can’t be prevented.</text>
-	<tablerow>3</tablerow>
-	<set rarity="rare">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Instant - Phantasm </type>
-		<manacost>2W</manacost>
-		<cmc>3</cmc>
-		<color>W</color>
-	</prop>
-</card>
-<card>
-	<name>Ox (Token)</name>
-	<text>Trample</text>
-	<token>1</token>
-	<tablerow>2</tablerow>
-	<set rarity="special">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Token Creature - Ox </type>
-		<manacost></manacost>
-		<cmc>0</cmc>
-		<color>M</color>
-	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -462,19 +462,19 @@ T: Creatures you control with the True Name Jeanne D’Arc get +4/+4 and can blo
 	</prop>
 </card>
 <card>
-	<name>Quetzalcoatlus (Token)</name>
-	<text>Flying, deathtouch</text>
+	<name>Ox (Token)</name>
+	<text>Trample</text>
 	<token>1</token>
 	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Token Creature - Dinosaur Snake </type>
+		<type>Token Creature - Ox </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color>M</color>
-	<pt>4/4</pt>
+	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -494,18 +494,19 @@ Enchanted creature loses all abilities and can’t attack or block.</text>
 	</prop>
 </card>
 <card>
-	<name>Food (Token)</name>
-	<text>2, T, Sacrifice this artifact: You gain 3 life.</text>
+	<name>Quetzalcoatlus (Token)</name>
+	<text>Flying, deathtouch</text>
 	<token>1</token>
-	<tablerow>1</tablerow>
+	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact - Food </type>
+		<type>Legendary Token Creature - Dinosaur Snake </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
-		<color></color>
+		<color>M</color>
+	<pt>4/4</pt>
 	</prop>
 </card>
 <card>
@@ -525,15 +526,15 @@ Whenever enchanted creature attacks, you gain 3 life.</text>
 	</prop>
 </card>
 <card>
-	<name>Philosophers Stone (Token)</name>
-	<text>T: Add two mana of any one color.</text>
+	<name>Food (Token)</name>
+	<text>2, T, Sacrifice this artifact: You gain 3 life.</text>
 	<token>1</token>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact</type>
+		<type>Token Artifact - Food </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
@@ -557,19 +558,18 @@ When Ionioi Hetairoi leaves the battlefield, shuffle all Servant creatures you c
 	</prop>
 </card>
 <card>
-	<name>Wall (Token)</name>
-	<text>Defender</text>
+	<name>Philosophers Stone (Token)</name>
+	<text>T: Add two mana of any one color.</text>
 	<token>1</token>
-	<tablerow>2</tablerow>
+	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact Creature - Wall </type>
+		<type>Token Artifact</type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
-	<pt>0/4</pt>
 	</prop>
 </card>
 <card>
@@ -589,20 +589,20 @@ If a Servant you don’t control would deal damage to a permanent or player, it 
 	</prop>
 </card>
 <card>
-	<name>Merlin Magus of Flowers (Emblem)</name>
-	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with the True Name Merlin.</text>
-	<tablerow>1</tablerow>
+	<name>Wall (Token)</name>
+	<text>Defender</text>
+	<token>1</token>
+	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Emblem</type>
+		<type>Token Artifact Creature - Wall </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
+	<pt>0/4</pt>
 	</prop>
-	<related>Merlin Magus of Flowers (Emblem)</related>
-	<related>Merlin Manifested (Token)</related>
 </card>
 <card>
 	<name>La Pucelle Crimson Holy Virgin</name>
@@ -620,8 +620,8 @@ Destroy all creatures.</text>
 	</prop>
 </card>
 <card>
-	<name>The Old Man of the Mountain (Emblem)</name>
-	<text>Whenever you’re dealt damage, you lose the game.</text>
+	<name>Merlin Magus of Flowers (Emblem)</name>
+	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with the True Name Merlin.</text>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -632,6 +632,8 @@ Destroy all creatures.</text>
 		<cmc>0</cmc>
 		<color></color>
 	</prop>
+	<related>Merlin Magus of Flowers (Emblem)</related>
+	<related>Merlin Manifested (Token)</related>
 </card>
 <card>
 	<name>Leonardo Bistario Harwey</name>
@@ -646,6 +648,20 @@ Destroy all creatures.</text>
 		<cmc>2</cmc>
 		<color>W</color>
 	<pt>1/1</pt>
+	</prop>
+</card>
+<card>
+	<name>The Old Man of the Mountain (Emblem)</name>
+	<text>Whenever you’re dealt damage, you lose the game.</text>
+	<tablerow>1</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Emblem</type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color></color>
 	</prop>
 </card>
 <card>
@@ -1030,6 +1046,22 @@ Enchanted creature loses all abilities and is an artifact named Stone.</text>
 	</prop>
 </card>
 <card>
+	<name>Celestial Inverted Moon</name>
+	<text>Enchant creature
+Whenever a creature other than enchanted creature dies, return it to its owner’s hand.
+At the beginning of each end step, remove all age counters from all permanents and each player shuffles their graveyard into their library.</text>
+	<tablerow>1</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Enchantment - Aura </type>
+		<manacost>3UU</manacost>
+		<cmc>5</cmc>
+		<color>U</color>
+	</prop>
+</card>
+<card>
 	<name>Crystal Dress</name>
 	<text>Enchant creature you control that shares a True Name with Crystal Dress.
 Creatures your opponents control get -4/-0.
@@ -1078,6 +1110,22 @@ Discard a card: Mister Hyde gets +1/+0 until end of turn.</text>
 	<pt>5/5</pt>
 	</prop>
 <related attach="attach">Doctor Jekyll</related>
+</card>
+<card>
+	<name>Einzbern Banquet</name>
+	<text>Each player creates X Food tokens, where X is the number of creatures they control.
+Tap all creatures. Those creatures don’t untap during their controller’s next untap step.</text>
+	<tablerow>3</tablerow>
+	<set rarity="mythic rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant</type>
+		<manacost>2UU</manacost>
+		<cmc>4</cmc>
+		<color>U</color>
+	</prop>
+	<related count="x">Food (Token)</related>
 </card>
 <card>
 	<name>First Folio</name>
@@ -1365,6 +1413,22 @@ Put an age counter on each permanent that has an age counter on it.</text>
 		<cmc>3</cmc>
 		<color>U</color>
 	<pt>2/2</pt>
+	</prop>
+</card>
+<card>
+	<name>Waver Velvet Upstart Mage</name>
+	<text>T: Servants you control get your choice of Forestguide, Islandguide, or Mountainguide until end of turn.
+2U, T: Counter target spell that targets a Servant you control.</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Human Master </type>
+		<manacost>1U</manacost>
+		<cmc>2</cmc>
+		<color>U</color>
+	<pt>1/1</pt>
 	</prop>
 </card>
 <card>
@@ -1675,6 +1739,23 @@ Destroy all creatures you don’t control. If the tapped creature was a vampire,
 	</prop>
 </card>
 <card>
+	<name>Kotomine Spiritual Healer</name>
+	<text>T: Target player gains 3 life and discards a card at random.
+1B, Sacrifice Kotomine, Spiritual Healer: Gain control of target tapped Servant.
+Whenever a Servant card is discarded, you may pay 3B. If you do, put that card onto the battlefield tapped under its owner’s control.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Human Master </type>
+		<manacost>2B</manacost>
+		<cmc>3</cmc>
+		<color>B</color>
+	<pt>2/3</pt>
+	</prop>
+</card>
+<card>
 	<name>Kuzuki Souichirou</name>
 	<text>First strike
 When Kuzuki Souichirou enters the battlefield, you may return a servant creature card from your graveyard to the battlefield.</text>
@@ -1929,9 +2010,26 @@ Sacrifice Zabaniya: Delusional Poison Body if you don’t control a female creat
 	</prop>
 </card>
 <card>
+	<name>Zouken Twisted Leech</name>
+	<text>Whenever Zouken, Twisted Leech dies, create two 2/1 black Insect creature tokens with “Sacrifice this creature: Add BB. You lose 2 life.”
+BB, Sacrifice a Servant: Return Zouken, Twisted Leech from your graveyard to the battlefield tapped.</text>
+	<tablerow>2</tablerow>
+	<set rarity="rare">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Insect Master </type>
+		<manacost>3BB</manacost>
+		<cmc>5</cmc>
+		<color>B</color>
+	<pt>3/2</pt>
+	</prop>
+	<related count="2">Insect (Token)</related>
+</card>
+<card>
 	<name>Aestus Domus Aurea</name>
 	<text>Cumulative upkeep 1
-Whenever a creature you control attacks, if it’s the first combat phase of the turn, untap all attacking creatures and after this phase, there is an additional combat phase.
+Whenever one or more creatures you control attack, if it’s the first combat phase of the turn, untap all attacking creatures and after this phase, there is an additional combat phase.
 Sacrifice Aestus Domus Aurea if you don’t control a creature that shares a True Name with it.</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
@@ -2022,7 +2120,7 @@ When Caligula, Emperor of Death enters the battlefield, you may search your libr
 		<manacost>1RR</manacost>
 		<cmc>3</cmc>
 		<color>R</color>
-	<pt></pt>
+	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -2071,6 +2169,21 @@ Whenever a creature blocks or is blocked by Eric, Bloodaxe King, that creature g
 		<cmc>1</cmc>
 		<color>R</color>
 	<pt>2/1</pt>
+	</prop>
+</card>
+<card>
+	<name>Flame Barrier</name>
+	<text>Flame Barrier deals 2 damage to any target.
+If it’s not your turn, Servants you control get +3/+0 until end of turn.</text>
+	<tablerow>3</tablerow>
+	<set rarity="common">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Instant</type>
+		<manacost>1R</manacost>
+		<cmc>2</cmc>
+		<color>R</color>
 	</prop>
 </card>
 <card>
@@ -2784,7 +2897,7 @@ Damage dealt by Otherworldly Hippogriff can’t be prevented.</text>
 </card>
 <card>
 	<name>Sanzang Traveling Sage</name>
-	<text>Protection from black and from red.
+	<text>Protection from black and from red
 1G: Target creature must block Sanzang, Traveling Sage this turn if able. Prevent the next 1 damage that would be dealt by that creature this turn.</text>
 	<tablerow>2</tablerow>
 	<set rarity="mythic rare">FGO</set>
@@ -2985,7 +3098,7 @@ Other creatures you control get +1/+1.</text>
 		<manacost>2URW</manacost>
 		<cmc>5</cmc>
 		<color>M</color>
-	<pt></pt>
+	<pt>3/4</pt>
 	</prop>
 </card>
 <card>
@@ -3753,7 +3866,7 @@ Your opponents play with their hands revealed.
 </card>
 <card>
 	<name>Kayneth El-Melloi Archibald</name>
-	<text>Servant spells you cast cost 2 less to cast.
+	<text>Servant spells you cast cost 1 less to cast.
 1U: Return target Servant you control to its owner’s hand, then draw a card.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
@@ -5973,6 +6086,7 @@ Soulequip 8</text>
 	<name>Wicker Man</name>
 	<text>As an additional cost to cast Wicker Man, tap a caster class creature you control that shares a True Name with it.
 Cumulative upkeep 1
+Protection from equipment
 Trample, berserk (This creature must attack if able and must be blocked if able.)</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
@@ -6202,17 +6316,18 @@ Creatures with islandguide can be blocked as though they didn’t have islandgui
 </card>
 <card>
 	<name>La Grâce Fille Noël</name>
-	<text>Create X Food tokens, where X is the number of creatures you control that share a True Name with La Grâce Fille Noël.</text>
+	<text>Create a Food token, then create X Food tokens, where X is the number of creatures you control that share a True Name with La Grâce Fille Noël.</text>
 	<tablerow>3</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Sorcery - Phantasm </type>
-		<manacost>W</manacost>
-		<cmc>1</cmc>
+		<manacost>1W</manacost>
+		<cmc>2</cmc>
 		<color>W</color>
 	</prop>
+	<related>Food (Token)</related>
 	<related count="x">Food (Token)</related>
 </card>
 <card>

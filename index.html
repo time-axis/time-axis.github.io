@@ -271,6 +271,16 @@
 			z-index: 999;
 		}
 		
+		.changelogBox {
+			background-color: #6373A0;
+			border-radius: 15px;
+			padding: 15px;
+			border: 3px;
+			border-color: #536390;
+			border-style: solid;
+			text-align: left;
+		}
+		
 		.flexboxStyle {
 			background-color: #6373A0;
 			border-radius: 15px;
@@ -465,11 +475,11 @@
 					
 					tempHtml = "";
 					
-					tempHtml = tempHtml + '<h1>Common (55%)</h1><br/><div class=\"flexboxStyle\">';
+					tempHtml = tempHtml + '<h1>Common (55% Rate)</h1><br/><div class=\"flexboxStyle\">';
 					for(let i = 0; i < commonList.length; i++){
 						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(commonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
 					}
-					tempHtml = tempHtml + "</div><br/><br/><br/><h1>Uncommon (33%)</h1><br/><div class=\"flexboxStyle\">";
+					tempHtml = tempHtml + "</div><br/><br/><br/><h1>Uncommon (33% Rate)</h1><br/><div class=\"flexboxStyle\">";
 					for(let i = 0; i < uncommonList.length; i++){
 						//console.log(uncommonList[i].isTransform());
 						if (!uncommonList[i].isTransform()) {
@@ -478,15 +488,15 @@
 							tempHtml = tempHtml + "<span class=\"transformThumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"transform img-thumbnail\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
 						}
 					}
-					tempHtml = tempHtml + '</div><br/><br/><h1>Rare (8%)</h1><br/><div class=\"flexboxStyle\">';
+					tempHtml = tempHtml + '</div><br/><br/><h1>Rare (8% Rate)</h1><br/><div class=\"flexboxStyle\">';
 					for(let i = 0; i < rareList.length; i++){
 						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(rareList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
 					}
-					tempHtml = tempHtml + '</div><br/><br/><h1>Mythic Rare (3%)</h1><br/><div class=\"flexboxStyle\">';
+					tempHtml = tempHtml + '</div><br/><br/><h1>Mythic Rare (3% Rate)</h1><br/><div class=\"flexboxStyle\">';
 					for(let i = 0; i < mythicList.length; i++){
 						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(mythicList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
 					}
-					tempHtml = tempHtml + '</div><br/><br/><h1>Special (1%)</h1><br/><div class=\"flexboxStyle\">';
+					tempHtml = tempHtml + '</div><br/><br/><h1>Special (1% Rate)</h1><br/><div class=\"flexboxStyle\">';
 					for(let i = 0; i < specialList.length; i++){
 						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(specialList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
 					}
@@ -784,6 +794,16 @@
 							$("#cardListDiv").addClass("hidden");
 							$("#summonDiv").addClass("hidden");
 							$("#draftDiv").removeClass("hidden");
+						}
+					});
+					
+					// Changelog Button
+					
+					$("#changelogButton").click(function(){
+						if($("#changelogDiv").hasClass("hidden")){
+							$("#changelogDiv").removeClass("hidden");
+						} else {
+							$("#changelogDiv").addClass("hidden");
 						}
 					});
 					
@@ -1556,9 +1576,23 @@
 	<br/><br/>
 	</div>
 	<h1>Download:</h1>
-	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-5.rar">v0.9.5</a>
+	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-6.rar">v0.9.6</a>
 	<br/>
 	<strong>Extract in "Users/(Your User)/AppData/Local/Cockatrice/Cockatrice" folder, and overwrite files as necessary.</strong>
+	<br/><br/><h3 id="changelogButton" class="buttonSmall">Changelog</h3>
+	<div id="changelogDiv" class="changelogBox hidden">
+		<strong>v0.9.6:</strong><br/>
+		- Added cards:<br/>&nbsp;&nbsp;&nbsp;- Celestial Inverted Moon<br/>&nbsp;&nbsp;&nbsp;- Einzbern Banquet<br/>&nbsp;&nbsp;&nbsp;- Flame Barrier<br/>&nbsp;&nbsp;&nbsp;- Kotominue, Spiritual Healer<br/>&nbsp;&nbsp;&nbsp;- Waver Velvet, Upstart Mage<br/>&nbsp;&nbsp;&nbsp;- Zouken, Twisted Leech<br/>
+		- Added tokens:<br/>&nbsp;&nbsp;&nbsp;- Insect<br/>
+		- Updated <em>Kayneth El-Melloi Archibald</em> from "Servant spells you cast cost [2] less to cast." to "... [1] less to cast."<br/>
+		- Updated <em>Wicker Man</em> to have "Protection from equipment" to avoid it being equipped with <em>Gae Bolg</em>.<br/>
+		- Updated <em>Mata Hari, Dancer Informant</em> from "When Mata Hari, Dancer Informant dies, sacrifice all male creatures you control" to "... tap all male creatures you control. They don't untap during your next untap step."<br/>
+		- Updated <em>La Grâce Fille Noël</em> from "Create X Food tokens ..." to "Create a Food token, then create X Food tokens ..." and increased mana cost from W to 1W.<br/>
+		- Fixed <em>Amakusa Shirou Tokisada</em> and <em>Caligula, Emperor of Death</em> not having Power and Toughness.<br/>
+		- Updated <em>Burrowing Crest Worm</em> Art.<br/>
+		- Corrected improper wording in <em>Aestus Domus Aurea</em>.<br/>
+		
+	</div>
 	<h1 style="text-align: center;">Rules</h1>
 	<br/>
 	<table style="width:90%;margin:auto;"><tr>
