@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (v0.9.6)</longname>
+  <longname>Fate Grand Order (v0.9.7)</longname>
  </set>
 </sets>
 <cards>
@@ -601,7 +601,7 @@ If a Servant you don’t control would deal damage to a permanent or player, it 
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
-	<pt>0/4</pt>
+	<pt>0/3</pt>
 	</prop>
 </card>
 <card>
@@ -995,6 +995,22 @@ Creatures that can block Warrior Monk Benkei must do so.</text>
 		<cmc>2</cmc>
 		<color>W</color>
 	<pt>1/3</pt>
+	</prop>
+</card>
+<card>
+	<name>Bazett Fraga McRemitz</name>
+	<text>As long as you control a Servant, Bazett Fraga McRemitz has the True Name Lugh.
+2R: Bazett Fraga McRemitz gets +2/+0 and berserk until end of turn. Play this ability as a sorcery. (It must attack if able and must be blocked if able.)</text>
+	<tablerow>2</tablerow>
+	<set rarity="uncommon">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Legendary Creature - Human Master </type>
+		<manacost>2U</manacost>
+		<cmc>3</cmc>
+		<color>U</color>
+	<pt>3/3</pt>
 	</prop>
 </card>
 <card>
@@ -1660,9 +1676,8 @@ Choose a True Name, then search target opponent’s library for all cards with t
 </card>
 <card>
 	<name>Hassan of Serenity</name>
-	<text>Cumulative upkeep—Pay 1 life
-Whenever Hassan of Serenity deals damage to a creature, that creature gains “Cumulative upkeep 1.”
-T: Hassan of Serenity deals 1 damage to target tapped creature.</text>
+	<text>Whenever Hassan of Serenity deals damage to a creature, that creature gains “Cumulative upkeep 1.”
+T, Pay 1 life: Hassan of Serenity deals 1 damage to target tapped creature.</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -3219,22 +3234,6 @@ Athanaton Ten Thousand’s power and toughness are equal to double the number of
 	</prop>
 </card>
 <card>
-	<name>Bazett Fraga McRemitz</name>
-	<text>As long as you control a Servant, Bazett Fraga McRemitz has the True Name Lugh.
-2R: Bazett Fraga McRemitz gets +2/+0 and berserk until end of turn. Play this ability as a sorcery. (It must attack if able and must be blocked if able.)</text>
-	<tablerow>2</tablerow>
-	<set rarity="uncommon">FGO</set>
-	<prop>
-		<layout>normal</layout>
-		<side>front</side>
-		<type>Legendary Creature - Human Master </type>
-		<manacost>1RW</manacost>
-		<cmc>3</cmc>
-		<color>M</color>
-	<pt>3/3</pt>
-	</prop>
-</card>
-<card>
 	<name>Billy the Kid</name>
 	<text>First strike, menace
 3: Billy the Kid deals 2 damage to any target. Damage dealt this way can’t be prevented. Activate this ability only twice each turn.</text>
@@ -3765,7 +3764,7 @@ Sacrifice a Food: Halloween Elizabeth gets +2/+2 until end of turn.</text>
 </card>
 <card>
 	<name>Infinite Pancakes</name>
-	<text>Exile target creature. Create X Food tokens where X is equal to that creature’s toughness.</text>
+	<text>Exile target creature. Create X Food tokens where X is equal to half that creature’s toughness rounded down.</text>
 	<tablerow>3</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -5523,7 +5522,8 @@ Soulequip 2 (2: Attach to target creature you control that shares a True Name wi
 </card>
 <card>
 	<name>Key of the Kings Law</name>
-	<text>Whenever an artifact card is put into your graveyard, as long as you control a creature that shares a True Name with Key of the King’s Law, you may return that card to your hand.</text>
+	<text>Catalyst
+Whenever an artifact card is put into your graveyard, as long as you control a creature that shares a True Name with Key of the King’s Law, exile that card, then return it to your hand at the beginning of the next end step.</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -5630,8 +5630,8 @@ Soulequip 3</text>
 <card>
 	<name>Ornithricopter</name>
 	<text>1: Ornithricopter gains flying until end of turn.
-Sacrifice Ornithricopter: Ornithricopter deals 4 damage to each creature.
-Crew 2</text>
+T, Sacrifice Ornithricopter and a creature that crewed it this turn: Ornithricopter deals 5 damage to any target.
+Crew 3</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -6118,8 +6118,8 @@ Soulequip 1 (1: Attach to target creature you control that shares a True Name wi
 <card>
 	<name>Chaos Labyrinthos</name>
 	<text>T: Add C.
-Sacrifice a Wall: Return target creature to its owner’s hand.
-At the beginning of your upkeep, if you control a creature that shares a True Name with Chaos Labyrinthos, create a 0/4 Wall artifact creature token with defender.</text>
+1, Sacrifice a Wall: Target creature can’t attack or block this turn.
+At the beginning of your upkeep, if you control a creature that shares a True Name with Chaos Labyrinthos, create a 0/3 Wall artifact creature token with defender.</text>
 	<tablerow>0</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -6130,7 +6130,6 @@ At the beginning of your upkeep, if you control a creature that shares a True Na
 		<cmc>0</cmc>
 		<color></color>
 	</prop>
-	<related>Wall (Token)</related>
 </card>
 <card>
 	<name>Dún Scáith Land of Shadows</name>
