@@ -814,7 +814,7 @@
 						var selfPeer = new Peer(
                             {
                                 host: 'https://9000-gray-parrotfish-ynsgs9w0.ws-us03.gitpod.io/',
-                                port: '9000',
+                                port: '443',
                                 path: '/',
                                 secure: true
                             });
@@ -1186,13 +1186,7 @@
 					
 					// Join Existing Draft
 					$("#draftConnectButton").click(function(){
-						var selfPeer = new Peer(
-                            {
-                                host: 'https://9000-gray-parrotfish-ynsgs9w0.ws-us03.gitpod.io/',
-                                port: '9000',
-                                path: '/',
-                                secure: true
-                            });
+						var selfPeer = new Peer();
 						var username = $("#draftNameTextbox").val();
 						var connectedPlayersBoxHTML = "";
 						var uncompressedArrayOfCards = "";
