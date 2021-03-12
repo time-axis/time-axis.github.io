@@ -811,7 +811,13 @@
 					
 					// Host New Draft
 					$("#draftHostButton").click(function(){
-						var selfPeer = new Peer();
+						var selfPeer = new Peer(
+                            {
+                                host: 'https://9000-brown-chicken-sw79ps7v.ws-us03.gitpod.io/',
+                                port: '9000',
+                                path: '/',
+                                secure: true
+                            });
 						var username = $("#draftNameTextbox").val();
 						var connectedPlayersBoxHTML = "<strong>Connected Players:</strong><br/><br/>";
 						var playerCount = 1;
@@ -1180,7 +1186,13 @@
 					
 					// Join Existing Draft
 					$("#draftConnectButton").click(function(){
-						var selfPeer = new Peer();
+						var selfPeer = new Peer(
+                            {
+                                host: 'https://9000-brown-chicken-sw79ps7v.ws-us03.gitpod.io/',
+                                port: '9000',
+                                path: '/',
+                                secure: true
+                            });
 						var username = $("#draftNameTextbox").val();
 						var connectedPlayersBoxHTML = "";
 						var uncompressedArrayOfCards = "";
