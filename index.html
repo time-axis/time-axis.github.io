@@ -811,7 +811,13 @@
 					
 					// Host New Draft
 					$("#draftHostButton").click(function(){
-						var selfPeer = new Peer();
+						var selfPeer = new Peer(
+                            {
+                                host: 'https://9000-gray-parrotfish-ynsgs9w0.ws-us03.gitpod.io/',
+                                port: '443',
+                                path: '/',
+                                secure: true
+                            });
 						var username = $("#draftNameTextbox").val();
 						var connectedPlayersBoxHTML = "<strong>Connected Players:</strong><br/><br/>";
 						var playerCount = 1;
