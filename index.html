@@ -1556,6 +1556,7 @@
 		</div>
 	</div>
 	<div id="rulesDiv" class="">
+    <h2><a href="https://discord.gg/m3hWub9PbC">Join the Discord to Provide Feedback and Help Playtest!</a></h2>
 	<h1>FAQ</h1>
 	<div style="margin-left:20px; margin-right:20px; text-align: left;"><strong>What is this?</strong><br/>
 	This is a Custom Magic the Gathering set based on Fate/Grand Order.  The set is the first in a planned block of three.  The block is called the "Fate" block, and the first set is simply called "Fate/Grand Order".  Naturally, this set may feature spoilers for F/GO and related properties.<br/>
@@ -1588,11 +1589,33 @@
 	<br/><br/>
 	</div>
 	<h1>Download:</h1>
-	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-7.rar">v0.9.7</a>
+	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-9.rar">v0.9.9</a>
 	<br/><strong>Extract in "Users/(Your User)/AppData/Local/Cockatrice/Cockatrice" folder, and overwrite files as necessary.</strong><br/>
 	<img src="cockatriceExample.png" />	
 	<br/><br/><h3 id="changelogButton" class="buttonSmall">Changelog</h3>
 	<div id="changelogDiv" class="changelogBox hidden">
+        
+        <strong>v0.9.9</strong><br/>
+        - Replaced "True Name" mechanic and all references with "origin".<br/>
+        - Added "connected" keyword. Replaced Soulequip with "Equip connected creature".<br/>
+        - Replaced Soulcrew with "Crew N or &lt;quality&gt;"<br/>
+        - Updated <em>Warrior Monk Benkei</em> from "cost 4 more to cast" to "cost 3 more to cast".<br/>
+        - Fixed wording on <em>Caress of the Medusa</em> to avoid rules paradox, now targets artifacts as well<br/>
+        - Updated <em>Azreal, Harbinger of Death</em> from "Whenever a creature dies for the first time each turn, you may put a loyalty counter on target origin planeswalker you control." to "At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target origin planeswalker you control."<br/>
+        - Updated <em>Beast of Billows</em> from 7/6 to 7/5.<br/>
+        - Updated <em>Enfer Château d'If</em>’s mana cost from 6BB to 5BB<br/>
+        - Removed "A deck can have any number of cards named Hundred Faced Hassan." from <em>Hundred Faced Hassan</em> and updated cost to duplicate from 1B to B.<br/>
+        - Updated <em>Dimension of Steam</em> to add "Whenever damage is prevented for the first time each turn, put an age counter on Dimension of Steam."<br/>
+        - Corrected <em>Darius, Achaemenid King</em> from "Put target creature card from your graveard onto the battlefield under your control." to "Return target creature from your graveyard to the battlefield."<br/>
+        <br/>
+        <strong>v0.9.8</strong><br/>
+        - Updated <em>Sasaki, Nameless Master</em> from "- deals damage equal to three times its power to target creature." to "- deals damage equal to double its power to target attacking creature."<br/>
+        - Updated <em>Prydwen</em>’s mana cost from 3 to 4.<br/>
+        - Corrected improper wording on <em>Prydwen</em>, <em>Llamrei Unit II</em>, and <em>Bond of Pain</em>.<br/>
+        - Updated <em>La Pucelle: Crimson Holy Virgin</em> from "Destroy all creatures." to "Destroy all creatures and planeswalkers."<br/>
+        - Updated <em>Bond of Pain</em> from "Whenever you’re dealt damage, Bond of Pain deals that much damage to enchanted player." to "Damage that would be dealt to you is dealt to you and enchanted player instead."<br/>
+        - Corrected <em>Book of False Attendant</em> from "each age counter on the chosen permanent" to "each age counter on enchanted permanent."<br/>
+        <br/>
 		<strong>v0.9.7:</strong><br/>
 		- Updated <em>Hassan of Serenity</em> to remove "Cumulative upkeep—Pay 1 life" and change "T: - deals 1 damage to target tapped creature." to "T, Pay 1 life: - deals 1 damage to target tapped creature."<br/>
 		- Updated <em>Infinite Pancakes</em> from "Create X Food tokens where X is equal to that creature’s toughness." to "... where X is equal to half that creature’s toughness rounded down."<br/>
@@ -1614,31 +1637,33 @@
 		
 	</div>
 	<h1 style="text-align: center;">Rules</h1>
+    <h2 style="text-align: center;"><a href="https://docs.google.com/document/d/1LQepmps1y5Ot9t04GtV7t0j9TJiN3ghFG6hKlB1bYEM/edit?usp=sharing">View Full Comprehensive Rules Changes</a></h2>
 	<br/>
-	<table style="width:90%;margin:auto;"><tr>
+    <table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Fergus Knight of the Red Branch.jpg" class="exampleCard" /></td>
-		<td><h2>True Name Bar</h2><strong style="">Some cards in this set have a bar below their name.  This is called the "True Name bar". The color of the bar is indicative of the card's rarity. On this bar, there are three new card properties:
+		<td><h2>Origin Bar</h2><strong style="">Some cards in this set have a bar below their name.  This is called the "Origin bar". The color of the bar is indicative of the card's rarity. On this bar, there are three new card properties:
 		<h3>Class</h3>The diamond-shaped icon on the top-left indicates a card's class. Normally only creatures and planeswalkers have classes. They don't have any rules meaning on their own, but abilities can refer to them.  The classes in this set are: Archer, Assassin, Berserker, Caster, Lancer, Rider, Saber, Avenger, Ruler, and Shielder. Fergus over here is a saber class creature. If a card doesn't have a class icon, then it doesn't have a class.
-		<h3>True Name</h3>A card's "True Name" is listed right below its regular name. This also doesn't have any rules meaning on its own, but many abilities will refer to them. True Names have no bearing on abilities that refer to Names, and vice versa. Fergus' true name is "Fergus mac Róich".
+		<h3>Origin</h3>A card's "origin" is listed right below its name. This represents a hero's True Name, and also doesn't have any rules meaning on its own, but many abilities will refer to them. A card that shares an origin with any given card is considered "connected" to that card. Fergus' origin is "Fergus mac Róich".
 		<h3>Gender</h3>Only creatures and planeswalkers can have genders. A card's gender is determined by the icon in the top right, below the mana cost. Cards can either be male, female, both, or neither. If a card doesn't have a male icon or female icon, then it doesn't have a gender. Fergus is male.</strong></td>
 	</tr></table>
 	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Spiral Sword Caladbolg.jpg" class="exampleCard" /></td>
 		<td><h2>New Keyword Abilities</h2><strong style="">
-		<h3>Catalyst</h3>Creatures aren't the only cards with True Names. Many cards will share the same True Name. Catalyst is an ability for artifacts. When an artifact with catalyst enters the battlefield, search your library for a Servant type card that shares a True Name with it, and put that card into your hand, then shuffle your library.
-		<h3>Soulequip</h3>Soulequip is an ability that only exists on Equipment. If an equipment has Soulequip instead of regular Equip, it can't be equipped to just any creature. You need to attach it to a creature that shares a True Name with it. Other than that, it works exactly like Equip.</strong>
-		<br/><strong>Note:</strong> The colored watermarks in the textboxes of some artifacts and lands have no rules meaning. They're just reminders of the colors of cards that are associated with that card through True Names.</td>
-	</tr></table>
-	<table style="width:90%;margin:auto;"><tr>
-		<td><img src="FateGrandOrder-files/Chariot of Boudica.jpg" class="exampleCard" /></td>
-		<td><strong style="">
-		<h3>Soulcrew</h3>Soulcrew is an ability for Vehicles. You can still treat it like a regular Crew ability and crew a vehicle with any creatures that have power equal to the Soulcrew cost, but you can also crew it with only one creature that shares a True Name with it, regardless of that creature's power.</strong></td>
+		<h3>Catalyst</h3>Creatures aren't the only cards with origins. Many cards will share the same origin. Catalyst is an ability for artifacts. When an artifact with catalyst enters the battlefield, search your library for a Servant type card that shares an origin with it, and put that card into your hand, then shuffle your library.
+		<h3>Connected</h3>A permanent or other card is "connected" if it shares an origin with the card in question. Sharing an origin with some other card (for example, two other cards that happen to share origins with each other) has no bearing. It only matters whether it shares one with the card the word "connected" is being used on.</strong>
+		<br/><strong>Note:</strong> The colored watermarks in the textboxes of some artifacts and lands have no rules meaning. They're just reminders of the colors of cards that are connected to it.</td>
 	</tr></table>
 	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Jaguar Warrior.jpg" class="exampleCard" /></td>
 		<td><strong style="">
 		<h3>Berserk</h3>Creatures with Berserk must attack if able, and they must be blocked if able.
 		<h3>Landguide</h3>A less powerful version of landwalk. If defending player controls a land of the corresponding type to the type of Landguide your creature has, that creature can't be blocked except by other creatures with the same type of Landguide. As an example, Jaguar Warrior has Forestguide, so if you have a Forest, you can't block Jaguar Warrior except with other creatures that have Forestguide.</strong></td>
+	</tr></table>
+    <table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Chariot of Boudica.jpg" class="exampleCard" /></td>
+		<td><strong style="">
+        <h2>Changes to existing mechanics</h2>
+		<h3>Crew</h3>"Crew N or &lt;quality&gt;" means "Tap any number of creatures you control with total power N or greater, or at least one &lt;quality&gt; creature: This vehicle becomes an artifact creature until end of turn."</strong></td>
 	</tr></table>
 	<table style="width:90%;margin:auto;"><tr>
 		<td><img src="FateGrandOrder-files/Arash Kamangir.jpg" class="exampleCard" /></td>
