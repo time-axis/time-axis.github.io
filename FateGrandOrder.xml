@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (v0.9.10)</longname>
+  <longname>Fate Grand Order (v0.9.11)</longname>
  </set>
 </sets>
 <cards>
@@ -29,7 +29,8 @@
 	<text>As an additional cost to cast Ars Almadel Salomonis, remove ten loyalty counters from a connected planeswalker you control.
 Cumulative upkeep—Ars Almadel Solomonis deals 1 damage to each creature and each player.
 Indestructible
-Remove 14 age counters from Ars Almadel Salomonis and sacrifice it: You win the game.</text>
+Remove 14 age counters from Ars Almadel Salomonis and sacrifice it: You win the game.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -126,7 +127,8 @@ T: Arjuna, The Endowed Hero deals damage equal to its power to target attacking 
 	<text>As an additional cost to cast Ars Paulina, Temple of Time, remove seven loyalty counters from a connected planeswalker you control.
 Cumulative upkeep 1
 Sacrifice Ars Paulina, Temple of Time if you don’t control a connected planeswalker.
-Demon creatures you control have indestructible. You can’t lose the game, and your opponents can’t win the game.</text>
+Demon creatures you control have indestructible. You can’t lose the game, and your opponents can’t win the game.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -416,7 +418,8 @@ Sacrifice this creature if you don’t control a connected creature.</text>
 <card>
 	<name>Failnaught</name>
 	<text>As an additional cost to cast Failnaught, tap a connected creature you control.
-Choose a creature. The chosen creature loses all abilities until end of turn, then if R was spent to cast Failnaught, it deals 4 damage to that creature. This damage can’t be prevented.</text>
+Choose a creature. The chosen creature loses all abilities until end of turn, then if R was spent to cast Failnaught, it deals 4 damage to that creature. This damage can’t be prevented.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -481,7 +484,8 @@ T: Creatures you control with a Jeanne D’Arc origin get +4/+4 and can block an
 	<name>Gohyaku Rakan Fudarakutokai</name>
 	<text>Enchant creature
 As an additional cost to cast Gohyaku Rakan Fudarakutokai, tap a connected creature you control.
-Enchanted creature loses all abilities and can’t attack or block.</text>
+Enchanted creature loses all abilities and can’t attack or block.
+Cycling 1 (1, Discard this card: Draw a card.)</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -545,7 +549,8 @@ Whenever enchanted creature attacks, you gain 3 life.</text>
 	<text>As an additional cost to cast Ionioi Hetairoi, tap a connected creature you control.
 Cumulative upkeep 1
 When Ionioi Hetairoi enters the battlefield, search your library for any number of Servant creature cards and put them onto the battlefield, then put that many age counters on it, then shuffle.
-When Ionioi Hetairoi leaves the battlefield, shuffle non-connected Servant creatures you control into their owners’ libraries.</text>
+When Ionioi Hetairoi leaves the battlefield, shuffle non-connected Servant creatures you control into their owners’ libraries.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -607,7 +612,8 @@ If a Servant you don’t control would deal damage to a permanent or player, it 
 <card>
 	<name>La Pucelle Crimson Holy Virgin</name>
 	<text>As an additional cost to cast La Pucelle: Crimson Holy Virgin, sacrifice a connected creature.
-Destroy all creatures and planeswalkers.</text>
+Destroy all creatures and planeswalkers.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -728,7 +734,8 @@ If you control a connected creature, prevent all damage that would be dealt this
 <card>
 	<name>Luminosité Eternelle</name>
 	<text>As an additional cost to cast Luminosité Eternelle, tap a ruler class connected creature you control. It doesn’t untap during your next untap step.
-Creatures you control gain hexproof and indestructible until end of turn.</text>
+Creatures you control gain hexproof and indestructible until end of turn.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -793,7 +800,8 @@ Sacrifice Nightingale Pledge if you don’t control a connected creature.</text>
 <card>
 	<name>Pain Breaker</name>
 	<text>As an additional cost to cast Pain Breaker, tap a connected creature you control.
-Prevent all damage that would be dealt to creatures you control this turn. You gain 8 life.</text>
+Prevent all damage that would be dealt to creatures you control this turn. You gain 8 life.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -808,7 +816,8 @@ Prevent all damage that would be dealt to creatures you control this turn. You g
 <card>
 	<name>Pashupata</name>
 	<text>As an additional cost to cast Pashupata, tap a connected creature you control.
-Destroy all nonblack creatures you don’t control.</text>
+Destroy all nonblack creatures you don’t control.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -855,7 +864,8 @@ T: Destroy all enchantments attached to target creature.</text>
 <card>
 	<name>Saint War Order</name>
 	<text>As an additional cost to cast Saint War Order, tap a connected creature you control.
-Creatures you control have +3/+3 and vigilance as long as you control a creature with a Gilles de Rais or Jeanne D’Arc origin.</text>
+Creatures you control have +3/+3 and vigilance as long as you control a creature with a Gilles de Rais or Jeanne D’Arc origin.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -933,7 +943,7 @@ As long as it’s not your turn, Sir Gawain, Devoted Knight’s power and toughn
 <card>
 	<name>Sir Lancelot of the Lake</name>
 	<text>Vigilance
-If Sir Lancelot of the Lake would deal damage to a female creature, it deals half that damage instead.
+If Sir Lancelot of the Lake would deal damage to a female creature, it deals half that damage instead, rounded up.
 1W, T: Attach target Equipment you control to Sir Lancelot of the Lake.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
@@ -1033,7 +1043,8 @@ Counter target spell.</text>
 	<text>As an additional cost to cast Breaker Gorgon: Dark Temple, tap a connected creature you control.
 Cumulative upkeep 1
 3: Put an age counter on Breaker Gorgon: Dark Temple. Any player may activate this ability.
-Players can’t cast Phantasm spells or activate abilities of Servant creatures.</text>
+Players can’t cast Phantasm spells or activate abilities of Servant creatures.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -1049,7 +1060,8 @@ Players can’t cast Phantasm spells or activate abilities of Servant creatures.
 	<name>Caress of the Medusa</name>
 	<text>Enchant creature or artifact
 As an additional cost to cast Caress of the Medusa, tap a connected creature you control.
-Enchanted permanent is an artifact named Stone and loses all other card types, origins and abilities.</text>
+Enchanted permanent is an artifact named Stone and loses all other card types, origins and abilities.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -1146,7 +1158,8 @@ Tap all creatures. Those creatures don’t untap during their controller’s nex
 <card>
 	<name>First Folio</name>
 	<text>As an additional cost to cast First Folio, tap a connected creature you control.
-Choose an origin. Exile all cards in target opponent’s graveyard that have the chosen origin. You may cast those cards without paying their mana costs for as long as they remain exiled.</text>
+Choose an origin. Exile all cards in target opponent’s graveyard that have the chosen origin. You may cast those cards without paying their mana costs for as long as they remain exiled.
+Cycling 1 (1, Discard this card: Draw a card.)</text>
 	<tablerow>3</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1273,7 +1286,8 @@ Remove all age counters from all permanents.</text>
 T: You gain 1 life, then choose one —
 • Creatures you control get +0/+2 until end of turn.
 • Creatures you control get +2/+0 until end of turn.
-• Creatures you control gain flying until end of turn.</text>
+• Creatures you control gain flying until end of turn.
+Cycling 1 (1, Discard this card: Draw a card.)</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1403,7 +1417,8 @@ Enchanted player skips their draw step.</text>
 </card>
 <card>
 	<name>Repeated Verse</name>
-	<text>Enchantment and sorcery spells in your hand have flash until end of turn.</text>
+	<text>Enchantment and sorcery spells in your hand have flash until end of turn.
+Draw a card.</text>
 	<tablerow>3</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1528,7 +1543,8 @@ If a source would deal damage to Anne Bonny &amp; Mary Read, it deals double tha
 <card>
 	<name>Azrael Harbinger of Death</name>
 	<text>As an additional cost to cast Azrael, Harbinger of Death, remove four loyalty counters from a connected planeswalker you control.
-At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control.</text>
+At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -1710,7 +1726,8 @@ First strike, haste
 <card>
 	<name>Enfer Château dIf</name>
 	<text>As an additional cost to cast Enfer Château d’If, tap an avenger class connected creature you control.
-Choose an origin, then search target opponent’s library for all cards with the chosen origin and put them into that player’s graveyard.</text>
+Choose an origin, then search target opponent’s library for all cards with the chosen origin and put them into that player’s graveyard.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -1788,7 +1805,8 @@ T: Destroy target female creature. Its controller mills a card.</text>
 <card>
 	<name>Kazikli Bey</name>
 	<text>As an additional cost to cast Kazikli Bey, tap a connected creature you control.
-Destroy all creatures you don’t control. If the tapped creature was a vampire, you gain life equal to the number of creatures destroyed this way.</text>
+Destroy all creatures you don’t control. If the tapped creature was a vampire, you gain life equal to the number of creatures destroyed this way.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -2043,7 +2061,8 @@ Creatures you control with a Medea origin get +1/+1 for each Food you control un
 <card>
 	<name>Zabaniya Delusional Heartbeat</name>
 	<text>As an additional cost to cast Zabaniya: Delusional Heartbeat, tap a male connected creature you control.
-Destroy target creature without flying.</text>
+Destroy target creature without flying.
+Cycling 1 (1, Discard this card: Draw a card.)</text>
 	<tablerow>3</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -2252,7 +2271,8 @@ If it’s not your turn, Servants you control get +3/+0 until end of turn.</text
 	<name>Flucticulus Diana</name>
 	<text>As an additional cost to cast Flucticulus Diana, sacrifice a connected creature.
 Cumulative upkeep 1 (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
-All creatures lose all abilities and gain berserk.</text>
+All creatures lose all abilities and gain berserk.
+Cycling 1 (1, Discard this card: Draw a card.)</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -2283,7 +2303,8 @@ RR: Put Frankenstein, Innocent Bride onto the battlefield from your graveyard, t
 <card>
 	<name>Great Grudge of Rashoumon</name>
 	<text>As an additional cost to cast Great Grudge of Rashoumon, tap a Demon connected creature you control.
-Target creature gets -3/-3 until end of turn, then Great Grudge of Rashoumon deals 5 damage to it.</text>
+Target creature gets -3/-3 until end of turn, then Great Grudge of Rashoumon deals 5 damage to it.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -2364,7 +2385,8 @@ At the end of your turn, if Lu Bu, Treacherous General didn’t deal combat dama
 	<name>Magna Voluisse Magnum</name>
 	<text>As an additional cost to cast Magna Voluisse Magnum, tap a connected creature you control.
 Destroy target land.
-Magna Voluisse Magnum deals X damage to any target, where X is the number of lands you control.</text>
+Magna Voluisse Magnum deals X damage to any target, where X is the number of lands you control.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -2494,7 +2516,8 @@ Spartacus, Gladiator of Thrace gets +3/+0 as long as it was dealt damage this tu
 <card>
 	<name>Spear of Striking Death Flight</name>
 	<text>As an additional cost to cast Spear of Striking Death Flight, unattach a connected Equipment from a creature you control.
-Spear of Striking Death Flight deals 8 damage divided as you choose among any number of targets.</text>
+Spear of Striking Death Flight deals 8 damage divided as you choose among any number of targets.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -2542,7 +2565,8 @@ Tamamo Shark gets +1/+0 for each female creature and planeswalker in a graveyard
 	<name>Tenshin Kashou Zanmai</name>
 	<text>As an additional cost to cast Tenshin Kashou Zanmai, tap a connected creature you control.
 Cumulative upkeep 1
-At the beginning of each upkeep, Tenshin Kashou Zanmai deals damage to each creature, player, and planeswalker equal to the number of age counters on it.</text>
+At the beginning of each upkeep, Tenshin Kashou Zanmai deals damage to each creature, player, and planeswalker equal to the number of age counters on it.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -2571,7 +2595,8 @@ At the beginning of each upkeep, Tenshin Kashou Zanmai deals damage to each crea
 <card>
 	<name>Tri-star Amore Mio</name>
 	<text>As an additional cost to cast Tri-star Amore Mio, tap a male connected creature you control and a female connected creature you control.
-Tri-star Amore Mio deals 8 damage to target opponent, and that player discards two cards at random.</text>
+Tri-star Amore Mio deals 8 damage to target opponent, and that player discards two cards at random.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -2670,7 +2695,8 @@ T: Diarmuid of the Love Spot fights target creature you don’t control.</text>
 	<text>As an additional cost to cast Dimension of Steam, tap a connected creature you control.
 Cumulative upkeep 1
 Prevent all damage. 
-Whenever damage is prevented for the first time each turn, put an age counter on Dimension of Steam.</text>
+Whenever damage is prevented for the first time each turn, put an age counter on Dimension of Steam.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -2734,7 +2760,8 @@ Then it fights target creature you don’t control. Damage it deals can’t be p
 	<name>Grendel Buster</name>
 	<text>Enchant connected creature you control
 As an additional cost to cast Grendel Buster, sacrifice two connected artifacts. (Artifacts that share an origin with this enchantment.)
-Enchanted creature loses cumulative upkeep. It gets +6/+4 and has trample.</text>
+Enchanted creature loses cumulative upkeep. It gets +6/+4 and has trample.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -2929,7 +2956,8 @@ T: Add G.</text>
 	<text>As an additional cost to cast Otherworldly Hippogriff, tap a connected creature you control.
 Flying
 Connected creatures you control get +2/+2.
-Damage dealt by Otherworldly Hippogriff can’t be prevented.</text>
+Damage dealt by Otherworldly Hippogriff can’t be prevented.
+Cycling 1</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -3072,7 +3100,8 @@ Trample</text>
 <card>
 	<name>Tsubame Gaeshi</name>
 	<text>As an additional cost to cast Tsubame Gaeshi, tap a connected creature you control.
-The tapped creature deals damage equal to three times its power to target player or planeswalker. This damage can’t be prevented.</text>
+The tapped creature deals damage equal to three times its power to target player or planeswalker. This damage can’t be prevented.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -3268,7 +3297,8 @@ Atalanta, Chaste Huntress can’t be the target of aura or sorcery spells your o
 	<name>Athanaton Ten Thousand</name>
 	<text>As an additional cost to cast Athanaton Ten Thousand, tap a connected creature you control, and sacrifice any number of Skeletons.
 Trample, menace
-Athanaton Ten Thousand’s power and toughness are equal to double the number of skeletons sacrificed.</text>
+Athanaton Ten Thousand’s power and toughness are equal to double the number of skeletons sacrificed.
+Cycling 1</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -3514,7 +3544,8 @@ Sacrifice Emiya Shirou, Projection Mage: Prevent all damage that would be dealt 
 	<name>Enuma Elish</name>
 	<text>As an additional cost to cast Enuma Elish, tap a connected creature you control.
 Exile all Gods.
-Return all creatures from your graveyard to the battlefield.</text>
+Return all creatures from your graveyard to the battlefield.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -3648,7 +3679,8 @@ Choose one —
 • Destroy all creatures.
 • Destroy all artifacts and enchantments.
 • Each player chooses a basic land type, then destroy all lands of the chosen types.
-You gain 1 life for each permanent destroyed this way.</text>
+You gain 1 life for each permanent destroyed this way.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -3966,7 +3998,8 @@ Protection from enchantments
 	<text>As an additional cost to cast Le Grondement de la Haine, tap a connected creature you control.
 Cumulative upkeep 1
 At the beginning of your upkeep, Le Grondement de la Haine deals 2 damage to each creature and each player.
-Creatures your opponents control have protection from spells their controllers control.</text>
+Creatures your opponents control have protection from spells their controllers control.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -4084,7 +4117,8 @@ Sacrifice a creature: Add BB.</text>
 	<name>Melammu Dingir</name>
 	<text>As an additional cost to cast Melammu Dingir, tap a connected creature you control.
 Creatures you control gain indestructible until end of turn.
-Melammu Dingir deals damage divided as you choose to any number of targets equal to the number of lands you control.</text>
+Melammu Dingir deals damage divided as you choose to any number of targets equal to the number of lands you control.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -4212,7 +4246,8 @@ T: Target land you control becomes a 5/5 Sphinx creature with flying. It’s sti
 <card>
 	<name>Pandemonium Cetus</name>
 	<text>As an additional cost to cast Pandemonium Cetus, tap a connected creature you control.
-Creatures target player controls lose all abilities and get -5/-5 until end of turn.</text>
+Creatures target player controls lose all abilities and get -5/-5 until end of turn.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -4243,7 +4278,8 @@ Sacrifice Papiyas, Demon King of the Sixth Heaven if you don’t control a conne
 <card>
 	<name>Phoebus Catastrophe</name>
 	<text>As an additional cost to cast Phoebus Catastrophe, tap a connected creature you control.
-Phoebus Catastrophe deals 3 damage to each creature you don’t control.</text>
+Phoebus Catastrophe deals 3 damage to each creature you don’t control.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -4259,7 +4295,8 @@ Phoebus Catastrophe deals 3 damage to each creature you don’t control.</text>
 	<name>Photon Ray</name>
 	<text>As an additional cost to cast Photon Ray, tap a connected creature you control.
 Destroy all lands.
-At the beginning of the next end step, each player searches their library for land cards up to the number of land cards in their graveyard, then puts those cards onto the battlefield and shuffles.</text>
+At the beginning of the next end step, each player searches their library for land cards up to the number of land cards in their graveyard, then puts those cards onto the battlefield and shuffles.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -4361,7 +4398,8 @@ Sacrifice Ramesseum Tentyris if you don’t control a connected creature.</text>
 Choose one —
 • Tap target creature and draw a card.
 • Requiem For Death deals 1 damage to any target.
-Copy this spell for each instant and sorcery card in your graveyard. You may choose new targets for the copies.</text>
+Copy this spell for each instant and sorcery card in your graveyard. You may choose new targets for the copies.
+Cycling 1 (1, Discard this card: Draw a card.)</text>
 	<tablerow>3</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -4473,15 +4511,16 @@ Whenever Siegfried, Dragon-Blood Knight would deal combat damage to a Dragon, it
 	<name>Solomon King of Mages</name>
 	<text>[+2]: Create a 5/5 black Demon God creature token with defender.
 [-3]: Search your library for a Servant creature card and put it onto the battlefield, then shuffle.
-[-8]: Scry 10, then draw three cards.</text>
+[-8]: Scry 10, then draw three cards.
+Solomon, King of Mages can be your commander.</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Planeswalker - Solomon </type>
-		<manacost>2WUB</manacost>
-		<cmc>5</cmc>
+		<manacost>3WUB</manacost>
+		<cmc>6</cmc>
 		<color>M</color>
 	</prop>
 	<related>Demon God (Token)</related>
@@ -4522,7 +4561,8 @@ T: Add one mana of any color.
 <card>
 	<name>Twin Arm - Big Crunch</name>
 	<text>As an additional cost to cast Twin Arm - Big Crunch, tap a ruler class connected creature you control.
-Destroy all enchantments target player controls. That player may return any number of Servant creatures they control to their owners’ hands, then Twin Arm - Big Crunch deals X damage to them, where X is the number of Servant creatures they control.</text>
+Destroy all enchantments target player controls. That player may return any number of Servant creatures they control to their owners’ hands, then Twin Arm - Big Crunch deals X damage to them, where X is the number of Servant creatures they control.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -4555,7 +4595,8 @@ Sacrifice Unlimited Blade Works if you don’t control a connected creature.</te
 	<name>Uomo Universale</name>
 	<text>As an additional cost to cast Uomo Universale, tap a connected creature you control.
 Counter target instant or sorcery spell.
-Uomo Universale deals damage to each creature you don’t control equal to that creature’s toughness.</text>
+Uomo Universale deals damage to each creature you don’t control equal to the tapped creature’s toughness.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -4588,7 +4629,8 @@ As long as an opponent has 10 or less life, Vlad the Impaler has berserk and lif
 	<name>World Faith Domination</name>
 	<text>As an additional cost to cast World Faith Domination, tap a connected creature you control.
 Cumulative upkeep 1
-Whenever another player casts a spell, copy that spell unless that player has World Faith Domination deal 3 damage to them. You may choose new targets for the copy.</text>
+Whenever another player casts a spell, copy that spell unless that player has World Faith Domination deal 3 damage to them. You may choose new targets for the copy.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -4651,7 +4693,8 @@ Equip connected creature 2W</text>
 	<name>Amaterasus Eightfold Blessings</name>
 	<text>As an additional cost to cast Amaterasu’s Eightfold Blessings, tap a caster class connected creature you control.
 Phantasm spells you cast cost 2 less to cast.
-T: Untap all creatures you control.</text>
+T: Untap all creatures you control.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -4919,7 +4962,8 @@ Crew 7 or connected</text>
 	<name>Chariot My Love</name>
 	<text>As an additional cost to cast Chariot My Love, tap a connected creature you control.
 When Chariot My Love enters the battlefield, exile target male creature until it leaves the battlefield. Chariot My Love’s power and toughness are equal to the exiled card’s mana value.
-Crew 6 or connected</text>
+Crew 6 or connected
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -5049,7 +5093,8 @@ Whenever Das Rheingold is put into a graveyard, choose an opponent, then put Das
 	<name>Dojoji Bell Method 108</name>
 	<text>As an additional cost to cast Dojoji Bell, Method 108, tap a connected creature you control.
 When Dojoji Bell, Method 108 enters the battlefield, exile target creature until Dojoji Bell, Method 108 leaves the battlefield.
-At the beginning of each upkeep, Dojoji Bell, Method 108 deals 2 damage to the exiled card’s owner.</text>
+At the beginning of each upkeep, Dojoji Bell, Method 108 deals 2 damage to the exiled card’s owner.
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -5843,7 +5888,8 @@ Equip connected creature 3</text>
 	<name>Sanat Kumara</name>
 	<text>As an additional cost to cast Sanat Kumara, tap a connected creature you control.
 Flying, trample
-Crew 6 or connected</text>
+Crew 6 or connected
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -5872,7 +5918,7 @@ Equip connected creature 4</text>
 </card>
 <card>
 	<name>Shinpen Kidoku Sake</name>
-	<text>Spells your opponents cast cost 2 more to cast.
+	<text>As long as you control a connected creature, spells your opponents cast cost 2 more to cast.
 2, T, Sacrifice Shinpen Kidoku Sake: You lose 2 life. Creatures target player controls don’t untap during that player’s next untap step.
 2, Tap a connected creature you control: Return Shinpen Kidoku Sake to the battlefield from your graveyard.</text>
 	<tablerow>1</tablerow>
@@ -5919,8 +5965,8 @@ T, Sacrifice Silver Earring: Return target connected creature card from your gra
 <card>
 	<name>Spiral Sword Caladbolg</name>
 	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
-Whenever equipped creature attacks, it gets +X/+X and trample, where X is the number of lands the defending player controls.
-Equip connected creature 3</text>
+Whenever equipped creature attacks, it gets +X/+X and trample until end of turn, where X is the number of lands the defending player controls.
+Equip connected creature 4</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -6015,7 +6061,8 @@ Equip connected creature 2</text>
 	<text>As an additional cost to cast Tick-Tock Bomb, tap a connected creature you control.
 Cumulative upkeep 1
 When Tick-Tock Bomb dies, it deals 7 damage to its controller.
-At the beginning of the end step, target opponent gains control of Tick-Tock Bomb.</text>
+At the beginning of the end step, target opponent gains control of Tick-Tock Bomb.
+Cycling 1</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -6080,7 +6127,8 @@ Equip connected creature 8</text>
 	<text>As an additional cost to cast Wicker Man, tap a caster class connected creature you control.
 Cumulative upkeep 1
 Protection from equipment
-Trample, berserk (This creature must attack if able and must be blocked if able.)</text>
+Trample, berserk (This creature must attack if able and must be blocked if able.)
+Cycling 1</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -6440,7 +6488,8 @@ T, Remove all age counters from Bathory the Brave: Bathory the Brave deals damag
 	<name>Class Card Install</name>
 	<text>Enchant connected creature you control
 As an additional cost to cast Class Card Install, exile a Servant creature card from your hand.
-Enchanted creature’s class is the class of the exiled card, and its origin is the exiled card’s origin in addition to its other origins. </text>
+Enchanted creature’s class is the class of the exiled card, and its origin is the exiled card’s origin in addition to its other origins. 
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -6488,7 +6537,8 @@ You may pay 0 rather than pay the cumulative upkeep cost for permanents you cont
 <card>
 	<name>Mumyou Sandan-Zuki</name>
 	<text>As an additional cost to cast Mumyou Sandan-Zuki, tap a connected creature you control.
-Until end of turn, creatures you control gain double strike, and creatures you don’t control without first strike or double strike can’t attack or block.</text>
+Until end of turn, creatures you control gain double strike, and creatures you don’t control without first strike or double strike can’t attack or block.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -6519,7 +6569,8 @@ At the beginning of each combat, you may untap up to two other creatures.</text>
 <card>
 	<name>Quintett Feuer</name>
 	<text>As an additional cost to cast Quintett Feuer, tap a connected creature you control.
-Choose a permanent type other than land. Destroy all permanents your opponents control of the chosen type.</text>
+Choose a permanent type other than land. Destroy all permanents your opponents control of the chosen type.
+Cycling 1</text>
 	<tablerow>3</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -6585,7 +6636,8 @@ Equip connected creature 3</text>
 	<text>As an additional cost to cast Llamrei Unit II, tap a connected creature you control.
 Flying
 Whenever a Santa creature crews Llamrei Unit II, each player may search their library for a card and put it into their hand, then shuffle.
-Crew 3 or connected</text>
+Crew 3 or connected
+Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
