@@ -3,7 +3,7 @@
 <sets>
  <set>
   <name>FGO</name>
-  <longname>Fate Grand Order (v0.9.11)</longname>
+  <longname>Fate Grand Order (v0.9.12)</longname>
  </set>
 </sets>
 <cards>
@@ -321,7 +321,7 @@ Chevalier d’Eon, White Lily Knight can block an additional creature each comba
 </card>
 <card>
 	<name>Dragonslayer Steed</name>
-	<text>When Dragonslayer Steed enters the battlefield, you may search your library for a card with a Georgios origin and put it into your hand, then shuffle.
+	<text>When Dragonslayer Steed enters the battlefield, you may search your library for a card with a Georgios origin, reveal it, and put it into your hand, then shuffle.
 Sacrifice Dragonslayer Steed: Creatures your opponents control can’t attack this turn.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
@@ -571,7 +571,7 @@ Cycling 1</text>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact</type>
+		<type>Token Artifact - Treasure </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
@@ -594,19 +594,18 @@ If a Servant you don’t control would deal damage to a permanent or player, it 
 	</prop>
 </card>
 <card>
-	<name>Wall (Token)</name>
-	<text>Defender</text>
+	<name>Treasure (Token)</name>
+	<text>T, Sacrifice this artifact: Add one mana of any color.</text>
 	<token>1</token>
-	<tablerow>2</tablerow>
+	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Token Artifact Creature - Wall </type>
+		<type>Token Artifact - Treasure </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
-	<pt>0/3</pt>
 	</prop>
 </card>
 <card>
@@ -626,20 +625,20 @@ Cycling 1</text>
 	</prop>
 </card>
 <card>
-	<name>Merlin Magus of Flowers (Emblem)</name>
-	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with a Merlin origin.</text>
-	<tablerow>1</tablerow>
+	<name>Wall (Token)</name>
+	<text>Defender</text>
+	<token>1</token>
+	<tablerow>2</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Emblem</type>
+		<type>Token Artifact Creature - Wall </type>
 		<manacost></manacost>
 		<cmc>0</cmc>
 		<color></color>
+	<pt>0/3</pt>
 	</prop>
-	<related>Merlin Magus of Flowers (Emblem)</related>
-	<related>Merlin Manifested (Token)</related>
 </card>
 <card>
 	<name>Leonardo Bistario Harwey</name>
@@ -657,8 +656,8 @@ Cycling 1</text>
 	</prop>
 </card>
 <card>
-	<name>The Old Man of the Mountain (Emblem)</name>
-	<text>Whenever you’re dealt damage, you lose the game.</text>
+	<name>Merlin Magus of Flowers (Emblem)</name>
+	<text>At the beginning of your upkeep, you may create a Legendary 4/4 caster class male blue Illusion Servant creature token named Merlin Manifested, with a Merlin origin.</text>
 	<tablerow>1</tablerow>
 	<set rarity="special">FGO</set>
 	<prop>
@@ -669,6 +668,8 @@ Cycling 1</text>
 		<cmc>0</cmc>
 		<color></color>
 	</prop>
+	<related>Merlin Magus of Flowers (Emblem)</related>
+	<related>Merlin Manifested (Token)</related>
 </card>
 <card>
 	<name>Leonidas King of Sparta</name>
@@ -684,6 +685,20 @@ Cycling 1</text>
 		<cmc>2</cmc>
 		<color>W</color>
 	<pt>2/3</pt>
+	</prop>
+</card>
+<card>
+	<name>The Old Man of the Mountain (Emblem)</name>
+	<text>Whenever you’re dealt damage, you lose the game.</text>
+	<tablerow>1</tablerow>
+	<set rarity="special">FGO</set>
+	<prop>
+		<layout>normal</layout>
+		<side>front</side>
+		<type>Emblem</type>
+		<manacost></manacost>
+		<cmc>0</cmc>
+		<color></color>
 	</prop>
 </card>
 <card>
@@ -847,7 +862,7 @@ Cycling 1</text>
 </card>
 <card>
 	<name>Saint Martha</name>
-	<text>When Saint Martha enters the battlefield, you may search your library for a Dragon card and put it into your hand, then shuffle.
+	<text>When Saint Martha enters the battlefield, you may search your library for a Dragon card, reveal it, and put it into your hand, then shuffle.
 T: Destroy all enchantments attached to target creature.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
@@ -879,7 +894,7 @@ Cycling 1</text>
 </card>
 <card>
 	<name>Saints Vessel</name>
-	<text>Sacrifice Saint’s Vessel: Search your library for a card with a Jeanne D’Arc origin and put it into your hand, then shuffle.</text>
+	<text>Sacrifice Saint’s Vessel: Search your library for a card with a Jeanne D’Arc origin, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1253,7 +1268,7 @@ Enchanted creature is male.</text>
 	<name>Invisible Air</name>
 	<text>Enchant creature
 When Invisible Air enters the battlefield, return each equipment attached to enchanted creature to its owner’s hand.
-Sacrifice Invisible Air: Enchanted creature gets +3/+0 until end of turn. Search your library for an Equipment card and put it into your hand.</text>
+Sacrifice Invisible Air: Enchanted creature gets +3/+0 until end of turn. Search your library for an Equipment card, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -1527,6 +1542,7 @@ UU, T: Counter target spell that targets a Servant you control.</text>
 <card>
 	<name>Anne Bonny &amp; Mary Read</name>
 	<text>Double strike, menace
+When Anne Bonny &amp; Mary Read enters the battlefield, create a Treasure token.
 If a source would deal damage to Anne Bonny &amp; Mary Read, it deals double that damage to it instead.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
@@ -1539,11 +1555,12 @@ If a source would deal damage to Anne Bonny &amp; Mary Read, it deals double tha
 		<color>B</color>
 	<pt>3/4</pt>
 	</prop>
+	<related>Treasure (Token)</related>
 </card>
 <card>
 	<name>Azrael Harbinger of Death</name>
 	<text>As an additional cost to cast Azrael, Harbinger of Death, remove four loyalty counters from a connected planeswalker you control.
-At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control.
+At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control for each creature sacrificed this way.
 Cycling 1</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
@@ -1559,7 +1576,7 @@ Cycling 1</text>
 <card>
 	<name>Beast of Billows</name>
 	<text>Menace, islandguide (As long as defending player controls an island, this creature can’t be blocked except by other creatures with islandguide.)
-When Beast of Billows dies, search your library for an artifact with a Cu Chulainn origin and put it into your hand, then shuffle.</text>
+When Beast of Billows dies, search your library for an artifact with a Cu Chulainn origin, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -1915,7 +1932,7 @@ T: Destroy target tapped saber class creature.</text>
 <card>
 	<name>Nitocris Avatar of the Sky</name>
 	<text>Deathtouch
-1B, Discard a card: Search your library for an artifact card and put it into your hand, then shuffle.</text>
+1B, Discard a card: Search your library for an artifact card, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -1930,7 +1947,7 @@ T: Destroy target tapped saber class creature.</text>
 </card>
 <card>
 	<name>The Old Man of the Mountain</name>
-	<text>[+3]: Each player sacrifices a creature.
+	<text>[+2]: Each player sacrifices a creature.
 [-4]: Target creature loses indestructible until end of turn, then destroy it.
 [-13]: Target player gets an emblem with “Whenever you’re dealt damage, you lose the game.”</text>
 	<tablerow>1</tablerow>
@@ -2191,7 +2208,7 @@ Boudica, Queen of Victory has berserk as long an opponent controls a permanent w
 <card>
 	<name>Caligula Emperor of Death</name>
 	<text>Berserk (This creature must attack if able and must be blocked if able.)
-When Caligula, Emperor of Death enters the battlefield, you may search your library for a Servant card with a Nero Claudius origin and put it into your hand, then shuffle.</text>
+When Caligula, Emperor of Death enters the battlefield, you may search your library for a Servant card with a Nero Claudius origin, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -2823,7 +2840,7 @@ If Heracles the Immortal would die, you may remove three age counters from it. I
 </card>
 <card>
 	<name>Hound of Chulainn</name>
-	<text>When Hound of Chulainn dies, you may search your library for a card with a Cu Chulainn origin and put it into your hand, then shuffle.</text>
+	<text>When Hound of Chulainn dies, you may search your library for a card with a Cu Chulainn origin, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -3147,7 +3164,7 @@ At the beginning of combat on your turn, Uraeus Astrape fights target creature.<
 <card>
 	<name>Alchemist Hohenheim</name>
 	<text>2, Sacrifice a creature: Search your library for an artifact with mana value equal to the sacrificed creature’s mana value, and put it onto the battlefield, then shuffle.
-2, T: Create a colorless artifact token named Philosopher’s Stone with “T: Add two mana of any one color.” </text>
+2, T: Create a colorless Treasure artifact token named Philosopher’s Stone with “T: Add two mana of any one color.” </text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
 	<prop>
@@ -3163,7 +3180,7 @@ At the beginning of combat on your turn, Uraeus Astrape fights target creature.<
 </card>
 <card>
 	<name>Alexander Macedonian Prince</name>
-	<text>When Alexander, Macedonian Prince enters the battlefield, search your library for a connected creature card and put that card into your hand, then shuffle.
+	<text>When Alexander, Macedonian Prince enters the battlefield, search your library for a connected creature card, reveal it, and put that card into your hand, then shuffle.
 Other creatures you control get +1/+1.</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
@@ -3408,10 +3425,10 @@ Burning Summer Kiyohime has berserk as long as an opponent controls a male creat
 	</prop>
 </card>
 <card>
-	<name>Cleopatra the Last Pharoah</name>
+	<name>Cleopatra the Last Pharaoh</name>
 	<text>Vigilance, menace, hexproof
-Whenever Cleopatra, the Last Pharoah attacks, it loses hexproof until end of combat.
-WB, T: Prevent all combat damage that would be dealt to Cleopatra, the Last Pharoah this turn.</text>
+Whenever Cleopatra, the Last Pharaoh attacks, it loses hexproof until end of combat.
+WB, T: Prevent all combat damage that would be dealt to Cleopatra, the Last Pharaoh this turn.</text>
 	<tablerow>2</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -3577,7 +3594,7 @@ Cycling 1</text>
 	<name>Fafnir Eternal Dragon</name>
 	<text>Flying
 Prevent all combat damage that would be dealt to Fafnir, Eternal Dragon by creatures that don’t have a Siegfried or Sigurd origin.
-When Fafnir, Eternal Dragon dies, search your library for a card with a Siegfried or Sigurd origin, and put it into your hand, then shuffle.</text>
+When Fafnir, Eternal Dragon dies, search your library for a card with a Siegfried or Sigurd origin, reveal it, and put it into your hand, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -3641,19 +3658,20 @@ Sacrifice a Food: Draw a card.</text>
 <card>
 	<name>Francis Drake</name>
 	<text>Islandguide, haste
-Whenever Francis Drake deals combat damage to a player, that player discards a card and you draw a card.
-T: Add one mana of any color.</text>
+Whenever Francis Drake becomes tapped for the first time each turn, create a Treasure token.
+Whenever Francis Drake deals combat damage to a player, that player discards a card and you draw a card.</text>
 	<tablerow>2</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Legendary Creature - Servant </type>
-		<manacost>2BR</manacost>
-		<cmc>4</cmc>
+		<manacost>3BR</manacost>
+		<cmc>5</cmc>
 		<color>M</color>
 	<pt>3/3</pt>
 	</prop>
+	<related>Treasure (Token)</related>
 </card>
 <card>
 	<name>Gaius Julius Caesar</name>
@@ -3695,7 +3713,7 @@ Cycling 1</text>
 <card>
 	<name>Gate of Babylon</name>
 	<text>Sacrifice Gate of Babylon if you don’t control a connected creature.
-1: Search your library for an artifact card and put it into your hand, then shuffle. This ability costs 1 more to activate for each time it’s been activated this turn.</text>
+1: Search your library for an artifact card, reveal it, and put it into your hand, then shuffle. This ability costs 1 more to activate for each time it’s been activated this turn.</text>
 	<tablerow>1</tablerow>
 	<set rarity="mythic rare">FGO</set>
 	<prop>
@@ -3709,7 +3727,7 @@ Cycling 1</text>
 </card>
 <card>
 	<name>Gil Clairvoyant Youth</name>
-	<text>When Gil, Clairvoyant Youth enters the battlefield, scry 5, then exile the top three cards of your library. Until end of turn, you may play cards exiled this way.
+	<text>When Gil, Clairvoyant Youth enters the battlefield, create two Treasure tokens, scry 5, then exile the top three cards of your library. Until end of turn, you may play cards exiled this way.
 Your opponents play with their hands revealed.</text>
 	<tablerow>2</tablerow>
 	<set rarity="uncommon">FGO</set>
@@ -3722,6 +3740,7 @@ Your opponents play with their hands revealed.</text>
 		<color>M</color>
 	<pt>3/3</pt>
 	</prop>
+	<related count="2">Treasure (Token)</related>
 </card>
 <card>
 	<name>Gilgamesh King of Heroes</name>
@@ -3861,7 +3880,7 @@ Sacrifice a Food: Halloween Elizabeth gets +2/+2 until end of turn.</text>
 	<name>Irisviel Lesser Holy Grail</name>
 	<text>GW: You gain 4 life.
 T: Prevent all damage that would be dealt to Irisviel, Lesser Holy Grail this turn.
-Sacrifice Irisviel, Lesser Holy Grail: Search your library for a connected Equipment card and put it onto the battlefield.</text>
+Sacrifice Irisviel, Lesser Holy Grail: Search your library for a connected Equipment card and put it onto the battlefield, then shuffle.</text>
 	<tablerow>2</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
@@ -4097,7 +4116,7 @@ T: Remove all age counters from target creature and destroy all auras attached t
 <card>
 	<name>Medea Witch of Colchis</name>
 	<text>Flying
-When Medea, Witch of Colchis enters the battlefield, you may search your library for an artifact card and put it into your hand, then shuffle.
+When Medea, Witch of Colchis enters the battlefield, you may search your library for an artifact card, reveal it, and put it into your hand, then shuffle.
 T: Create a 1/1 black Skeleton Warrior creature token.
 Sacrifice a creature: Add BB.</text>
 	<tablerow>2</tablerow>
@@ -4737,7 +4756,7 @@ Equip 2</text>
 </card>
 <card>
 	<name>Ark of the Covenant</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 If a spell or ability destroys Ark of the Covenant, it deals 10 damage to that spell or ability’s controller.</text>
 	<tablerow>1</tablerow>
 	<set rarity="uncommon">FGO</set>
@@ -4801,7 +4820,7 @@ Equip connected creature 5</text>
 <card>
 	<name>Azoth Blade</name>
 	<text>Equipped creature gets +2/+0.
-3, Sacrifice Azoth Blade: Search your library for a saber class creature card and put it into your hand, then shuffle.
+3, Sacrifice Azoth Blade: Search your library for a saber class creature card, reveal it, and put it into your hand, then shuffle.
 Equip 2</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
@@ -4816,7 +4835,7 @@ Equip 2</text>
 </card>
 <card>
 	<name>Bale of Inexhaustibility</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 At the beginning of your upkeep, if you control a connected creature, create a Food token.
 2, T: You gain 3 life.</text>
 	<tablerow>1</tablerow>
@@ -4833,7 +4852,7 @@ At the beginning of your upkeep, if you control a connected creature, create a F
 </card>
 <card>
 	<name>Balmung</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 Equipped creature gets +X/+X where X is the number of dragon cards in all graveyards.
 Equip connected creature 2</text>
 	<tablerow>1</tablerow>
@@ -5025,7 +5044,7 @@ Equip connected creature 4</text>
 </card>
 <card>
 	<name>Crocea Mors</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 Equipped creature has +4/+4, first strike and deathtouch.
 Equip connected creature 6</text>
 	<tablerow>1</tablerow>
@@ -5058,7 +5077,7 @@ Equip connected creature 4BR</text>
 </card>
 <card>
 	<name>Dagger of No Return</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 Sacrifice Dagger of No Return: Equipped creature gains first strike until end of turn.
 Equip connected creature 1</text>
 	<tablerow>1</tablerow>
@@ -5083,7 +5102,7 @@ Whenever Das Rheingold is put into a graveyard, choose an opponent, then put Das
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Artifact - Phantasm </type>
+		<type>Legendary Artifact - Phantasm Treasure </type>
 		<manacost>3</manacost>
 		<cmc>3</cmc>
 		<color></color>
@@ -5157,15 +5176,15 @@ Equip connected creature WUBRG</text>
 <card>
 	<name>Elixir of Love</name>
 	<text>When Elixir of Love enters the battlefield, choose male or female.
-2, T: Creatures of the chosen gender can’t attack you or planeswalkers you control this turn.</text>
+2, T: Creatures of the chosen gender can’t attack you or planeswalkers you control this turn unless their controller pays 2 for each creature attacking you or planeswalkers you control.</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Artifact</type>
-		<manacost>3</manacost>
-		<cmc>3</cmc>
+		<manacost>2</manacost>
+		<cmc>2</cmc>
 		<color></color>
 	</prop>
 </card>
@@ -5179,8 +5198,8 @@ Equip connected creature WUBRG</text>
 		<layout>normal</layout>
 		<side>front</side>
 		<type>Artifact</type>
-		<manacost>3</manacost>
-		<cmc>3</cmc>
+		<manacost>4</manacost>
+		<cmc>4</cmc>
 		<color></color>
 	</prop>
 </card>
@@ -5297,7 +5316,7 @@ Equip connected creature 4</text>
 </card>
 <card>
 	<name>Fleur de Lys</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 Creatures blocked by equipped creature have base power 1 until end of combat.
 Equip connected creature 3</text>
 	<tablerow>1</tablerow>
@@ -5412,13 +5431,13 @@ Equip connected creature 4</text>
 	<name>Golden Apple</name>
 	<text>Catalyst
 Creatures you control have haste, and nonland, nonartifact cards you own that aren’t on the battlefield have flash.
-Sacrifice Golden Apple: Untap all creatures you control.</text>
+T, Sacrifice Golden Apple: Untap all creatures you control.</text>
 	<tablerow>1</tablerow>
 	<set rarity="rare">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
-		<type>Legendary Artifact - Phantasm </type>
+		<type>Legendary Artifact - Phantasm Food </type>
 		<manacost>5</manacost>
 		<cmc>5</cmc>
 		<color></color>
@@ -5507,7 +5526,7 @@ Equip connected creature 4</text>
 </card>
 <card>
 	<name>Hecates Staff</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 As long as Hecate’s Staff is attached to a creature, Equipped creature and Skeleton creatures you control get +2/+2.
 Equip connected creature 1</text>
 	<tablerow>1</tablerow>
@@ -5601,7 +5620,7 @@ Whenever an artifact card is put into your graveyard, as long as you control a c
 </card>
 <card>
 	<name>La Mort Espoir</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 2, Tap a connected creature you control: If target opponent has more life than you, they lose half their life rounded up.</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
@@ -5632,7 +5651,7 @@ Equip connected creature 1</text>
 <card>
 	<name>Magic Meter</name>
 	<text>T: Add C.
-2, T, Discard a card: Search your library for a caster class creature card and put it into your hand, then shuffle. If that card’s mana value is 4 or greater, sacrifice Magic Meter.</text>
+2, T, Discard a card: Search your library for a caster class creature card and put it into your hand, reveal it, then shuffle. If that card’s mana value is 4 or greater, sacrifice Magic Meter.</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
 	<prop>
@@ -5824,7 +5843,7 @@ Equip connected creature 1B</text>
 </card>
 <card>
 	<name>Rins Pendant</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 At the beginning of your upkeep, put an age counter on Rin’s Pendant.
 Sacrifice Rin’s Pendant: Add C for each age counter on Rin’s Pendant.</text>
 	<tablerow>1</tablerow>
@@ -5874,7 +5893,7 @@ Equip connected creature 3</text>
 	<text>1: Salmon of Knowledge becomes a 1/1 Fish creature with islandguide in addition to its other types until end of turn.
 2, T, Sacrifice Salmon of Knowledge: You gain 3 life. Draw two cards.</text>
 	<tablerow>1</tablerow>
-	<set rarity="rare">FGO</set>
+	<set rarity="common">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
@@ -5949,7 +5968,7 @@ Equip connected creature 4</text>
 </card>
 <card>
 	<name>Silver Earring</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 T, Sacrifice Silver Earring: Return target connected creature card from your graveyard to your hand.</text>
 	<tablerow>1</tablerow>
 	<set rarity="common">FGO</set>
@@ -5964,7 +5983,7 @@ T, Sacrifice Silver Earring: Return target connected creature card from your gra
 </card>
 <card>
 	<name>Spiral Sword Caladbolg</name>
-	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card and put that card into your hand.)
+	<text>Catalyst (When this enters the battlefield, search your library for a connected Servant card, reveal it, and put that card into your hand.)
 Whenever equipped creature attacks, it gets +X/+X and trample until end of turn, where X is the number of lands the defending player controls.
 Equip connected creature 4</text>
 	<tablerow>1</tablerow>
@@ -6175,10 +6194,11 @@ At the beginning of your upkeep, if you control a connected creature, create a 0
 </card>
 <card>
 	<name>Dún Scáith Land of Shadows</name>
-	<text>Whenever a nontoken creature is put into a graveyard from the battlefield, exile that card and its owner creates a 1/1 black Spirit creature token with flying.
-T: Add B.</text>
+	<text>Whenever a nontoken creature is put into a graveyard from the battlefield, its owner creates a 1/1 black Spirit creature token with flying.
+T: Add B.
+T, Sacrifice Dún Scáith, Land of Shadows: Search your library for a card with a Scathach origin, reveal it, and put it into your hand.</text>
 	<tablerow>0</tablerow>
-	<set rarity="common">FGO</set>
+	<set rarity="uncommon">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
@@ -6264,7 +6284,7 @@ Sacrifice Garden of Avalon if you don’t control a connected permanent.</text>
 <card>
 	<name>Prison Castle Csejte</name>
 	<text>Prison Castle Csejte enters the battlefield tapped.
-As long as you control a connected creature, creatures you don’t control get -2/-2.
+As long as you control a connected creature, Prison Castle Csejte has “Cumulative upkeep 1” and creatures you don’t control get -2/-2.
 T: Add R or B.</text>
  <cipt>1</cipt>
 	<tablerow>0</tablerow>
@@ -6281,7 +6301,7 @@ T: Add R or B.</text>
 <card>
 	<name>Rome</name>
 	<text>Rome enters the battlefield tapped.
-When Rome enters the battlefield, you may search your library for a Servant card with a Caligula, Gaius Julius Ceasar, Romulus, or Nero Claudius origin and put it into your hand, then shuffle.
+When Rome enters the battlefield, you may search your library for a Servant card with a Caligula, Gaius Julius Ceasar, Romulus, or Nero Claudius origin, reveal it, and put it into your hand, then shuffle.
 T: Add U, R or W.</text>
  <cipt>1</cipt>
 	<tablerow>0</tablerow>
@@ -6316,7 +6336,7 @@ T: Add CC.</text>
 When Shapeless Island enters the battlefield, you may search your library for a Servant card with a Medusa, Eurayle, or Stheno origin, reveal it, and put it into your hand, then shuffle.
 Creatures with islandguide can be blocked as though they didn’t have islandguide.</text>
 	<tablerow>0</tablerow>
-	<set rarity="common">FGO</set>
+	<set rarity="uncommon">FGO</set>
 	<prop>
 		<layout>normal</layout>
 		<side>front</side>
@@ -6358,8 +6378,8 @@ Creatures with islandguide can be blocked as though they didn’t have islandgui
 <card>
 	<name>Tri-Hermes Spiritron Processor</name>
 	<text>Tri-Hermes, Spiritron Processor enters the battlefield tapped.
-T: Add CC.
-3, T, Reveal a card from your hand: Search your library for a card that shares an origin with that card, reveal it, put it into your hand, then shuffle.</text>
+T: Add CC. Activate only during your turn.
+4, T, Reveal a card from your hand: Search your library for a card that shares an origin with that card, reveal it, put it into your hand, then shuffle.</text>
  <cipt>1</cipt>
 	<tablerow>0</tablerow>
 	<set rarity="mythic rare">FGO</set>
