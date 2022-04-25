@@ -1,0 +1,94 @@
+<html>
+<body>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				type: "GET",
+				url: "PokemonEvoDB.xml",
+				cache: false,
+				dataType: 'xml',
+				success: function(data){
+				
+					$("ul").children().remove();
+					
+					var pkmnList = new Array();
+				},
+				error: function(data){
+					console.log('Error loading XML data');
+					$("#console").append('Error loading XML data');
+				}
+			});
+			
+			function pkmn(pkmnIdInput,nameInput,evosInput){
+				switch(arguments.length) // Function Overload
+				{
+					case 0:
+						
+						break;
+					case 1:
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					default:
+						console.log("Error constructing pkmn object. Too many arguments.")
+						break;
+				}
+				
+				function id(){
+					return pkmnIdInput;
+				}
+				
+				function name(){
+					return nameInput;
+				}
+			}
+			
+			function evo(evoIdInput,evoNameInput,evoNoteInput){
+				switch(arguments.length) // Function Overload
+				{
+					case 0:
+						this.id = false;
+						this.name = "(Argument Error)";
+						this.note = "";
+						break;
+					case 1:
+						this.id = id;
+						this.name = "(Argument Error)";
+						this.note = "";
+						break;
+					case 2:
+						this.id = id;
+						this.name = name;
+						this.note = "";
+						break;
+					case 3:
+						this.id = id;
+						this.name = name;
+						this.note = note;
+						break;
+					default:
+						console.log("Error constructing evo object. Too many arguments");
+						break;
+				}
+				
+				function id(){
+					return evoIdInput;
+				}
+				
+				function name(){
+					return evoNameInput;
+				}
+				
+				function note(){
+					return evoNoteInput;
+				}
+			}
+		});
+	</script>
+	
+	<div id="console"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pkmnDB>
+	<pkmn>
+		<id>0001</id>
+		<name>Bulbasaur</name>
+		<evos>
+			<evo>
+				<id>0002</id>
+				<name>Ivysaur</name>
+				<note>Lv 16</note>
+			</evo>
+		</evos>
+	</pkmn>
+	<pkmn>
+		<id>0002</id>
+		<name>Ivysaur</name>
+		<evos>
+			<evo>
+				<id>0003</id>
+				<name>Venusaur</name>
+				<note>Lv 32</note>
+			</evo>
+		</evos>
+	</pkmn>
+	<pkmn>
+		<id>0003</id>
+		<name>Venusaur</name>
+		<evos>
+			<evo>
+				<id>0003_0002</id>
+				<name>Mega Venusaur</name>
+				<note>Mega</note>
+			</evo>
+			<evo>
+				<id>0003_g</id>
+				<name>GMax Venusaur</name>
+				<note>Gmax</note>
+			</evo>
+		</evos>
+	</pkmn>
+	<pkmn>
+		<id>0003_0002</id>
+		<name>Mega Venusaur</name>
+		<evos>
+		</evos>
+	</pkmn>
+	<pkmn>
+		<id>0003_g</id>
+		<name>GMax Venusaur</name>
+		<evos>
+		</evos>
+	</pkmn>
+</pkmnDB>
