@@ -1,11 +1,21 @@
 <html>
 <body>
+	<style>
+		img {
+			display: inline-block;
+			margin-left: auto;
+			margin-right: auto;
+			border: 3px solid;
+		}
+
+	</style>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="wz_jsgraphics.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$.ajax({
 				type: "GET",
-				url: "PokemonEvoDB.xml",
+				url: "https://time-axis.github.io/PkmnRedux/PokemonEvoDB.xml",
 				cache: false,
 				dataType: 'xml',
 				success: function(data){
@@ -24,13 +34,24 @@
 				switch(arguments.length) // Function Overload
 				{
 					case 0:
-						
+						this.id = false;
+						this.name = "(Argument Error)";
+						this.evos = false;
 						break;
 					case 1:
+						this.id = id;
+						this.name = "(Argument Error)";
+						this.evos = false;
 						break;
 					case 2:
+						this.id = id;
+						this.name = name;
+						this.evos = false;
 						break;
 					case 3:
+						this.id = id;
+						this.name = name;
+						this.evos = false;
 						break;
 					default:
 						console.log("Error constructing pkmn object. Too many arguments.")
@@ -85,10 +106,30 @@
 				function note(){
 					return evoNoteInput;
 				}
+				
+				
 			}
+
+			var jg = new jsGraphics();
+			jg.setPrintable(true);
+			jg.setColor("#000000");
+			jg.setStroke(3);
+			jg.drawLine($("#test1").position().left+($("#test1").width()/2),$("#test1").position().top+($("#test1").height()/2),$("#test2").position().left+($("#test2").width()/2),$("#test2").position().top);
+			jg.drawLine($("#test1").position().left+($("#test1").width()/2),$("#test1").position().top+($("#test1").height()),$("#test3").position().left+($("#test3").width()/2),$("#test3").position().top);
+			jg.drawImage("gfx/0001.png",$("#test1").position().left,$("#test1").position().top,0,0);
+			jg.paint();
 		});
 	</script>
-	
+	<div id="canvas">
+		<div style="text-align:center;" >
+		<br/>
+			<br/>
+			<div id="branch"> </div>
+				<br/>
+					<br/>
+		<span><img id = 'test2' src='gfx/0002.png' class="child">&nbsp;&nbsp;<img id = 'test3' src='gfx/0002.png' class="child">&nbsp;&nbsp;<img id = 'test4' src='gfx/0002.png' class="child"></span></div>
+	</div>
 	<div id="console"></div>
+	
 </body>
 </html>

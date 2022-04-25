@@ -3,8 +3,1759 @@
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
+	<style>
+		body {
+			background-color: #8393b0;
+			color: #FFFFFF;
+			font-family: "Arial", Helvetica, sans-serif;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #DDDDFF;
+			font-weight: bold;
+			text-shadow: 2px 2px #000000;
+		}
+		
+		a:hover {
+			text-decoration: none;
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+		
+		h1 {
+			clear: both;
+			text-align: center;
+		}
+		
+		input[type=text] {
+		  width: 380px;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+		  border: 2px solid #FFFFFF;
+		  border-radius: 2px;
+		  background-color: #536390;
+		  color: #FFFFFF;
+		}
+		
+		#cardListDiv {
+			margin-top: 100px;
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-bottom: 200px;
+			height:auto;
+			text-align: center;
+		}
+		
+		#afterSummon {
+			margin-top: 50px;
+			margin-left: 8vw;
+			margin-right: 8vw;
+			margin-bottom: 200px;
+			height:auto;
+			text-align: center;
+		}
+		
+		#beforeSummon {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			padding: 50px 0;
+		}
+		
+		#summoningPlatform {
+			height: 50vw;
+		}
+		
+		#downloadLink {
+			display:block;
+			text-decoration: none;
+			color: #FFFFFF;
+			width: 125px;
+			margin: auto;
+			text-shadow: none;
+		}
+		
+		#duringSummon {
+			width: 90%;
+			margin: auto;
+			text-align: center;
+		}
+		
+		#volumeMute {
+			-webkit-user-select: none; /* Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+			user-select: none; /* Standard */
+			padding: 0 10px;
+		}
+		
+		.mutedButton {
+			opacity: 0.7;
+		}
+		
+		.draftCardButton {
+			cursor: pointer;
+		}
+		
+		.button {
+			height: 35px;
+			width: 180px;
+			margin-left: 20px;
+			margin-right: 20px;
+			padding: 20px 0;
+			text-align: center;
+			background-color: #7383a0;
+			display: inline-block;
+			border: 3px;
+			border-style: solid;
+			border-radius: 3px;
+			border-color: #536390;
+			font-size: 30px;
+			font-weight: bold;
+		}
+		
+		#connectedPlayersBox {
+			background-color: #536390;
+			border: 2px;
+			border-radius: 2px;
+			border-style: solid;
+			border-color: #334370;
+			width: 480px;
+			text-align: left;
+			padding: 10px 10px;
+			display: inline-block;
+		}
+		
+		.button:hover {
+			background-color: #536390;
+			border-color: #334370;
+			cursor: pointer;
+		}
+		
+		.buttonSmall {
+			height: 28px;
+			width: 125px;
+			margin-left: 10px;
+			margin-right: 10px;
+			padding: 10px 0;
+			text-align: center;
+			background-color: #7383a0;
+			display: inline-block;
+			border: 3px;
+			border-style: solid;
+			border-radius: 3px;
+			border-color: #536390;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		
+		.buttonSmall:hover {
+			background-color: #536390;
+			border-color: #334370;
+			cursor: pointer;
+		}
+		
+		.slider {
+			  -webkit-appearance: none;  /* Override default CSS styles */
+			  appearance: none;
+			  width: 200px; /* Full-width */
+			  height: 25px; /* Specified height */
+			  background: #7383a0;
+			  outline: none; /* Remove outline */
+			  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+			  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+			  transition: opacity .2s;
+		}
+		
+		.slider:hover {
+			opacity: 1;
+		}
+		
+		/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+		.slider::-webkit-slider-thumb {
+		  -webkit-appearance: none; /* Override default look */
+		  appearance: none;
+		  width: 25px; /* Set a specific slider handle width */
+		  height: 25px; /* Slider handle height */
+		  background: #FFFFFF;
+		  cursor: pointer; /* Cursor on hover */
+		}
+
+		.slider::-moz-range-thumb {
+		  width: 25px; /* Set a specific slider handle width */
+		  height: 25px; /* Slider handle height */
+		  background: #FFFFFF;
+		  cursor: pointer; /* Cursor on hover */
+		}
+		
+		#header {
+			padding: 10px 0;
+			margin-left: auto;
+			margin-right: auto;
+			width: 95%;
+			text-align: center;
+		}
+		
+		
+		video {
+			z-index: -1;
+			width: 100%;
+			object-fit: cover;
+			position: absolute;
+			background-attachment: scroll;
+			top: 0vw;
+			left: 0;
+			min-height: 555px;
+			height: calc(100vh);
+			-webkit-animation-name: videofadeIn;
+			-webkit-animation-duration: 0.8s;
+			-webkit-animation-play-state: paused;
+		}
+		
+		@keyframes videofadeIn {
+			0% {
+				filter:opacity(0%);
+			}
+			100% {
+				filter:opacity(100%);
+			}
+		}
+		
+		#footer {
+			clear: both;
+			height: 200px;
+		}
+		
+		#summonDiv {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			
+		}
+		
+		.draftCardsDiv {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		
+		#rulesDiv {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		
+		li {
+			/*float: left;*/
+			/*height: auto;*/
+			
+		}
+		
+		.img-thumbnail {
+			border-radius: 12px; 
+			width: 200px;
+			/*position: absolute;*/
+			/*float:left;*/
+		}
+		
+		.img-thumbnail:hover {
+			/*top: -40%;
+			left: -25%;
+			/*width: 375px;*/
+			transform: scale(1.875,1.875);
+			border-radius: 10px;
+			position: relative;
+			z-index: 999;
+		}
+		
+		.changelogBox {
+			background-color: #6373A0;
+			border-radius: 15px;
+			padding: 15px;
+			border: 3px;
+			border-color: #536390;
+			border-style: solid;
+			text-align: left;
+		}
+		
+		.flexboxStyle {
+			background-color: #6373A0;
+			border-radius: 15px;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 15px;
+			border: 3px;
+			border-color: #536390;
+			border-style: solid;
+		}
+		
+		ul {
+			list-style-type: none;
+		}
+		
+		#volumeMute:hover {
+			cursor:pointer;
+		}
+		
+		.transform:hover {
+			/*top: -40%;
+			left: -25%;
+			width: 375px;
+			left: -73%;
+			transform: scale(1.5,1.5);
+			border-radius: 10px;
+			position: relative;
+			z-index: 999;*/
+		}
+		
+		.transform:hover ~ .transformBackside {
+			display: initial !important;
+			transform: scale(1.5,1.5);
+			left: -27%;
+			border-radius: 10px;
+			position: relative;
+			z-index: 999;
+		}
+		
+		.transform {
+			border-radius: 12px;
+		}
+		
+		.transformThumbnail {
+			width: 200px;
+			height: 279px;
+			display: inline-flex;
+		}
+		
+		.transformThumbnail:hover > .transform {
+			left: -73%;
+			transform: scale(1.5,1.5);
+			border-radius: 10px;
+			position: relative;
+			z-index: 999;
+		}
+		
+		.transformThumbnail:hover > .transformBackside {
+			display: initial !important;
+			transform: scale(1.5,1.5);
+			left: -27%;
+			border-radius: 10px;
+			position: relative;
+			z-index: 999;
+		}
+		
+		.thumbnail {
+			width: 200px;
+			height: 279px;
+			display: inline-flex;
+		}
+		
+		.invisible {
+			opacity: 0;
+		}
+		
+		.hidden {
+			display: none !important;
+		}
+		
+		.card {
+			border-radius: 20px;
+			width: 100%;
+			height: 523px;
+			margin: 0 auto;
+		}
+		
+		.exampleCard {
+			border-radius: 20px;
+			margin: 0 auto;
+		}
+		
+		#summonCardContainer {
+			width: 375px;
+			margin: 0 auto;
+		}
+		
+		.fadingIn {
+			-webkit-animation-name: fadingInAnim;
+			-webkit-animation-duration: 1.4s;
+			-webkit-animation-play-state: paused;
+			-webkit-animation-timing-function: ease-in;
+		}
+		
+		@keyframes fadingInAnim {
+			0% {
+				opacity: 0;
+			}
+			25% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		
+		.spinning {
+			-webkit-animation-name: spinningAnim;
+			-webkit-animation-duration: 0.3s;
+			-webkit-animation-play-state: running;
+			-webkit-animation-iteration-count: infinite;
+		}
+		
+		@keyframes spinningAnim {
+			0%, 100% {
+				width: 375px;
+				height: 523px;
+			}
+			50% {
+				width: 0px;
+				height: 523px;
+			}
+		}
+		
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+			$.ajax({
+				type: "GET",
+				url: 'https://time-axis.github.io/FateGrandOrder.xml',
+				cache: false,
+				dataType: 'xml',
+				success: function(data){
+				
+					$("ul").children().remove();
+					
+					var cardsList = new Array();
+					
+					var commonList = new Array();
+					var uncommonList = new Array();
+					var rareList = new Array();
+					var mythicList = new Array();
+					var specialList = new Array();
+					var tempHtml = "";
+					var yourCardPool = new Array();
+					
+					var busy = false;
+					
+					// Populate Card List
+					$(data).find("card").each( function (i) {
+						var newCard = new card(i,$(this).find('name').text(),$(this).find('set').attr('rarity'),$(this).find('token').text(),$(this).find('prop').find('layout').text(),$(this).find('prop').find('side').text(),$(this).find('prop').find('type').text());
+						cardsList.push(newCard);
+						if(!newCard.isBackside()){
+							switch(newCard.rarity()){
+								case "common":
+									commonList.push(newCard);
+									break;
+								case "uncommon":
+									uncommonList.push(newCard);
+									break;
+								case "rare":
+									rareList.push(newCard);
+									break;
+								case "mythic rare":
+									mythicList.push(newCard);
+									break;
+								case "special":
+									specialList.push(newCard);
+									break;
+								default:
+									console.log("Error populating card list.");
+									break;
+							}
+						}
+						//console.log(cardsList.length + ", " + i + ", " + cardsList[i].name() + ", " + cardsList[i].rarity() + ", "+ cardsList[i].isToken()+", "+ cardsList[i].isTransform()+", "+cardsList[i].isBackside()+", "+cardsList[i].isEmblem()+", "+cardsList[i].isBasicLand());
+					});
+					
+					// Draw Card List
+					
+					tempHtml = "";
+					
+					tempHtml = tempHtml + '<h1>Common (55% Rate)</h1><br/><div class=\"flexboxStyle\">';
+					for(let i = 0; i < commonList.length; i++){
+						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(commonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+					}
+					tempHtml = tempHtml + "</div><br/><br/><br/><h1>Uncommon (33% Rate)</h1><br/><div class=\"flexboxStyle\">";
+					for(let i = 0; i < uncommonList.length; i++){
+						//console.log(uncommonList[i].isTransform());
+						if (!uncommonList[i].isTransform()) {
+							tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+						} else {
+							tempHtml = tempHtml + "<span class=\"transformThumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncommonList[i].name()) + ".jpg\" class=\"transform img-thumbnail\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
+						}
+					}
+					tempHtml = tempHtml + '</div><br/><br/><h1>Rare (8% Rate)</h1><br/><div class=\"flexboxStyle\">';
+					for(let i = 0; i < rareList.length; i++){
+						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(rareList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+					}
+					tempHtml = tempHtml + '</div><br/><br/><h1>Mythic Rare (3% Rate)</h1><br/><div class=\"flexboxStyle\">';
+					for(let i = 0; i < mythicList.length; i++){
+						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(mythicList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+					}
+					tempHtml = tempHtml + '</div><br/><br/><h1>Special (1% Rate)</h1><br/><div class=\"flexboxStyle\">';
+					for(let i = 0; i < specialList.length; i++){
+						tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(specialList[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+					}
+					tempHtml = tempHtml + '</div>';
+					$("#cardListDiv").append(tempHtml);
+					
+					// Rules
+					
+					
+					// Summoning
+					var summonList = new Array;
+					
+					//		Volume Slider
+					var lastVolume = 0;
+					$("#volumeMute").click(function() {
+						if($("#volumeSlider").val() > 0) {
+							lastVolume = $("#volumeSlider").val();
+							$("#volumeSlider").val(0);
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+							$("#volumeMute").addClass("mutedButton");
+						}
+						else {
+							$("#volumeSlider").val(lastVolume);
+							$("#BGM").prop("volume", lastVolume / 100);
+							$("#SFX").prop("volume", lastVolume / 100);
+							$("#volumeMute").removeClass("mutedButton");
+						}
+						
+					});
+					
+					$("#volumeSlider").on("input", function() {
+						//console.log($("#volumeSlider").val());
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#volumeMute").removeClass("mutedButton");
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						
+					});
+					
+					function normalSummon(){
+						var roll = Math.floor((Math.random()*100)+1);
+						var summonedCard = "";
+						
+						
+						if (roll < 55) { //Common (55%) 55
+							summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
+							while(summonedCard.isBasicLand()) // Don't summon basic lands
+							{
+								summonedCard = commonList[Math.floor(Math.random() * commonList.length)];
+							}
+						} else 
+						if (roll < 88) { //Uncommon (33%) 88
+							summonedCard = uncommonList[Math.floor(Math.random() * uncommonList.length)];
+						} else
+						if (roll < 96) { //Rare (8%) 96
+							summonedCard = rareList[Math.floor(Math.random() * rareList.length)];
+						} else
+						if (roll < 99) { //Mythic Rare (3%) 99
+							summonedCard = mythicList[Math.floor(Math.random() * mythicList.length)];
+						} 
+						else { //Special (1%)
+							summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+							while(summonedCard.isToken() || summonedCard.isEmblem()) {
+								//console.log("Can't summon "+summonedCard.name()+". Rerolling.");
+								summonedCard = specialList[Math.floor(Math.random() * specialList.length)];
+							}
+						}
+						return summonedCard;
+					}
+					
+					function rareSummon(){ // For Guaranteed Rare or Above
+						var roll = Math.floor((Math.random()*100)+1);
+						var summonedCard = "";
+						
+						if (roll < 97) { // Rare (97%)
+							summonedCard = rareList[Math.floor(Math.random() * rareList.length)];
+						}
+						else { // Mythic Rare (3%)
+							summonedCard = mythicList[Math.floor(Math.random() * mythicList.length)];
+						}
+						return summonedCard;
+					}
+					
+					$("#begin10SummonButton").click(async function (){ // When Summon 10 Button is Pressed
+						
+						busy = true;
+						window.scrollTo(0, 0);
+						$("#header").addClass("invisible");
+						$("#beforeSummon").addClass("hidden");
+						$("#duringSummon").removeClass("hidden");
+						$("#summonVid").get(0).play();
+						$("#summonVid").css("-webkit-animation-play-state", "running");
+						
+						var tempCard = "";
+						
+						if(!($("#skipAnimationBox").get(0).checked)) {
+							//Play BGM
+							if($("#volumeSlider").val() > 0) {
+								$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+								$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+							}
+							else {
+								$("#BGM").prop("volume", 0);
+								$("#SFX").prop("volume", 0);
+							}
+							$("#BGM").trigger('play');
+						}
+						
+						var rareSlot1 = Math.floor(Math.random()*10);
+						var rareSlot2 = Math.floor(Math.random()*10);
+						while (rareSlot1 == rareSlot2) {	
+							rareSlot2 = Math.floor(Math.random()*10);
+						}
+						for(let i = 0; i < 10; i++) {
+							if(i == rareSlot1 || i== rareSlot2) {
+								tempCard = rareSummon();
+							}
+							else {
+								tempCard = normalSummon();
+							}
+							//console.log(tempCard.name() + " " + tempCard.rarity())
+							summonList.push(tempCard);
+							//console.log(summonList[i].name());
+						}
+						//console.log(summonList[0].name());
+						
+						//STEP 1
+						function summonStep1(i) {
+							//setTimeout(function() {
+								if(summonList[i].rarity() == "common") {
+									$("#summonCard").attr('src',"cardback_default" + ".jpg");
+								} else
+								if(summonList[i].rarity() == "uncommon") {
+									$("#summonCard").attr('src',"cardback_uncommon" + ".jpg");
+								} else
+								if(summonList[i].rarity() == "rare") {
+									$("#summonCard").attr('src',"cardback_rare" + ".jpg");
+								} else
+								if(summonList[i].rarity() == "mythic rare") {
+									$("#summonCard").attr('src',"cardback_rare" + ".jpg");
+								} 
+								else {
+									$("#summonCard").attr('src',"cardback_special" + ".jpg");
+								}
+								$("#summonCardContainer").removeClass("hidden");
+								$("#summonCard").css("-webkit-animation-play-state", "running");
+								//Play SFX
+								if($("#volumeSlider").val() > 0) {
+								$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+								$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+								}
+								else {
+									$("#BGM").prop("volume", 0);
+									$("#SFX").prop("volume", 0);
+								}
+								$("#SFX").trigger('load');
+								$("#SFX").trigger('play');
+							//}, 800);							
+						};
+						
+						//STEP 2
+						function summonStep2(i) {
+							//setTimeout(function() {
+								$("#summonCard").attr('src',"FateGrandOrder-files/"+ summonList[i].name() + ".jpg");
+								//$("#summonCardContainer").css("-webkit-animation-duration", "1s");
+								$("#summonCardContainer").css("-webkit-animation-iteration-count", "1");
+							//}, 3800);
+						}
+						
+						//STEP 3
+						function summonStep3(i) {
+							//setTimeout(function() {
+								$("#summonCardContainer").addClass("hidden");
+								$("#summonCardContainer").css("-webkit-animation-iteration-count", "infinite");
+							//}, 7500);
+						}
+						
+						//for(let i = 0; i < summonList.length; i++) {
+						
+						for(i = 0; i < summonList.length; i++) {
+							if(!($("#skipAnimationBox").get(0).checked)) {
+								await delay(200);
+								summonStep1(i);
+								await delay(3000);
+								summonStep2(i);
+								await delay(2050);
+								summonStep3(i);
+							}
+						}
+						
+						$("#header").removeClass("invisible");
+						$("#duringSummon").addClass("hidden");
+						$("#afterSummon").removeClass("hidden");
+						
+						tempHtml = ""
+						tempHtml = tempHtml + '<h1>Summoned Cards:</h1><div class=\"flexboxStyle\">';
+						for(let i = 0; i < summonList.length; i++){
+							if(!summonList[i].isTransform()) {							
+								tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ summonList[i].name() + ".jpg\" class=\"img-thumbnail\" /></span>";
+							} else {
+								tempHtml = tempHtml + "<span class=\"transformThumbnail\"><img src=\"FateGrandOrder-files/"+ summonList[i].name() + ".jpg\" class=\"transform\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
+							}
+						}
+						tempHtml = tempHtml + '</div><br/><br/>';
+						$("#afterSummonList").append(tempHtml);
+						console.log(cardListToString(summonList));
+						busy = false;
+					});
+					
+					$("#resetButton").click(function() {
+						window.scrollTo(0, 0);
+						$("#afterSummon").addClass("hidden");
+						$("#beforeSummon").removeClass("hidden");
+						summonList = new Array;
+						$("#BGM").trigger('load');
+						$("#SFX").trigger('load');
+						$("#summonVid").get(0).load();
+						$("#afterSummonList").html("");
+					});
+								
+					/*
+					$("#audioTestButton").click(function() {
+						console.log($("#volumeSlider").val());
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						$("#BGM").trigger('play');
+					});
+					$("#audioTestButton2").click(function() {
+						console.log($("#volumeSlider").val());
+						if($("#volumeSlider").val() > 0) {
+							$("#BGM").prop("volume", ($("#volumeSlider").val() / 100));
+							$("#SFX").prop("volume", ($("#volumeSlider").val() / 100));
+						}
+						else {
+							$("#BGM").prop("volume", 0);
+							$("#SFX").prop("volume", 0);
+						}
+						$("#SFX").trigger('play');
+					});*/
+					
+					
+					
+					// Header Buttons
+					
+					$("#cardListButton").click(function(){
+						if(!busy)
+						{
+							window.scrollTo(0, 0);
+							$("#rulesDiv").addClass("hidden");
+							$("#summonDiv").addClass("hidden");
+							$("#draftDiv").addClass("hidden");
+							$("#cardListDiv").removeClass("hidden");
+						}
+					});
+					
+					$("#rulesButton").click(function(){
+						if(!busy)
+						{
+							window.scrollTo(0, 0);
+							$("#summonDiv").addClass("hidden");
+							$("#cardListDiv").addClass("hidden");
+							$("#draftDiv").addClass("hidden");
+							$("#rulesDiv").removeClass("hidden");
+						}
+					});
+					
+					$("#summoningButton").click(function(){
+						if(!busy)
+						{
+							window.scrollTo(0, 0);
+							$("#rulesDiv").addClass("hidden");
+							$("#cardListDiv").addClass("hidden");
+							$("#draftDiv").addClass("hidden");
+							$("#summonDiv").removeClass("hidden");
+						}
+					});
+					
+					$("#draftButton").click(function(){
+						if(!busy)
+						{
+							window.scrollTo(0, 0);
+							$("#rulesDiv").addClass("hidden");
+							$("#cardListDiv").addClass("hidden");
+							$("#summonDiv").addClass("hidden");
+							$("#draftDiv").removeClass("hidden");
+						}
+					});
+					
+					// Changelog Button
+					
+					$("#changelogButton").click(function(){
+						if($("#changelogDiv").hasClass("hidden")){
+							$("#changelogDiv").removeClass("hidden");
+						} else {
+							$("#changelogDiv").addClass("hidden");
+						}
+					});
+					
+					// DRAFTING
+					
+					// Host New Draft
+					$("#draftHostButton").click(function(){
+						var selfPeer = new Peer(
+                            {
+                                host: 'whispering-shelf-32257.herokuapp.com',
+                                port: '443',
+                                path: '/',
+                                secure: true
+                            });
+						var username = $("#draftNameTextbox").val();
+						var connectedPlayersBoxHTML = "<strong>Connected Players:</strong><br/><br/>";
+						var playerCount = 1;
+						var cpuCount = 0;
+						var activeConnections = new Array();
+						var playerList = new Array();
+						var compressedArrayOfCards = "";
+						
+						
+						if(username == "")
+						{
+							username = "Player";
+						}
+						
+						// selfPeer initalization
+						selfPeer.on('open', function(id){
+							console.log("Peer ID:"+ id);
+							$("#draftBeforeConnected").html("");
+							$("#connectionInfo").prepend("<h1>Host ID: "+id+"</h1>Send this ID to other players to let them join your draft.<br/><br/>");
+							$("#connectedPlayersBox").removeClass("hidden");
+							connectedPlayersBoxHTML = writePlayerList();
+							$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+							$("#draftSettings").removeClass("hidden");
+						});
+						
+						function writePlayerList() {
+							var outputString = "<strong>Connected Players:</strong><br/>" + "<br/><strong>1. </strong>"+username+"";
+							for(i=0; i < 4; i++) {
+								if (activeConnections.length > i) {
+									outputString = outputString + "<br/><strong>"+ (i+2) + ". </strong>"+activeConnections[i].metadata[0]+"";
+								} else {
+									if(!($("#addCPUCheckbox").get(0).checked)) {
+										outputString = outputString + "<br/><strong>"+ (i+2) + ". </strong>";
+									} else {
+										outputString = outputString + "<br/><strong>"+ (i+2) + ". </strong><em>CPU"+((i+1)-activeConnections.length)+"</em>";
+									}
+								}
+							}
+							return outputString;
+						}
+						
+						$("#addCPUCheckbox").change(function() {
+							connectedPlayersBoxHTML = writePlayerList();
+							for(i=0; i < activeConnections.length;i++){
+								activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
+							}
+							$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+						});
+						
+						function quickSummon10(){
+							var tempBooster = new Array;
+							var tempCard = "";
+							
+							var rareSlot1 = Math.floor(Math.random()*10);
+							var rareSlot2 = Math.floor(Math.random()*10);
+							while (rareSlot1 == rareSlot2) {	
+								rareSlot2 = Math.floor(Math.random()*10);
+							}
+							for(let i = 0; i < 10; i++) {
+								if(i == rareSlot1 || i== rareSlot2) {
+									tempCard = rareSummon();
+								}
+								else {
+									tempCard = normalSummon();
+								}
+								tempBooster.push(tempCard);
+							}
+							return tempBooster;
+						}
+						
+						function beginDraft() {
+							
+							// Initialization
+							var boosterNumber = 0;
+							var readyForNextStep = false;
+							console.log("Beginning draft.");
+							var playerList = new Array; // Create List of Players
+							playerList.push([username,quickSummon10(),"host",false]); // Label Player 0 as Host (0: Username, 1: Booster Pack, 2: Label, 3: Selected Card Number [false if not selected])
+							for (i=0; i < activeConnections.length; i++) {
+								playerList.push([activeConnections[i].metadata[0],quickSummon10(),activeConnections[i],false]); // Add non-CPU players first
+								//console.log(playerList[i][1]);
+							}
+							if($("#addCPUCheckbox").get(0).checked) { // Add CPU players if enabled
+								for (i=0; i < (5-(activeConnections.length + 1)); i++) {
+									playerList.push(["CPU"+(playerList.length - activeConnections.length),quickSummon10(),"CPU",false]);
+								}
+							}
+							$("#draftSettings").addClass("hidden");
+							boosterNumber ++;
+							
+							mainDraftLoop();
+							
+							function mainDraftLoop() {
+								readyForNextStep = false;
+								
+								
+								activeConnections.forEach(function(item){
+									item.off('data');
+								});
+								
+								for(r=0; r < playerList.length; r++) {
+									playerList[r][3] = false;
+								}
+								
+								
+								// Draw Host's Booster
+								tempHtml = ""
+								tempHtml = tempHtml + '<br/><br/><div class=\"flexboxStyle\">';
+								//console.log(playerList[0][1]);
+								for(i = 0; i < playerList[0][1].length; i++){
+									if(!playerList[0][1][i].isTransform()) {							
+										tempHtml = tempHtml + "<span id=\"draftCardButton" + i + "\" class=\"draftCardButton thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(playerList[0][1][i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+									} else {
+										tempHtml = tempHtml + "<span id=\"draftCardButton" + i + "\" class=\"draftCardButton transformThumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(playerList[0][1][i].name()) + ".jpg\" class=\"transform\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
+									}
+								}
+								tempHtml = tempHtml + '</div><br/><br/>';
+								$("#draftSummonList").html(tempHtml);
+								
+								// Send each player their booster
+								for(i=0; i < playerList.length; i++) {
+									//console.log(playerList[i]);
+									if (playerList[i][2] != "host" && playerList[i][2] != "CPU") {
+										
+										compressedArrayOfCards = new Array;
+										for (j=0; j < playerList[i][1].length; j++) {
+											compressedArrayOfCards.push(cardToArray(playerList[i][1][j])); // Convert each card in booster into an array
+											//console.log(j);
+										}
+										playerList[i][2].send(['draftPool',compressedArrayOfCards,i]);
+									}
+								}
+								
+								// Wait for players to choose a card
+								
+								activeConnections.forEach(function(item){
+									item.off().on('data', function(data) {
+										switch(data[0]){
+											case 'cardPickedNumber':
+												playerList[data[2]][3] = data[1];
+												readyForNextStep = true;
+												for(j=0;j < playerList.length; j++) {
+													console.log("Step 1: "+playerList[j][3]);
+													if(playerList[j][3] === false) {
+														readyForNextStep = false;
+													}
+												}
+												if (readyForNextStep) {
+													console.log("Step 2");
+													draftStep();
+												} else if (playerList[0][3] !== false) {
+													$("#draftSummonList").html("<br/><br/><h1>Waiting for:</h1>");
+													tempHtml = "";
+													for(j = 0; j < playerList.length; j++) {
+														if(playerList[j][3] === false) {
+															tempHtml = tempHtml + "<br/>" + playerList[j][0];
+														} else {
+															console.log("Test: "+ playerList[j][3]);
+														}
+														
+													}
+													$("#draftSummonList").append(tempHtml);
+												}
+												break;
+											default:
+												console.log("Peer sent invalid data.");
+												break;
+										}
+									});
+								});
+								
+								// Have CPUs choose their cards
+								for (i = 0; i < playerList.length; i++) {
+									if (playerList[i][2] == "CPU") {
+										var randomCPUCardNumber = Math.floor(Math.random() * playerList[i][1].length);
+										//playerList[i][1].splice(randomCPUCardNumber,1); // CPU takes a random card (Maybe add some logic to it in future)
+										playerList[i][3] = randomCPUCardNumber;
+									}
+								}
+								
+								// Wait for host to choose a card
+								
+								$("#draftSummonList").off().on('click', 'div > .draftCardButton', function() {
+
+									var targetId = $(this).attr("id");
+									var targetNumber = parseInt(targetId.substr(15));
+									yourCardPool.push(playerList[0][1][targetNumber]); // Add Chosen Card to Card Pool
+									playerList[0][3] = targetNumber;
+									
+									$("#draftSummonList").html("<br/><br/><h1>Waiting for:</h1>");
+									tempHtml = "";
+									
+									if (playerList.length > 1) {
+										for(i = 1; i < playerList.length; i++) {
+											if(playerList[i][3] === false) {
+												tempHtml = tempHtml + "<br/>" + playerList[i][0];
+											} else {
+												console.log("Test: "+ playerList[i][3]);
+											}
+										}
+									}
+									$("#draftSummonList").append(tempHtml);
+									
+									// Refresh Card Pool
+									tempHtml = ""
+									tempHtml = tempHtml + '<br/><br/><div class=\"flexboxStyle\">';
+									if (yourCardPool.length > 0) {
+										for(i = 0; i < yourCardPool.length; i++){
+											if(!yourCardPool[i].isTransform()) {							
+												tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(yourCardPool[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+											} else {
+												tempHtml = tempHtml + "<span class=\"transformThumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(yourCardPool[i].name()) + ".jpg\" class=\"transform\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
+											}
+										}
+									} else {
+										console.log('Error: yourCardPool.length <= 0.');
+									}
+									tempHtml = tempHtml + '</div><br/><br/>';
+									$("#cardPoolNumber").html(yourCardPool.length +' Cards');
+									$("#draftCardPool").html(tempHtml);
+									
+									readyForNextStep = true;
+									for(i=0;i < playerList.length;i++) {
+										console.log("Step 1: "+playerList[i][3]);
+										if(playerList[i][3] === false) {
+											readyForNextStep = false;
+											console.log("Not ready.");
+										}
+									}
+									if (readyForNextStep) {
+										console.log("Step 2");
+										draftStep();
+									}
+								});
+							
+							}
+							
+							async function draftStep() {
+
+
+								console.log("READY!");
+								for(i = 0; i < playerList.length; i++) {
+									console.log("Index: "+ i +" Removing: "+playerList[i][3]+" "+playerList[i][1][playerList[i][3]].name());
+									const tempNumber = playerList[i][3];
+									playerList[i][1].splice(tempNumber,1);
+									//console.log(playerList[i][1].length);
+								}
+								var bufferArray = new Array;
+								var passDirection = 1;
+								
+								if(boosterNumber % 2 == 0) {
+									passDirection = 1;
+								} else {
+									passDirection = -1;
+								}
+								
+								if (playerList[0][1].length > 0) {
+									bufferArray = playerList[0][1];
+									
+									for(h = 0; h < playerList.length && h > (playerList.length * -1); h -= passDirection) {
+										var catcher = h;
+										var passer = catcher - passDirection;
+										if (catcher < 0) {
+											catcher = catcher + playerList.length;
+										}
+										if (passer < 0) {
+											passer = passer + playerList.length;
+										} else if (passer >= playerList.length) {
+											passer = passer - playerList.length;
+										}
+										
+										if (passer == 0) {
+											playerList[catcher][1] = bufferArray;
+										} else {
+											playerList[catcher][1] = playerList[passer][1];
+										}
+										//console.log(playerList[catcher][1].length);
+									}
+									console.log("Restarting!");
+									busy = false;
+									if (yourCardPool.length < 45)
+									{
+										mainDraftLoop();
+									}
+									else {
+										// end draft function
+										$("#draftSummonList").html("<br/><br/><h3>Draft finished. Refresh the page to draft again.</h3>");
+										activeConnections.forEach(function(item){
+											item.send(['endDraft']);
+										});
+										$("#connectionInfo").addClass("hidden");
+										$("#connectedPlayersBox").addClass("hidden");
+										$("#draftCardPool").append('<div class=\"flexboxStyle\">' + cardListToString(yourCardPool, true) + '</div>');
+										
+									}
+									
+								} else {
+									// Open new boosters
+									console.log("New boosters opened.")
+									for (let h = 0; h < playerList.length; h++) {
+										playerList[h][1] = quickSummon10();
+									}
+									boosterNumber++;
+									busy = false;
+									if (yourCardPool.length < 45)
+									{
+										await delay(500);
+										mainDraftLoop();
+									}
+									else {
+										// end draft function
+										$("#draftSummonList").html("<br/><br/><h3>Draft finished. Refresh the page to draft again.</h3>");
+										activeConnections.forEach(function(item){
+											item.send(['endDraft']);
+										});
+										$("#connectionInfo").addClass("hidden");
+										$("#connectedPlayersBox").addClass("hidden");
+										$("#draftCardPool").append('<div class=\"flexboxStyle\">' + cardListToString(yourCardPool, true) + '</div>');
+									}
+									
+								}
+															
+							}
+							
+						}
+						
+						// Begin Draft From Host Side
+						$("#draftHostStartButton").click(function() {
+							beginDraft();
+						});
+						
+						
+						selfPeer.on('connection', function(conn) { //When someone connects to your draft
+							if (activeConnections.length < 4) {
+								activeConnections.push(conn);
+								connectedPlayersBoxHTML = writePlayerList();
+								conn.on('open', function(){
+									for(i=0; i < activeConnections.length;i++){
+										activeConnections[i].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
+									}
+									$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+									
+									(function checkConnections() {
+										for(i=0; i < activeConnections.length; i++) {
+											if(!activeConnections[i]._open) {
+												activeConnections.splice(i,1);
+												console.log("Connection "+ i +" lost.");
+												connectedPlayersBoxHTML = writePlayerList();
+												for(j=0; j < activeConnections.length;j++){
+													activeConnections[j].send(['consoleUpdate',connectedPlayersBoxHTML]); //Update connected player display for each player
+												}
+												$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+												
+											}
+										}
+										setTimeout(checkConnections, 15000);
+									})();
+								});
+							}
+							else {
+								conn.close();
+							}
+						});
+					});
+					
+					
+					// Join Existing Draft
+					$("#draftConnectButton").click(function(){
+						var selfPeer = new Peer(
+                            {
+                                host: 'whispering-shelf-32257.herokuapp.com',
+                                port: '443',
+                                path: '/',
+                                secure: true
+                            });
+						var username = $("#draftNameTextbox").val();
+						var connectedPlayersBoxHTML = "";
+						var uncompressedArrayOfCards = "";
+						if(username == "")
+						{
+							username = "Player";
+						}
+						
+						selfPeer.on('open', function(id){
+							console.log("Peer ID:"+ id);
+							var conn = selfPeer.connect($("#draftHostIDTextbox").val(), {metadata: [username,'']});
+							$("#draftBeforeConnected").html("");
+							
+							conn.on('open', function() {
+								$("#connectionInfo").prepend("<br/><br/>Waiting for Host to begin draft.<br/><br/>");
+								var playerNumber;
+								conn.off().on('data', function(data){
+									if(Array.isArray(data))
+									{
+										switch(data[0]){
+											case 'consoleUpdate': // Receive console update
+												$("#connectedPlayersBox").removeClass("hidden");
+												connectedPlayersBoxHTML = data[1];
+												$("#connectedPlayersBox").html(connectedPlayersBoxHTML);
+												break;
+											case 'draftPool': // Receive booster pack from host
+												playerNumber = data[2];
+												uncompressedArrayOfCards = new Array;
+												for (i=0; i < data[1].length; i++){
+													uncompressedArrayOfCards.push(arrayToCard(data[1][i])); // Convert Array-Format Cards back into Card Objects
+												}
+												
+												$("#draftSettings").addClass("hidden");
+												$("#draftSummonList").html("");
+												tempHtml = ""
+												tempHtml = tempHtml + '<br/><br/><div class=\"flexboxStyle\">';
+												for(let i = 0; i < uncompressedArrayOfCards.length; i++){
+													if(!uncompressedArrayOfCards[i].isTransform()) {							
+														tempHtml = tempHtml + "<span id=\"draftCardButton" + i + "\" class=\"draftCardButton thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncompressedArrayOfCards[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+													} else {
+														tempHtml = tempHtml + "<span id=\"draftCardButton" + i + "\" class=\"draftCardButton transformThumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(uncompressedArrayOfCards[i].name()) + ".jpg\" class=\"transform\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
+													}
+												}
+												tempHtml = tempHtml + '</div><br/><br/>';
+												$("#draftSummonList").append(tempHtml);
+												
+												$("#draftSummonList").off().on('click', 'div > .draftCardButton', function() {
+													var targetId = $(this).attr("id");
+													var targetNumber = parseInt(targetId.substr(15));
+													yourCardPool.push(uncompressedArrayOfCards[targetNumber]); // Add Chosen Card to Card Pool
+													
+													conn.send(['cardPickedNumber',targetNumber,playerNumber]);
+													
+													$("#draftSummonList").html("<br/><br/><h1>Waiting for other players.</h1>");
+													
+													// Refresh Card Pool
+													tempHtml = ""
+													tempHtml = tempHtml + '<br/><br/><div class=\"flexboxStyle\">';
+													for(let i = 0; i < yourCardPool.length; i++){
+														if(!yourCardPool[i].isTransform()) {							
+															tempHtml = tempHtml + "<span class=\"thumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(yourCardPool[i].name()) + ".jpg\" class=\"img-thumbnail\" /></span>";
+														} else {
+															tempHtml = tempHtml + "<span class=\"transformThumbnail\"><img src=\"FateGrandOrder-files/"+ encodeURIComponent(yourCardPool[i].name()) + ".jpg\" class=\"transform\" />"+"<img src=\"FateGrandOrder-files/Mister Hyde.jpg\" class=\"hidden transformBackside\" /></span>";
+														}
+													}
+													tempHtml = tempHtml + '</div><br/><br/>';
+													$("#cardPoolNumber").html(yourCardPool.length +' Cards');
+													$("#draftCardPool").html(tempHtml);
+													
+												});
+												
+												
+												break;
+											case 'endDraft':
+												$("#draftSummonList").html("<br/><br/><h3>Draft finished.  Refresh the page to draft again.</h3>");
+												conn.close();
+												$("#connectedPlayersBox").addClass("hidden");
+												$("#connectionInfo").addClass("hidden");
+												$("#draftCardPool").append('<div class=\"flexboxStyle\">' + cardListToString(yourCardPool, true) + '</div>');
+												break;
+											default:
+												console.log("Error: Host sent invalid data.");
+												break;
+										}
+									}
+									else
+									{
+										console.log("Error: Host sent invalid data.");
+									}
+									
+								});
+								
+							});
+						});
+					});
+										
+				},
+				error: function(data){
+					console.log('Error loading XML data');
+					$("#console").append('Error loading XML data');
+				}
+			});
+			
+			//Animate Card
+			function animateCard(cardInput)
+			{
+				
+			}
+										
+			//Convert Card Object to Array
+			function cardToArray(inputCard)
+			{
+				var output = new Array;
+				output = [inputCard.cardId(), inputCard.name(), inputCard.rarity(), inputCard.isToken(), inputCard.isTransform(), inputCard.isBackside(), inputCard.isEmblem(), inputCard.isBasicLand()];
+				return output;
+			}
+			
+			//Convert Array to Card Object
+			function arrayToCard(inputArray)
+			{
+				var cardId = inputArray[0];
+				var cardNameInput = inputArray[1];
+				var cardRarity = inputArray[2];
+				var cardTokenInput = "";
+				if (inputArray[3]){
+					cardTokenInput = "1";
+				}
+				var cardLayoutInput = "";
+				if (inputArray[4]) {
+					cardLayoutInput = "transform";
+				}
+				var cardSideInput = "";
+				if (inputArray[5]) {
+					cardSideInput = "back";
+				}
+				var cardTypeInput = "";
+				if (inputArray[6]) {
+					cardTypeInput = "Emblem";
+				}
+				if (inputArray[7]) {
+					cardTypeInput = "Basic Land";
+				}
+				
+				var output = new card(cardId,cardNameInput,cardRarity,cardTokenInput,cardLayoutInput,cardSideInput,cardTypeInput);
+				return output;
+			}
+			
+			//Convert Array of Cards to String
+			function cardListToString(listInput, htmlFormat = false){
+				var newCardList = listInput.slice();
+				var tempName = "";
+				var tempNumber = 1;
+				var tempIndex = 0;
+				var numberList = new Array;
+				var outputList = "";
+				var okayToGo = true;
+				
+				for(i = 0; i < newCardList.length; i++) {
+					tempNumber = 1;
+					tempName = newCardList[i].name();
+					okayToGo = true;
+					while(okayToGo){
+						tempIndex = newCardList.findIndex(checkDuplicateName, i);
+						//console.log(tempIndex);
+						if (tempIndex != -1) {
+							tempNumber++;
+							newCardList.splice(tempIndex, 1);
+						} else {
+							okayToGo = false;
+						}
+					}
+					numberList.push(tempNumber);
+				}
+				
+				for(i = 0; i < newCardList.length; i++) {
+					if (htmlFormat) {
+						outputList = outputList + numberList[i] + " " + newCardList[i].name() + "<br/>";
+					} else {
+						outputList = outputList + numberList[i] + " " + newCardList[i].name() + "\n";
+					}
+				}
+				
+				return outputList;
+				
+				function checkDuplicateName(card, index) {
+					//console.log(index);
+					var mainIndex = this;
+					return (card.name() === tempName && index != mainIndex);
+					
+				}
+			}
+			
+			//Create Card Object Function
+			function card(cardIdInput,nameInput,rarityInput,tokenInput,layoutInput,sideInput,typeInput){
+			
+				switch(arguments.length) // Function Overload Handling
+				{
+					case 0:
+						this.cardId = false;
+						this.name = "(Argument Error)";
+						this.rarity = "(Argument Error)";
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;		
+					case 1:
+						this.cardId = cardId;
+						this.name = "(Argument Error)";
+						this.rarity = "(Argument Error)";
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;
+						break;
+					case 2:
+						this.cardId = cardId;
+						this.name = name;
+						this.rarity = "(Argument Error)";
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;
+						break;
+					case 3:
+						this.cardId = cardId;
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = false;
+						this.isTransform = false;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;
+						break;
+					case 4:
+						this.cardId = cardId;
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = false;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;
+						break;
+					case 5:
+						this.cardId = cardId;
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = isTransform;
+						this.isBackside = false;
+						this.isEmblem = false;
+						this.isBasicLand = false;
+						break;
+					case 6:
+						this.cardId = cardId;
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = isTransform;
+						this.isBackside = isBackside;
+						this.isEmblem = false;
+						this.isBasicLand = false;
+						break;
+					case 7:
+						this.cardId = cardId;
+						this.name = name;
+						this.rarity = rarity;
+						this.isToken = isToken;
+						this.isTransform = isTransform;
+						this.isBackside = isBackside;
+						this.isEmblem = isEmblem;
+						this.isBasicLand = isBasicLand;
+						break;
+					default:
+						console.log("Error constructing card object. Too many arguments.");
+						break;
+				}
+				
+				function cardId(){
+					return cardIdInput;
+				}
+				
+				function name(){
+					return nameInput;
+				}
+				function rarity(){
+					return rarityInput;
+				}
+				function isToken(){
+					if (tokenInput == "1") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isTransform(){
+					if (layoutInput == "transform") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isBackside(){
+					if (sideInput == "back") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isEmblem(){
+					if (typeInput == "Emblem") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				function isBasicLand() {
+					if (typeInput.includes("Basic Land")) {
+						return true;
+					} else {
+						return false;
+					}
+				}
+			}
+			
+			//Delay Function
+			function delay(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+			
+		});
+	</script>
 </head>
 <body>
-If you're looking for FGO MTG, contact TimeAxis. It's been temporarily removed from this server to make room for other stuff.
+	<div id="header"><div id="cardListButton" class="button">Card List</div> <div id="rulesButton" class="button">FAQ</div> <div id="summoningButton" class="button">Summoning</div><div id="draftButton" class="button">Draft</div></div>
+	<div id="summonDiv" class="hidden">
+		<audio id="BGM" src="Summoning.mp3"></audio><audio id="SFX" src="soundEffect.mp3"></audio>
+		<span id="volumeMute" style="font-size: 45px;"><img src="audioIcon.png" style="top: -15px;"/></span><input type="range" min="0" max="100" value="50" class="slider" id="volumeSlider"><br/>
+		<div id="summoningPlatform">
+			<div id="beforeSummon" class="">
+				<div id="begin10SummonButton" class="button">10 Summon</div>
+				<br/><br/>
+				<strong>Summons 10 cards, 2 of which are guaranteed to be rare or above.</strong>
+				<br/><br/>
+				<input type="checkbox" id="skipAnimationBox"><strong> Skip Animation</strong>
+			</div>
+			<div id="duringSummon" class="hidden">
+				<div id="summonCardContainer" class="hidden spinning"><img id="summonCard" src = "cardback_default.jpg" class="card fadingIn"></div>
+				<video id="summonVid" width="100%" class="">
+					<source src="summonBG.webm" type="video/webm">
+				</video>
+			</div>
+			<div id="afterSummon" class="hidden">
+				<div id="resetButton" class="buttonSmall">Reset</div>
+				<br/>
+				<div id="afterSummonList"></div>
+			</div>
+		</div>
+	</div>
+	<div id="rulesDiv" class="">
+    <h2><a href="https://discord.gg/m3hWub9PbC">Join the Discord to Provide Feedback and Help Playtest!</a></h2>
+	<h1>FAQ</h1>
+	<div style="margin-left:20px; margin-right:20px; text-align: left;"><strong>What is this?</strong><br/>
+	This is a Custom Magic the Gathering set based on Fate/Grand Order.  The set is the first in a planned block of three.  The block is called the "Fate" block, and the first set is simply called "Fate/Grand Order".  Naturally, this set may feature spoilers for F/GO and related properties.<br/>
+	In general, the set is heavily combo-oriented, with cards specifically designed to work with each other.
+	<br/><br/>
+	<strong>Can I play this?</strong><br/>
+	Yes! Using a program called <a href="https://cockatrice.github.io/">Cockatrice</a>, you can play games using these cards and even combine them with existing MTG cards as well. They're fully compatible.  You just need to make sure the person you're playing with has downloaded this custom set as well, and you're both using the most up-to-date download.
+	<br/><br/>
+	<strong>My favorite character is missing!</strong><br/>
+	This first set includes every single Servant released up to the end of Part 1 of the F/GO storyline.  If your favorite Servant was released in Epic of Remnant or Lostbelt, then it will show up in the later sets when I eventually get to those parts.
+	<br/><br/>
+	<strong>The colors for this character seem wrong.</strong><br/>
+	I did my best to balance making the colors accurate to character personalities and also making them accurate to what that character is capable of, gameplay-wise. Sometimes I had to make a few compromises in either direction.  I'm open to feedback, but a lot of thought was put into the existing colors and there may not be much wiggle room left to tweak colors too much.
+	<br/><br/>
+	<strong>Why are Noble Phantasms usable by all versions of a Servant?</strong><br/>
+	Tying a Noble Phantasm's effect directly to a creature on the same card would have made creatures way too wordy, so I separated them into separate cards.  All versions of a Servant can use them (for example, Artoria Lily can use Excalibur, and all versions of Hassan can use any other Hassan's NP) because I felt this made for a more versatile set that was more fun to play.  Limiting them to only being usable by one card each would have made for a lot of dead draws and unusable cards in your hand.
+	<br/><br/>
+	<strong>Some of these cards seem pretty powerful...</strong><br/>
+	I wanted Noble Phantasms to feel powerful in general, and my main priority is that the set is balanced within itself and that there are viable options in every color.  I'm not overly concerned right now with how balanced it is with the rest of the MTG card pool, as there are already tons of broken cards in MTG.  That being said, the set is still undergoing playtesting and I will be making tweaks to ensure nothing is overtly broken to the point of being unfun.
+	<br/><br/>
+	<strong>Why bring back old dead mechanics like Cumulative Upkeep or World Enchantments?</strong><br/>
+	For World Enchantments, it was because I felt that was the best mechanic to represent Reality Marbles and similar abilities in F/GO. It fit too perfectly. I also gave World Enchantments their own new card frame with full art to make them a bit more exciting.<br/>
+	As for Cumulative Upkeep, at first it was because I wanted to emulate the fact that Reality Marbles aren't meant to stick around for long.  But I later realized that there were interesting ways to use the mechanic on other cards as well.  Since it's a bit of a faux-pas to include more than one type of counter on permanents in a set, trying to find ways to use age counters in place of other counters like +1/+1 or -1/-1 counters made for an interesting design challenge.  In order to avoid the nightmare of having to keep track of all sorts of different cumulative upkeep costs, all cumulative upkeep costs in this set are counted in 1s. I felt this was no less manageable than keeping track of how many times your Commander has died, for example.
+	<br/><br/>
+	<strong>Why add gender? What about cards from before this set?</strong><br/>
+	There are too many characters in Fate whose abilities, myths, and legends revolve heavily around gender-based interactions. I felt it was very thematically fitting and it made for a fun mechanic.  From a strict rules perspective, if a card does not have a gender printed on it, then it's genderless. That would include all cards outside of this set.  However, in reality, if Wizards ever added a mechanic like Gender, I imagine they would probably errata older cards to have them, based on their existing lore or card art, so if both players agree beforehand, you could houserule older cards to have genders if you were mixing older cards in. Officially, however, cards only have a gender if they're printed with one.
+	<br/><br/>
+	<strong>What do Classes do? Don't Classes already exist in MTG?</strong><br/>
+	Classes don't really do anything on their own outside of being a new card property for other cards to refer to, but I felt I couldn't just leave them out, since they're so important to FGO.  I'm working on some optional rules that would grant all Servants of each class particular class abilities.  As for the existing "Classes" of MTG, that was always a more colloquial thing to refer to certain creature types.  The word "class" doesn't actually exist in the rules, and I felt the word was too important to FGO to use a different one.
+	<br/><br/>
+	</div>
+	<h1>Download:</h1>
+	<a class="buttonSmall" id="downloadLink" href="FGOv0-9-12.rar">v0.9.12</a>
+	<br/><strong>Extract in "Users/(Your User)/AppData/Local/Cockatrice/Cockatrice" folder, and overwrite files as necessary.</strong><br/>
+	<img src="cockatriceExample.png" />	
+	<br/><br/><h3 id="changelogButton" class="buttonSmall">Changelog</h3>
+	<div id="changelogDiv" class="changelogBox hidden">
+		 <strong>v0.9.12</strong><br/>
+		- Updated all tutor cards with specific conditions to require revealing<br/>
+		- Changed rarity of <em>Salmon of Knowledge</em> from Rare to Common<br/>
+		- Changed rarity of <em>Dún Scáith, Land of Shadows</em> and <em>Shapeless Island</em> from Common to Uncommon<br/>
+		- Updated <em>Elixir of Love</em> to replace "Creatures of the chosen gender can’t attack you or planeswalkers you control this turn." with "Creatures of the chosen gender can’t attack you or planeswalkers you control this turn unless their controller pays 2 for each creature attacking you or planeswalkers you control."<br/>
+		- Reduced mana cost of <em>Elixir of Love</em> from 3 to 2.<br/>
+		- Increased mana cost of <em>Elixir of Youth</em> from 3 to 4.<br/>
+		- Fixed typo in <em>Cleopatra, the Last Pharaoh</em>’s name.<br/>
+		- Updated <em>Prison Castle Csejte</em> to replace "As long as you control a connected creature, creatures you don’t control get -2/-2." with "As long as you control a connected creature, Prison Castle Csejte has “Cumulative upkeep 1” and creatures you don’t control get -2/-2."<br/>
+		- Updated <em>Azreal, Harbinger of Death</em> to replace "At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control." with "At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control for each creature sacrificed this way."<br/>
+		- Changed <em>The Old Man of the Mountain</em>’s +3 ability to +2.<br/>
+		- Updated <em>Tri-Hermes, Spiritron Processor</em> to replace "T: Add CC." with T: Add CC. Activate only during your turn." Increased cost of ability from 3 to 4.
+		- Updated <em>Gil, Clairvoyant Youth</em> to replace "When Gil, Clairvoyant Youth enters the battlefield, scry 5, then exile the top three cards of your library. Until end of turn, you may play cards exiled this way." with "When Gil, Clairvoyant Youth enters the battlefield, create two Treasure tokens, scry 5, then exile the top three cards of your library. Until end of turn, you may play cards exiled this way."<br/>
+		- Updated <em>Francis Drake</em> to replace "T: Add one mana of any color." with "Whenever Francis Drake becomes tapped for the first time each turn, create a Treasure token." and increased mana cost from 2BR to 3BR
+		- Added Treasure token.<br/>
+		- Updated <em>Philosopher’s Stone</em> and <em>Das Rheingold</em> to have Treasure subtype<br/>
+		- Updated <em>Golden Apple</em> to replace "Sacrifice Golden Apple:" with "T, Sacrifice Golden Apple:" and added Food subtype.<br/>
+		- Updated <em>Anne Bonny & Mary Read</em> to add "When Anne Bonny & Mary Read enters the battlefield, create a Treasure token."<br/>
+		- Updated <em>Dún Scáith, Land of Shadows</em> to replace "Whenever a nontoken creature is put into a graveyard from the battlefield, exile that card and its owner creates a 1/1 black Spirit creature token with flying." with "Whenever a nontoken creature is put into a graveyard from the battlefield, its owner creates a 1/1 black Spirit creature token with flying." And added "T, Sacrifice Dún Scáith, Land of Shadows: Search your library for a card with a Scathach origin, reveal it, and put it into your hand."<br/>
+        <br/>
+		<strong>v0.9.11</strong><br/>
+        - Added "Cycling 1" to every card that requires tapping a connected creature as an additional cost.<br/>
+        - Updated <em>Sir Lancelot of the Lake</em> to replace "half that damage instead" with "half that damage instead, rounded up".<br/>
+        - Updated <em>Solomon, King of Mages</em> to add "Solomon, King of Mages can be your commander." and changed mana cost from 2WUB to 3WUB.<br/>
+        - Updated <em>Spiral Sword Caladbolg</em> to replace " it gets +X/+X and trample," with " it gets +X/+X and trample until end of turn," and adjusted equip cost from 3 to 4.<br/>
+        - Updated <em>Shinpen Kidoku Sake</em> to replace "Spells your opponents cast cost 2 more to cast." with "As long as you control a connected creature, spells your opponents cast cost 2 more to cast."<br/>
+        - Updated <em>Repeated Verse</em> to add "Draw a card."<br/>
+        <br/>
+        <strong>v0.9.10</strong><br/>
+        - Removed <em>Hellfire of Wisdom</em><br/>
+        - Removed <em>Ember of Wisdom</em><br/>
+        - Removed <em>Blaze of Wisdom</em><br/>
+        - Removed <em>Roaring Flames of Wisdom</em><br/>
+        - Removed <em>Torch of Wisdom</em><br/>
+        - Added <em>Sphinx Queen</em><br/>
+        - Added <em>Gazer</em><br/>
+        - Added <em>Rani VIII, Child of Atlas</em><br/>
+        - Added <em>Tri-Hermes, Spiritron Processor</em><br/>
+        - Added <em>Arcane Grimoire</em><br/>
+        - Updated <em>Magic Meter</em> to add "T: Add C." and replace "3, T: Search your library for a caster class creature card and put it into your hand, then shuffle. If that card’s mana value is 3 or greater, sacrifice Magic Meter." with "2, T, Discard a card: Search your library for a caster class creature card and put it into your hand, then shuffle. If that card’s mana value is 4 or greater, sacrifice Magic Meter."<br/>
+        - Updated <em>Märchen Meines Lebens</em>’s mana cost from 3U to 2U and it is no longer Legendary.<br/>
+        - Updated <em>Tamamo no Mae</em>, Fox Priestess to replace "2U: Counter target spell unless its controller pays 1." with "1U: Counter target spell unless its controller pays 1."<br/>
+        - Updated <em>Waver Velvet, Upstart Mage</em> to replace "2U, T: Counter target spell that targets a Servant you control." with "UU, T: Counter target spell that targets a Servant you control."<br/>
+        - Updated <em>Rin’s Pendant</em> to replace "Sacrifice Rin’s Pendant: Add CCC." with "At the beginning of your upkeep, put an age counter on Rin’s Pendant. Sacrifice Rin’s Pendant: Add C for each age counter on Rin’s Pendant."<br/>
+        - Fixed typo on <em>Thermopylae</em>, replacing "base toughness" with "base power and toughness".<br/>
+        - Fixed various cards not including "shuffle" after searching.<br/>
+        - Fixed typo on <em>Invisible Air</em>, adding "When Invisible Air enters the battlefield," where it was missing.<br/>
+        - Fixed <em>Jack the Ripper</em> to use "mills a card" terminology.<br/>
+        - Updated <em>Silver Earring</em> to replace "Sacrifice Silver Earring: Return target connected creature card from your graveyard to the battlefield." with "Sacrifice Silver Earring: Return target connected creature card from your graveyard to your hand."<br/>
+        - Updated <em>Uryuu Ryuunosuke</em> to replace "Sacrifice Uryuu Ryuunosuke: Add BBBB." with "T, Sacrifice Uryuu Ryuunosuke: Add BBBB."<br/>
+        <br/>
+        <strong>v0.9.9</strong><br/>
+        - Replaced "True Name" mechanic and all references with "origin".<br/>
+        - Added "connected" keyword. Replaced Soulequip with "Equip connected creature".<br/>
+        - Replaced Soulcrew with "Crew N or &lt;quality&gt;"<br/>
+        - Updated <em>Warrior Monk Benkei</em> from "cost 4 more to cast" to "cost 3 more to cast".<br/>
+        - Fixed wording on <em>Caress of the Medusa</em> to avoid rules paradox, now targets artifacts as well<br/>
+        - Updated <em>Azreal, Harbinger of Death</em> from "Whenever a creature dies for the first time each turn, you may put a loyalty counter on target connected planeswalker you control." to "At the beginning of your upkeep, each opponent sacrifices a creature, then you may put a loyalty counter on target connected planeswalker you control."<br/>
+        - Updated <em>Beast of Billows</em> from 7/6 to 7/5.<br/>
+        - Updated <em>Enfer Château d'If</em>’s mana cost from 6BB to 5BB<br/>
+        - Removed "A deck can have any number of cards named Hundred Faced Hassan." from <em>Hundred Faced Hassan</em> and updated cost to duplicate from 1B to B.<br/>
+        - Updated <em>Dimension of Steam</em> to add "Whenever damage is prevented for the first time each turn, put an age counter on Dimension of Steam."<br/>
+        - Corrected <em>Darius, Achaemenid King</em> from "Put target creature card from your graveard onto the battlefield under your control." to "Return target creature from your graveyard to the battlefield."<br/>
+        <br/>
+        <strong>v0.9.8</strong><br/>
+        - Updated <em>Sasaki, Nameless Master</em> from "- deals damage equal to three times its power to target creature." to "- deals damage equal to double its power to target attacking creature."<br/>
+        - Updated <em>Prydwen</em>’s mana cost from 3 to 4.<br/>
+        - Corrected improper wording on <em>Prydwen</em>, <em>Llamrei Unit II</em>, and <em>Bond of Pain</em>.<br/>
+        - Updated <em>La Pucelle: Crimson Holy Virgin</em> from "Destroy all creatures." to "Destroy all creatures and planeswalkers."<br/>
+        - Updated <em>Bond of Pain</em> from "Whenever you’re dealt damage, Bond of Pain deals that much damage to enchanted player." to "Damage that would be dealt to you is dealt to you and enchanted player instead."<br/>
+        - Corrected <em>Book of False Attendant</em> from "each age counter on the chosen permanent" to "each age counter on enchanted permanent."<br/>
+        <br/>
+		<strong>v0.9.7:</strong><br/>
+		- Updated <em>Hassan of Serenity</em> to remove "Cumulative upkeep—Pay 1 life" and change "T: - deals 1 damage to target tapped creature." to "T, Pay 1 life: - deals 1 damage to target tapped creature."<br/>
+		- Updated <em>Infinite Pancakes</em> from "Create X Food tokens where X is equal to that creature’s toughness." to "... where X is equal to half that creature’s toughness rounded down."<br/>
+		- Updated <em>Key of the King’s Law</em> to add "Catalyst" and replaced "... return that card to your hand" with  "exile that card, then return it to your hand at the beginning of the next end step."<br/>
+		- Updated <em>Chaos Labyrinthos</em> from "Sacrifice a Wall: Return target creature to its owner’s hand." to "1, Sacrifice a Wall: Target creature can’t attack or block this turn." and from "create a 0/4 Wall" to create a 0/3 Wall".<br/>
+		- Updated <em>Bazett Fraga McRemitz</em>’s mana cost from 1RW to 2U.<br/>
+		- Updated <em>Ornithricopter</em> from "Crew 2" to "Crew 3" and from "Sacrifice -: - deals 4 damage to each creature." to "T, Sacrifice - and a creature that crewed it this turn: - deals 5 damage to any target."<br/>
+		<br/>
+		<strong>v0.9.6:</strong><br/>
+		- Added cards:<br/>&nbsp;&nbsp;&nbsp;- Celestial Inverted Moon<br/>&nbsp;&nbsp;&nbsp;- Einzbern Banquet<br/>&nbsp;&nbsp;&nbsp;- Flame Barrier<br/>&nbsp;&nbsp;&nbsp;- Kotominue, Spiritual Healer<br/>&nbsp;&nbsp;&nbsp;- Waver Velvet, Upstart Mage<br/>&nbsp;&nbsp;&nbsp;- Zouken, Twisted Leech<br/>
+		- Added tokens:<br/>&nbsp;&nbsp;&nbsp;- Insect<br/>
+		- Updated <em>Kayneth El-Melloi Archibald</em> from "Servant spells you cast cost [2] less to cast." to "... [1] less to cast."<br/>
+		- Updated <em>Wicker Man</em> to have "Protection from equipment" to avoid it being equipped with <em>Gae Bolg</em>.<br/>
+		- Updated <em>Mata Hari, Dancer Informant</em> from "When Mata Hari, Dancer Informant dies, sacrifice all male creatures you control" to "... tap all male creatures you control. They don't untap during your next untap step."<br/>
+		- Updated <em>La Grâce Fille Noël</em> from "Create X Food tokens ..." to "Create a Food token, then create X Food tokens ..." and increased mana cost from W to 1W.<br/>
+		- Fixed <em>Amakusa Shirou Tokisada</em> and <em>Caligula, Emperor of Death</em> not having Power and Toughness.<br/>
+		- Updated <em>Burrowing Crest Worm</em> Art.<br/>
+		- Corrected improper wording in <em>Aestus Domus Aurea</em>.<br/>
+		
+	</div>
+	<h1 style="text-align: center;">Rules</h1>
+    <h2 style="text-align: center;"><a href="https://docs.google.com/document/d/1LQepmps1y5Ot9t04GtV7t0j9TJiN3ghFG6hKlB1bYEM/edit?usp=sharing">View Full Comprehensive Rules Changes</a></h2>
+	<br/>
+    <table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Fergus Knight of the Red Branch.jpg" class="exampleCard" /></td>
+		<td><h2>Origin Bar</h2><strong style="">Some cards in this set have a bar below their name.  This is called the "Origin bar". The color of the bar is indicative of the card's rarity. On this bar, there are three new card properties:
+		<h3>Class</h3>The diamond-shaped icon on the top-left indicates a card's class. Normally only creatures and planeswalkers have classes. They don't have any rules meaning on their own, but abilities can refer to them.  The classes in this set are: Archer, Assassin, Berserker, Caster, Lancer, Rider, Saber, Avenger, Ruler, and Shielder. Fergus over here is a saber class creature. If a card doesn't have a class icon, then it doesn't have a class.
+		<h3>Origin</h3>A card's "origin" is listed right below its name. This represents a hero's True Name, and also doesn't have any rules meaning on its own, but many abilities will refer to them. A card that shares an origin with any given card is considered "connected" to that card. Fergus' origin is "Fergus mac Róich".
+		<h3>Gender</h3>Only creatures and planeswalkers can have genders. A card's gender is determined by the icon in the top right, below the mana cost. Cards can either be male, female, both, or neither. If a card doesn't have a male icon or female icon, then it doesn't have a gender. Fergus is male.</strong></td>
+	</tr></table>
+	<table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Spiral Sword Caladbolg.jpg" class="exampleCard" /></td>
+		<td><h2>New Keyword Abilities</h2><strong style="">
+		<h3>Catalyst</h3>Creatures aren't the only cards with origins. Many cards will share the same origin. Catalyst is an ability for artifacts. When an artifact with catalyst enters the battlefield, search your library for a Servant type card that shares an origin with it, and put that card into your hand, then shuffle your library.
+		<h3>Connected</h3>A permanent or other card is "connected" if it shares an origin with the card in question. Sharing an origin with some other card (for example, two other cards that happen to share origins with each other) has no bearing. It only matters whether it shares one with the card the word "connected" is being used on.</strong>
+		<br/><strong>Note:</strong> The colored watermarks in the textboxes of some artifacts and lands have no rules meaning. They're just reminders of the colors of cards that are connected to it.</td>
+	</tr></table>
+	<table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Jaguar Warrior.jpg" class="exampleCard" /></td>
+		<td><strong style="">
+		<h3>Berserk</h3>Creatures with Berserk must attack if able, and they must be blocked if able.
+		<h3>Landguide</h3>A less powerful version of landwalk. If defending player controls a land of the corresponding type to the type of Landguide your creature has, that creature can't be blocked except by other creatures with the same type of Landguide. As an example, Jaguar Warrior has Forestguide, so if you have a Forest, you can't block Jaguar Warrior except with other creatures that have Forestguide.</strong></td>
+	</tr></table>
+    <table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Chariot of Boudica.jpg" class="exampleCard" /></td>
+		<td><strong style="">
+        <h2>Changes to existing mechanics</h2>
+		<h3>Crew</h3>"Crew N or &lt;quality&gt;" means "Tap any number of creatures you control with total power N or greater, or at least one &lt;quality&gt; creature: This vehicle becomes an artifact creature until end of turn."</strong></td>
+	</tr></table>
+	<table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Arash Kamangir.jpg" class="exampleCard" /></td>
+		<td><strong style="">
+		<h2>Returning Old Mechanics</h2>
+		<h3>Cumulative Upkeep</h3>If a permanent has Cumulative Upkeep, put an age counter on it at the beginning of your upkeep, then sacrifice that permanent unless you pay the Cumulative Upkeep cost for each age counter on it. In this set, with very few exceptions, the Cumulative Upkeep cost will always be 1 generic mana, making the cost generally 1 mana per age counter.</strong></td>
+	</tr></table>
+	<table style="width:90%;margin:auto;"><tr>
+		<td><img src="FateGrandOrder-files/Aestus Domus Aurea.jpg" class="exampleCard" /></td>
+		<td><strong style="">
+		<h3>World Enchantments</h3>Only one enchantment with the World supertype may exist on the battlefield at one time, regardless of who controls it.  Whenever a World Enchantment enters the battlefield under either player's control, all other World Enchantments controlled by all players are destroyed. World Enchantments have a unique card frame in this set, and generally have powerful abilities with cumulative upkeep costs to balance them out.</strong></td>
+	</tr></table>
+	<strong></strong></div>
+	<div id="cardListDiv" class="hidden"></div>
+	<div id="draftDiv" class="hidden">
+		<div style="margin-left:20px; margin-right:20px; text-align: center;">
+			<div id="connectionInfo">
+				<div id="draftBeforeConnected">
+					<br/>
+					<h1>Online Draft</h1>
+					<strong>Username: </strong><input type="text" id="draftNameTextbox" style="width:240px;" maxlength="16"><br/>
+					Click "Host" to host a drafting session, or enter another host's ID and click "Connect" to join their session.<br/><br/>
+					<div id="draftHostButton" class="buttonSmall">Host</div><br/>
+					<strong>Host ID: </strong><input type="text" id="draftHostIDTextbox"><div id="draftConnectButton" class="buttonSmall">Connect</div><br/>
+				</div>
+			</div>
+			<div id="connectedPlayersBox" class="hidden"></div>
+			<div id="draftSettings" class="hidden">
+				<br/>
+				Fill Empty Slots with CPUs <input type="checkbox" id="addCPUCheckbox"><div id="draftHostStartButton" class="buttonSmall">Start</div>
+			</div>
+			<div class="draftCardsDiv">
+				<div id="draftSummonList"></div>
+			</div>
+			<br/><br/>
+			<h2>Your Card Pool: <span id="cardPoolNumber">0 Cards</span></h2><br/>
+			<div class="draftCardsDiv">
+				<div id="draftCardPool"></div>		
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+	<div id="console"></div>
 </body>
 </html>
