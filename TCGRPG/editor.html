@@ -1214,6 +1214,55 @@
             }
         }
 
+        // Load Original reads og:image metadata through our Cloudflare Worker.
+        // Unlike a direct cross-origin browser fetch, this works on hosted and file:// pages.
+        // The illustrator lookup below is still a separate, extension-based tool.
+        const ORIGINAL_METADATA_PROXY = 'https://tcg-og-proxy.timeaxisgames.workers.dev/og';
+        let displayedOriginalLink = '';
+        let singleIllustratorBusy = false;
+        let originalImageRequestToken = 0;
+
+        async function fetchOriginalMetadata(url) {
+            const endpoint = new URL(ORIGINAL_METADATA_PROXY);
+            endpoint.searchParams.set('url', url);
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 16000);
+            try {
+                const response = await fetch(endpoint.href, {
+                    method: 'GET', mode: 'cors', credentials: 'omit', signal: controller.signal
+                });
+                let result;
+                try {
+                    result = await response.json();
+                } catch {
+                    throw new Error('The metadata proxy returned an invalid response.');
+                }
+                if (!response.ok) {
+                    throw new Error(result?.error || `The metadata proxy returned HTTP ${response.status}.`);
+                }
+                if (!result || typeof result.ogImage !== 'string' || !result.ogImage.trim()) {
+                    throw new Error('The metadata proxy did not find an original image.');
+                }
+                const imageUrl = new URL(result.ogImage, url);
+                if (!['https:', 'http:'].includes(imageUrl.protocol)) {
+                    throw new Error('The metadata proxy returned an unsupported image URL.');
+                }
+                return { ogImage: imageUrl.href, title: typeof result.title === 'string' ? result.title : '' };
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    throw new Error('The metadata proxy did not respond in time.');
+                }
+                throw error;
+            } finally {
+                clearTimeout(timeout);
+            }
+        }
+
+        /* LEGACY EXTENSION CODE — Load Original (disabled; uncomment to restore old loading path)
+           This is the previous direct-browser / Firefox-extension image-metadata implementation.
+           To restore it, remove this block's delimiters and remove the active
+           fetchOriginalMetadata function above to avoid duplicate declarations.
+
         // The original OG-image extension API is untouched. Illustrator requests use a
         // separate action, so older Load Original buttons continue to work as before.
         let displayedOriginalLink = '';
@@ -1295,6 +1344,8 @@
             }
         }
 
+        END LEGACY EXTENSION CODE — Load Original */
+
         // Allow advanced-action shortcuts even when the details dropdown is folded.
         // The standalone hotkeys.js still owns the assignments and all visible
         // shortcut handling; this only handles a collapsed, otherwise hidden tool.
@@ -1372,6 +1423,8 @@
             return document.getElementById('quickIllustratorApply')?.checked === true;
         }
 
+        // Illustrator lookup uses the still-active Firefox extension bridge.
+        // The current Worker only supplies og:image; it does not supply illustrator metadata.
         function requestCardIllustrator(url) {
             return new Promise((resolve, reject) => {
                 const id = 'illus-' + Math.random().toString(36).slice(2);
@@ -1509,8 +1562,7 @@
             const cardTable = document.getElementById('cardTable');
             cardTable.innerHTML = '';
             
-            // Load the source image without an extension when CORS permits it.
-            // Retain the extension bridge as a fallback for local file:// usage.
+            // Get image metadata from the Worker; no direct CORS fetch or extension fallback.
             const url = String(cardData.originalLink || '').trim();
             renderSourceLink(url);
             const result = document.getElementById('originalImageDisplay');
@@ -1541,20 +1593,9 @@
                         anchor.rel = 'noopener noreferrer';
                         const image = document.createElement('img');
                         image.alt = metadata.title || 'Original card image';
-                        image.onerror = async () => {
+                        image.onerror = () => {
                             if (clickToken !== originalImageRequestToken) return;
-                            // A page can expose an og:image URL that fails to display.
-                            // Give the extension one chance before reporting failure.
-                            if (!metadata.viaExtension) {
-                                try {
-                                    const fallback = await fetchOriginalMetadataFromExtension(url);
-                                    if (clickToken !== originalImageRequestToken) return;
-                                    if (!fallback.ogImage) throw new Error('No image found');
-                                    displayImage({ ...fallback, viaExtension: true });
-                                    return;
-                                } catch { /* Show an error and permit retry. */ }
-                            }
-                            result.textContent = 'The source image could not be displayed.';
+                            result.textContent = 'The original image URL was found, but the image could not be displayed.';
                             button.style.display = 'block';
                         };
                         image.src = imageUrl.href;
