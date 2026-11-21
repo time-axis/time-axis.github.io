@@ -337,6 +337,13 @@
     .illustrator-navigation-controls { display: flex; align-items: center; flex-wrap: wrap;
         gap: 8px; margin: 7px 0 8px; }
     #nextMissingIllustrator { font-size: 12px; padding: 5px 8px; }
+    .illustrator-advanced-tools { text-align: left; margin: 4px 0 8px;
+        border: 1px solid #d4dae2; border-radius: 7px; background: #fff; }
+    .illustrator-advanced-tools > summary { padding: 9px 10px; font-size: 13px;
+        font-weight: 600; cursor: pointer; user-select: none; }
+    .illustrator-advanced-tools[open] > summary { border-bottom: 1px solid #e5e7eb; }
+    .illustrator-advanced-tools .illustrator-navigation-controls { margin: 8px 10px; }
+    .illustrator-advanced-tools #illustratorLookupStatus { margin: 5px 10px 10px; }
     .illustrator-hotkeys-option { display: inline-flex; align-items: center; gap: 5px;
         font-size: 12px; text-align: left; cursor: pointer; }
     .illustrator-hotkeys-option input { margin: 0; }
@@ -1211,6 +1218,106 @@
         // separate action, so older Load Original buttons continue to work as before.
         let displayedOriginalLink = '';
         let singleIllustratorBusy = false;
+        let originalImageRequestToken = 0;
+
+        // A normal page fetch works for same-origin pages and remote sites that
+        // explicitly allow cross-origin reads. For other sites, the existing
+        // Firefox extension remains the fallback (especially on file:// pages).
+        async function fetchOriginalMetadataDirect(url) {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            try {
+                const response = await fetch(url, {
+                    method: 'GET', mode: 'cors', credentials: 'omit',
+                    redirect: 'follow', signal: controller.signal
+                });
+                if (!response.ok) throw new Error(`Source returned HTTP ${response.status}.`);
+                const contentType = (response.headers.get('content-type') || '').toLowerCase();
+                const responseUrl = response.url || url;
+                if (contentType.startsWith('image/')) {
+                    return { ogImage: responseUrl, title: '' };
+                }
+                const html = await response.text();
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const metas = [...doc.querySelectorAll('meta')];
+                const metaContent = (...names) => {
+                    for (const name of names) {
+                        const found = metas.find(tag =>
+                            (tag.getAttribute('property') || tag.getAttribute('name') || '').toLowerCase() === name);
+                        if (found?.getAttribute('content')?.trim()) return found.getAttribute('content').trim();
+                    }
+                    return '';
+                };
+                const rawImage = metaContent('og:image:secure_url', 'og:image', 'twitter:image');
+                if (!rawImage) throw new Error('No preview image found on the source page.');
+                const imageUrl = new URL(rawImage, responseUrl);
+                if (!['http:', 'https:'].includes(imageUrl.protocol))
+                    throw new Error('Source returned an unsupported image URL.');
+                return { ogImage: imageUrl.href, title: metaContent('og:title', 'twitter:title') || doc.title || '' };
+            } finally {
+                clearTimeout(timeout);
+            }
+        }
+
+        function fetchOriginalMetadataFromExtension(url) {
+            return new Promise((resolve, reject) => {
+                const id = 'og-' + Math.random().toString(36).slice(2);
+                // The extension may not be installed, or may only run on file://.
+                const timeout = setTimeout(() => {
+                    window.removeEventListener('message', receive);
+                    reject(new Error('No response from the Original Image extension.'));
+                }, location.protocol === 'file:' ? 12000 : 4500);
+                function receive(event) {
+                    if (event.source !== window || !event.data ||
+                        event.data.source !== 'og-image-proxy-extension' || event.data.id !== id) return;
+                    clearTimeout(timeout);
+                    window.removeEventListener('message', receive);
+                    if (event.data.error) reject(new Error(event.data.error));
+                    else resolve(event.data);
+                }
+                window.addEventListener('message', receive);
+                window.postMessage({ source: 'og-image-proxy-page', id, url }, '*');
+            });
+        }
+
+        async function fetchOriginalMetadata(url) {
+            let directError;
+            try { return { ...await fetchOriginalMetadataDirect(url), viaExtension: false }; }
+            catch (error) { directError = error; }
+            try {
+                const result = await fetchOriginalMetadataFromExtension(url);
+                if (!result.ogImage) throw new Error('No preview image found on the source page.');
+                return { ...result, viaExtension: true };
+            } catch (extensionError) {
+                throw new Error(`Cannot load the original image directly (${directError.message || directError}). ` +
+                    `Extension fallback also failed (${extensionError.message || extensionError}). ` +
+                    'The source may restrict cross-origin access; on local files enable the extension.');
+            }
+        }
+
+        // Allow advanced-action shortcuts even when the details dropdown is folded.
+        // The standalone hotkeys.js still owns the assignments and all visible
+        // shortcut handling; this only handles a collapsed, otherwise hidden tool.
+        document.addEventListener('keydown', event => {
+            const advanced = document.getElementById('illustratorAdvancedTools');
+            if (!advanced || advanced.open || event.defaultPrevented || event.repeat ||
+                event.ctrlKey || event.altKey || event.metaKey ||
+                !document.getElementById('illustratorHotkeysEnabled')?.checked ||
+                typeof BUTTON_HOTKEYS === 'undefined') return;
+            const active = document.activeElement;
+            if (active && (active.matches('textarea, select') ||
+                (active.matches('input') && !['checkbox', 'radio', 'button', 'submit', 'reset'].includes(active.type)) ||
+                active.isContentEditable)) return;
+            for (const selector of ['#getIllustratorButton', '#nextMissingIllustrator']) {
+                const assigned = BUTTON_HOTKEYS[selector];
+                if (!assigned || assigned.trim().toLowerCase() !== event.key.toLowerCase()) continue;
+                const button = document.querySelector(selector);
+                if (!button || button.disabled || button.hidden) return;
+                event.preventDefault();
+                button.click();
+                return;
+            }
+        });
         function isSupportedIllustratorSource(value) {
             try {
                 const url = new URL(value);
@@ -1402,79 +1509,65 @@
             const cardTable = document.getElementById('cardTable');
             cardTable.innerHTML = '';
             
-            // Get Image from Card's Original Link
-            function fetchOgImage(url) { 
-              return new Promise((resolve, reject) => {
-                const id = Math.random().toString(36).slice(2);
-
-                function onMessage(event) {
-                  if (event.source !== window) return;
-                  if (!event.data || event.data.source !== "og-image-proxy-extension") return;
-                  if (event.data.id !== id) return;
-
-                  window.removeEventListener("message", onMessage);
-
-                  if (event.data.error) {
-                    reject(new Error(event.data.error));
-                  } else {
-                    resolve(event.data);
-                  }
-                }
-
-                window.addEventListener("message", onMessage);
-
-                window.postMessage({
-                  source: "og-image-proxy-page",
-                  id,
-                  url
-                }, "*");
-              });
-            }
-
-            const url = cardData.originalLink;
-            renderSourceLink(cardData.originalLink);
-            const result   = document.getElementById("originalImageDisplay");
-            const button   = document.getElementById('sidePanelButton');
-
+            // Load the source image without an extension when CORS permits it.
+            // Retain the extension bridge as a fallback for local file:// usage.
+            const url = String(cardData.originalLink || '').trim();
+            renderSourceLink(url);
+            const result = document.getElementById('originalImageDisplay');
+            const button = document.getElementById('sidePanelButton');
+            ++originalImageRequestToken;
             if (!result || !button) {
-              console.error("Required elements not found");
-              return;
+                console.error('Required original image elements not found');
+                return;
             }
-            
             button.onclick = null;
-            button.style.display = "block";
-            result.innerHTML = '';
-
+            button.style.display = url ? 'block' : 'none';
+            result.replaceChildren();
             button.onclick = async () => {
-              button.style.display = "none";
-              result.innerHTML = "Loading…";
-              try {
-                const data = await fetchOgImage(url.trim());
-
-                if (data.error) {
-                  result.innerHTML = `<p class="error">${data.error}</p>`;
-                  return;
+                if (!url || !/^https?:\/\//i.test(url)) return;
+                const clickToken = ++originalImageRequestToken;
+                button.style.display = 'none';
+                result.textContent = 'Loading…';
+                try {
+                    const data = await fetchOriginalMetadata(url);
+                    if (clickToken !== originalImageRequestToken) return;
+                    const displayImage = metadata => {
+                        const imageUrl = new URL(metadata.ogImage, url);
+                        if (!['http:', 'https:'].includes(imageUrl.protocol))
+                            throw new Error('Image URL is not HTTP(S).');
+                        const anchor = document.createElement('a');
+                        anchor.href = url;
+                        anchor.target = '_blank';
+                        anchor.rel = 'noopener noreferrer';
+                        const image = document.createElement('img');
+                        image.alt = metadata.title || 'Original card image';
+                        image.onerror = async () => {
+                            if (clickToken !== originalImageRequestToken) return;
+                            // A page can expose an og:image URL that fails to display.
+                            // Give the extension one chance before reporting failure.
+                            if (!metadata.viaExtension) {
+                                try {
+                                    const fallback = await fetchOriginalMetadataFromExtension(url);
+                                    if (clickToken !== originalImageRequestToken) return;
+                                    if (!fallback.ogImage) throw new Error('No image found');
+                                    displayImage({ ...fallback, viaExtension: true });
+                                    return;
+                                } catch { /* Show an error and permit retry. */ }
+                            }
+                            result.textContent = 'The source image could not be displayed.';
+                            button.style.display = 'block';
+                        };
+                        image.src = imageUrl.href;
+                        anchor.appendChild(image);
+                        result.replaceChildren(anchor);
+                    };
+                    displayImage(data);
+                } catch (error) {
+                    if (clickToken !== originalImageRequestToken) return;
+                    result.textContent = error.message || String(error);
+                    button.style.display = 'block';
                 }
-
-                let html = "";
-                if (data.ogImage) {
-                  if (data.title) {
-                      html += `<a href="${url}" target="_blank"><img src="${data.ogImage}" alt="${data.title}"></a>`;
-                  } else {
-                      html += `<a href="${url}" target="_blank"><img src="${data.ogImage}" alt="Original Link"></a>`;
-                  }
-                } else {
-                  if (data.title) {
-                      html += `<a href"${url}" target="_blank">${data.title}</a>`;
-                  } else {
-                      html += `<a href"${url}" target="_blank">Original Link</a>`;
-                  }
-                }
-                result.innerHTML = html;
-              } catch (err) {
-                result.innerHTML = `<p class="error">${err.message}</p>`;
-              }
-            };      
+            };
 
             const generalTable = document.createElement('table');
             const generalRow = generalTable.insertRow();
@@ -4909,11 +5002,14 @@ let resizeTimeout = null;
             <label class="illustrator-quick-option"><input type="checkbox" id="quickIllustratorApply">Quick fill (Disables warning prompts)</label>
             <label class="illustrator-hotkeys-option" title="Only when not typing in a field"><input type="checkbox" id="illustratorHotkeysEnabled">Enable Hotkeys</label>
         </div>
-        <div class="illustrator-navigation-controls">
-            <button type="button" id="getIllustratorButton" hidden>Get Illustrator</button>
-            <button type="button" id="nextMissingIllustrator" title="Next missing illustrator in the current list (wraps around)">Next With Missing Artist</button>
-        </div>
-        <div id="illustratorLookupStatus" role="status" aria-live="polite"></div>
+        <details class="illustrator-advanced-tools" id="illustratorAdvancedTools">
+            <summary>Advanced Tools</summary>
+            <div class="illustrator-navigation-controls">
+                <button type="button" id="getIllustratorButton" hidden>Get Illustrator</button>
+                <button type="button" id="nextMissingIllustrator" title="Next missing illustrator in the current list (wraps around)">Next With Missing Artist</button>
+            </div>
+            <div id="illustratorLookupStatus" role="status" aria-live="polite"></div>
+        </details>
     </div>
 </div>
 
