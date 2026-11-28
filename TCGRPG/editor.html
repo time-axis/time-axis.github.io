@@ -3642,8 +3642,8 @@
                 const count = Number(quantityMatch[1]);
                 // Card IDs have a set code (which may include +) and a set number.
                 // Look anywhere after the quantity, not just at the end of a line.
-                const idMatch = quantityMatch[2].match(/(?:^|[^A-Za-z0-9+])([A-Za-z0-9+]+-[A-Za-z0-9]+)(?![A-Za-z0-9])/);
-                const id = idMatch ? idMatch[1] : '';
+                const idCandidates = [...quantityMatch[2].matchAll(/(?:^|[^A-Za-z0-9+])([A-Za-z0-9+]+-[A-Za-z0-9]+)(?![A-Za-z0-9])/g)].map(match => match[1]);
+                const id = idCandidates.find(candidate => byId.has(candidate.toUpperCase())) || '';
                 const card = id ? byId.get(id.toUpperCase()) : null;
                 if (!Number.isSafeInteger(count) || count < 1 || !card) {
                     missing.push(id || line);
@@ -3684,7 +3684,16 @@
             try {
                 if (file.size > 2_000_000) throw new Error('Deck TXT is unusually large.');
                 const fallbackName = file.name.replace(/\.txt$/i, '').trim() || 'Imported Deck';
-                const imported = parseSavedDeck(await file.text(), fallbackName);
+                importDeckText(await file.text(), fallbackName);
+            } catch (error) {
+                showToast(error.message, 'error', 4500);
+            }
+        }
+
+        function importDeckText(text, fallbackName = 'Imported Deck') {
+            try {
+                if (!text.trim()) throw new Error('No deck text to import.');
+                const imported = parseSavedDeck(text, fallbackName);
                 if ((deckEntries.length || document.getElementById('deckName').value.trim()) &&
                     !confirm('Replace the current deck with this imported deck?')) return;
                 deckEntries.splice(0, deckEntries.length, ...imported.entries);
@@ -3737,6 +3746,13 @@
             document.getElementById('generateDeckText').addEventListener('click', generateDeckText);
             document.getElementById('copyDeckText').addEventListener('click', copyDeckText);
             document.getElementById('downloadDeckText').addEventListener('click', downloadDeckText);
+            document.getElementById('importDeckText').addEventListener('click', () => {
+                importDeckText(document.getElementById('deckTextOutput').value);
+            });
+
+            document.getElementById('deckTextOutput').addEventListener('input', event => {
+                event.target.dataset.generated = 'false';
+            });
             document.getElementById('downloadSetJSON').addEventListener('click', downloadSetJSON);
             for (const [buttonId, inputId, handler] of [
                 ['importDeck', 'deckImportFile', importDeckFile],
@@ -5103,8 +5119,9 @@ let resizeTimeout = null;
             <button type="button" id="generateDeckText">Generate Text</button>
             <button type="button" id="copyDeckText">Copy</button>
             <button type="button" id="downloadDeckText">Save .txt</button>
+<button type="button" id="importDeckText">Import Text</button>
         </div>
-        <textarea id="deckTextOutput" rows="10" readonly spellcheck="false" aria-label="Deck export text"></textarea>
+<textarea id="deckTextOutput" rows="10" spellcheck="false" aria-label="Deck import and export text"></textarea>
     </div>
 </section>
 <section id="setWorkspace" class="workspace-panel" hidden>
